@@ -1,36 +1,18 @@
 export type NavigationItem = {
   label: string;
   href: string;
-  children?: NavigationItem[];
 };
 
 export type SectionNavigation = {
   id: string;
   label: string;
   href: string;
-
-  /**
-   * Global navigation items that remain visible
-   * while the visitor is inside this section.
-   */
   globalItems: string[];
-
-  /**
-   * Navigation belonging specifically to this section.
-   */
   items: NavigationItem[];
-
-  /**
-   * Optional navigation belonging to a subdivision.
-   */
-  subdivisions?: Record<string, NavigationItem[]>;
+  subdivisions?: {
+    [key: string]: NavigationItem[];
+  };
 };
-
-/*
-|--------------------------------------------------------------------------
-| GLOBAL NAVIGATION
-|--------------------------------------------------------------------------
-*/
 
 export const globalNavigation: NavigationItem[] = [
   {
@@ -67,12 +49,6 @@ export const globalNavigation: NavigationItem[] = [
   },
 ];
 
-/*
-|--------------------------------------------------------------------------
-| SECTION NAVIGATION
-|--------------------------------------------------------------------------
-*/
-
 export const sectionNavigation: SectionNavigation[] = [
   /*
   |--------------------------------------------------------------------------
@@ -93,6 +69,7 @@ export const sectionNavigation: SectionNavigation[] = [
       'Blog',
       'News',
       'Events & Activities',
+      'Resources',
     ],
 
     items: [
@@ -134,7 +111,7 @@ export const sectionNavigation: SectionNavigation[] = [
       'Blog',
       'News',
       'Events & Activities',
-      'Contact',
+      'Resources',
     ],
 
     items: [
@@ -155,80 +132,6 @@ export const sectionNavigation: SectionNavigation[] = [
         href: '/media/nhtv-voices',
       },
     ],
-
-    subdivisions: {
-      'nexus-hub-tv': [
-        {
-          label: 'Home',
-          href: '/media/nexus-hub-tv',
-        },
-        {
-          label: 'Shows',
-          href: '/media/nexus-hub-tv/shows',
-        },
-        {
-          label: 'Schedule',
-          href: '/media/nexus-hub-tv/schedule',
-        },
-        {
-          label: 'Stories',
-          href: '/media/nexus-hub-tv/stories',
-        },
-      ],
-
-      'nhtv-football': [
-        {
-          label: 'Home',
-          href: '/media/nhtv-football',
-        },
-        {
-          label: 'Football News',
-          href: '/media/nhtv-football/news',
-        },
-        {
-          label: 'Matches',
-          href: '/media/nhtv-football/matches',
-        },
-        {
-          label: 'Features',
-          href: '/media/nhtv-football/features',
-        },
-      ],
-
-      'nhtv-stories': [
-        {
-          label: 'Home',
-          href: '/media/nhtv-stories',
-        },
-        {
-          label: 'Stories',
-          href: '/media/nhtv-stories/stories',
-        },
-        {
-          label: 'Features',
-          href: '/media/nhtv-stories/features',
-        },
-      ],
-
-      'nhtv-voices': [
-        {
-          label: 'Home',
-          href: '/media/nhtv-voices',
-        },
-        {
-          label: 'Interviews',
-          href: '/media/nhtv-voices/interviews',
-        },
-        {
-          label: 'Opinions',
-          href: '/media/nhtv-voices/opinions',
-        },
-        {
-          label: 'Features',
-          href: '/media/nhtv-voices/features',
-        },
-      ],
-    },
   },
 
   /*
@@ -248,8 +151,9 @@ export const sectionNavigation: SectionNavigation[] = [
       'Digital',
       'Business',
       'Blog',
+      'News',
+      'Events & Activities',
       'Resources',
-      'Contact',
     ],
 
     items: [
@@ -260,10 +164,6 @@ export const sectionNavigation: SectionNavigation[] = [
       {
         label: 'Services',
         href: '/digital/services',
-      },
-      {
-        label: 'Projects',
-        href: '/projects',
       },
     ],
 
@@ -286,28 +186,28 @@ export const sectionNavigation: SectionNavigation[] = [
           href: '/digital/services/mobile-app-development',
         },
         {
-          label: 'UI/UX & Product Design',
-          href: '/digital/services/ui-ux-design',
+          label: 'E-commerce',
+          href: '/digital/services/ecommerce',
         },
         {
           label: 'Digital Platforms',
           href: '/digital/services/digital-platforms',
         },
         {
-          label: 'Digital Transformation',
-          href: '/digital/services/digital-transformation',
-        },
-        {
-          label: 'E-commerce',
-          href: '/digital/services/ecommerce',
-        },
-        {
           label: 'Systems Integration',
           href: '/digital/services/systems-integration',
         },
         {
+          label: 'Digital Transformation',
+          href: '/digital/services/digital-transformation',
+        },
+        {
           label: 'Technical Consulting',
           href: '/digital/services/technical-consulting',
+        },
+        {
+          label: 'UI/UX Design',
+          href: '/digital/services/ui-ux-design',
         },
       ],
     },
@@ -331,8 +231,8 @@ export const sectionNavigation: SectionNavigation[] = [
       'Business',
       'Blog',
       'News',
+      'Events & Activities',
       'Resources',
-      'Contact',
     ],
 
     items: [
@@ -388,12 +288,20 @@ export const sectionNavigation: SectionNavigation[] = [
           href: '/business/solutions/business',
         },
         {
+          label: 'Organizational Solutions',
+          href: '/business/solutions/organizational',
+        },
+        {
           label: 'Digital Solutions',
           href: '/business/solutions/digital',
         },
         {
-          label: 'Media Solutions',
+          label: 'Media & Marketing Solutions',
           href: '/business/solutions/media',
+        },
+        {
+          label: 'Partnership Solutions',
+          href: '/business/solutions/partnerships',
         },
         {
           label: 'Custom Solutions',
@@ -422,29 +330,13 @@ export const sectionNavigation: SectionNavigation[] = [
       'Blog',
       'News',
       'Events & Activities',
-      'Contact',
+      'Resources',
     ],
 
     items: [
       {
         label: 'All Posts',
         href: '/blog',
-      },
-      {
-        label: 'Technology',
-        href: '/blog/technology',
-      },
-      {
-        label: 'Digital Innovation',
-        href: '/blog/digital-innovation',
-      },
-      {
-        label: 'Business',
-        href: '/blog/business',
-      },
-      {
-        label: 'Media',
-        href: '/blog/media',
       },
     ],
   },
@@ -468,29 +360,13 @@ export const sectionNavigation: SectionNavigation[] = [
       'Blog',
       'News',
       'Events & Activities',
-      'Contact',
+      'Resources',
     ],
 
     items: [
       {
-        label: 'Latest News',
+        label: 'All News',
         href: '/news',
-      },
-      {
-        label: 'Company News',
-        href: '/news/company',
-      },
-      {
-        label: 'Media News',
-        href: '/news/media',
-      },
-      {
-        label: 'Digital News',
-        href: '/news/digital',
-      },
-      {
-        label: 'Business News',
-        href: '/news/business',
       },
     ],
   },
@@ -515,21 +391,12 @@ export const sectionNavigation: SectionNavigation[] = [
       'News',
       'Events & Activities',
       'Resources',
-      'Contact',
     ],
 
     items: [
       {
-        label: 'Upcoming Events',
-        href: '/events-activities/events',
-      },
-      {
-        label: 'Activities',
-        href: '/events-activities/activities',
-      },
-      {
-        label: 'Past Events',
-        href: '/events-activities/past',
+        label: 'All Events & Activities',
+        href: '/events-activities',
       },
     ],
   },
@@ -552,11 +419,15 @@ export const sectionNavigation: SectionNavigation[] = [
       'Business',
       'Blog',
       'News',
+      'Events & Activities',
       'Resources',
-      'Contact',
     ],
 
     items: [
+      {
+        label: 'Overview',
+        href: '/resources',
+      },
       {
         label: 'Downloads',
         href: '/resources/downloads',
@@ -571,4 +442,15 @@ export const sectionNavigation: SectionNavigation[] = [
       },
     ],
   },
+
+  /*
+  |--------------------------------------------------------------------------
+  | CONTACT
+  |--------------------------------------------------------------------------
+  |
+  | Contact is intentionally NOT included in globalItems.
+  | It is a global header action and remains available through
+  | Quick Links and the footer.
+  |--------------------------------------------------------------------------
+  */
 ];
