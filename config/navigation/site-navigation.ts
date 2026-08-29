@@ -22,11 +22,6 @@ export type SectionNavigation = {
 
   /**
    * Optional navigation belonging to a subdivision.
-   *
-   * Example:
-   * subdivisions: {
-   *   "nhtv-football": [...]
-   * }
    */
   subdivisions?: Record<string, NavigationItem[]>;
 };
@@ -35,10 +30,6 @@ export type SectionNavigation = {
 |--------------------------------------------------------------------------
 | GLOBAL NAVIGATION
 |--------------------------------------------------------------------------
-|
-| This is the primary Nexus Hub navigation.
-| The homepage uses ONLY this navigation layer.
-|
 */
 
 export const globalNavigation: NavigationItem[] = [
@@ -123,16 +114,8 @@ export const sectionNavigation: SectionNavigation[] = [
         href: '/about/mission-vision',
       },
       {
-        label: 'Our Team',
-        href: '/about/team',
-      },
-      {
         label: 'Our Approach',
         href: '/about/approach',
-      },
-      {
-        label: 'Careers',
-        href: '/about/careers',
       },
     ],
   },

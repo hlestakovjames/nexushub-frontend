@@ -9,6 +9,8 @@ const footerGroups = [
       { label: 'About', href: '/about' },
       { label: 'Our Story', href: '/about/our-story' },
       { label: 'Mission & Vision', href: '/about/mission-vision' },
+      { label: 'Our Approach', href: '/about/approach' },
+      { label: 'Leadership', href: '/about/leadership' },
       { label: 'Our Team', href: '/about/team' },
       { label: 'Careers', href: '/about/careers' },
     ],
@@ -49,6 +51,13 @@ const footerGroups = [
       { label: 'News', href: '/news' },
       { label: 'Events & Activities', href: '/events-activities' },
     ],
+  },
+];
+
+const connectLinks = [
+  {
+    label: 'Contact',
+    href: '/contact',
   },
 ];
 
@@ -114,14 +123,16 @@ export default function Footer() {
               </h2>
 
               <ul className="mt-5 space-y-3">
-                <li>
-                  <Link
-                    href="/contact"
-                    className="text-sm text-white/60 transition hover:text-white"
-                  >
-                    Contact
-                  </Link>
-                </li>
+                {connectLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-white/60 transition hover:text-white"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
 
               <p className="mt-6 text-sm leading-6 text-white/40">
