@@ -164,6 +164,7 @@ export default function GlobalNav({
               )}
             </div>
 
+            {/* MAIN NAVIGATION */}
             {navigation.map((item) => {
               const isActive =
                 item.href === '/'
@@ -193,13 +194,20 @@ export default function GlobalNav({
             })}
           </div>
 
-          {/* RIGHT SIDE */}
+          {/* RIGHT SIDE ACTIONS */}
           <div className="flex items-center gap-3">
             <Link
               href="/contact"
               className="hidden rounded-md border border-white/15 px-4 py-2 text-sm font-semibold text-white/90 transition hover:bg-white/10 sm:block"
             >
               Contact
+            </Link>
+
+            <Link
+              href="/login"
+              className="hidden rounded-md bg-[#5FC9E6] px-4 py-2 text-sm font-semibold text-[#050A30] transition hover:opacity-90 sm:block"
+            >
+              Login
             </Link>
 
             <MobileGlobalNav

@@ -65,10 +65,6 @@ export const globalNavigation: NavigationItem[] = [
     label: 'Resources',
     href: '/resources',
   },
-  {
-    label: 'Contact',
-    href: '/contact',
-  },
 ];
 
 /*
@@ -97,7 +93,6 @@ export const sectionNavigation: SectionNavigation[] = [
       'Blog',
       'News',
       'Events & Activities',
-      'Contact',
     ],
 
     items: [
