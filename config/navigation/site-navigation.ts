@@ -47,6 +47,10 @@ export const globalNavigation: NavigationItem[] = [
     label: 'Resources',
     href: '/resources',
   },
+  {
+    label: 'Platforms',
+    href: '/platforms',
+  },
 ];
 
 export const sectionNavigation: SectionNavigation[] = [
@@ -70,6 +74,7 @@ export const sectionNavigation: SectionNavigation[] = [
       'News',
       'Events & Activities',
       'Resources',
+      'Platforms',
     ],
 
     items: [
@@ -112,6 +117,7 @@ export const sectionNavigation: SectionNavigation[] = [
       'News',
       'Events & Activities',
       'Resources',
+      'Platforms',
     ],
 
     items: [
@@ -154,6 +160,7 @@ export const sectionNavigation: SectionNavigation[] = [
       'News',
       'Events & Activities',
       'Resources',
+      'Platforms',
     ],
 
     items: [
@@ -233,6 +240,7 @@ export const sectionNavigation: SectionNavigation[] = [
       'News',
       'Events & Activities',
       'Resources',
+      'Platforms',
     ],
 
     items: [
@@ -331,6 +339,7 @@ export const sectionNavigation: SectionNavigation[] = [
       'News',
       'Events & Activities',
       'Resources',
+      'Platforms',
     ],
 
     items: [
@@ -361,6 +370,7 @@ export const sectionNavigation: SectionNavigation[] = [
       'News',
       'Events & Activities',
       'Resources',
+      'Platforms',
     ],
 
     items: [
@@ -391,6 +401,7 @@ export const sectionNavigation: SectionNavigation[] = [
       'News',
       'Events & Activities',
       'Resources',
+      'Platforms',
     ],
 
     items: [
@@ -421,6 +432,7 @@ export const sectionNavigation: SectionNavigation[] = [
       'News',
       'Events & Activities',
       'Resources',
+      'Platforms',
     ],
 
     items: [
@@ -445,12 +457,48 @@ export const sectionNavigation: SectionNavigation[] = [
 
   /*
   |--------------------------------------------------------------------------
-  | CONTACT
-  |--------------------------------------------------------------------------
-  |
-  | Contact is intentionally NOT included in globalItems.
-  | It is a global header action and remains available through
-  | Quick Links and the footer.
+  | PLATFORMS
   |--------------------------------------------------------------------------
   */
+
+  {
+    id: 'platforms',
+    label: 'Platforms',
+    href: '/platforms',
+
+    globalItems: [
+      'About',
+      'Media',
+      'Digital',
+      'Business',
+      'Blog',
+      'News',
+      'Events & Activities',
+      'Resources',
+      'Platforms',
+    ],
+
+    items: [
+      {
+        label: 'Overview',
+        href: '/platforms',
+      },
+      {
+        label: 'Nexus Hub TV',
+        href: '/media/nexus-hub-tv',
+      },
+      {
+        label: 'NHTV Football',
+        href: '/media/nhtv-football',
+      },
+      {
+        label: 'NHTV Stories',
+        href: '/media/nhtv-stories',
+      },
+      {
+        label: 'NHTV Voices',
+        href: '/media/nhtv-voices',
+      },
+    ],
+  },
 ];
