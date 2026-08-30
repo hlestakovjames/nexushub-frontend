@@ -6,36 +6,42 @@ const solutions = [
     title: 'Business Growth Solutions',
     description:
       'Practical approaches that help organizations identify opportunities, strengthen operations, and pursue sustainable growth.',
+    href: '/business/solutions/business',
   },
   {
     number: '02',
     title: 'Organizational Solutions',
     description:
       'Solutions designed around internal structures, workflows, teams, processes, and the operational challenges organizations face.',
+    href: '/business/solutions/organizational',
   },
   {
     number: '03',
     title: 'Digital Business Solutions',
     description:
       'Business-focused solutions that connect organizational objectives with digital products, services, platforms, and technology.',
+    href: '/business/solutions/digital',
   },
   {
     number: '04',
     title: 'Media & Marketing Solutions',
     description:
       'Content, communication, media, and audience-focused approaches that help organizations strengthen their visibility and engagement.',
+    href: '/business/solutions/media',
   },
   {
     number: '05',
     title: 'Partnership Solutions',
     description:
       'Collaborative approaches that bring together organizations, capabilities, networks, and resources around shared opportunities.',
+    href: '/business/solutions/partnerships',
   },
   {
     number: '06',
     title: 'Custom Solutions',
     description:
       'A combination of services, strategy, technology, media, and partnerships designed around a specific organizational challenge.',
+    href: '/business/solutions/custom',
   },
 ];
 
@@ -195,15 +201,16 @@ export default function SolutionsPage() {
 
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {solutions.map((solution) => (
-              <article
+              <Link
                 key={solution.number}
+                href={solution.href}
                 className="group rounded-2xl border border-slate-200 bg-white p-7 transition hover:-translate-y-1 hover:border-[#1266B6]/40 hover:shadow-lg"
               >
                 <span className="text-sm font-semibold text-[#1266B6]">
                   {solution.number}
                 </span>
 
-                <h3 className="mt-5 text-2xl font-bold">
+                <h3 className="mt-5 text-2xl font-bold transition group-hover:text-[#1266B6]">
                   {solution.title}
                 </h3>
 
@@ -211,10 +218,10 @@ export default function SolutionsPage() {
                   {solution.description}
                 </p>
 
-                <span className="mt-7 inline-block text-sm font-semibold text-[#1266B6] transition group-hover:translate-x-1">
+                <span className="mt-7 inline-flex text-sm font-semibold text-[#1266B6] transition group-hover:translate-x-1">
                   Explore Solution →
                 </span>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
@@ -294,7 +301,7 @@ export default function SolutionsPage() {
 
               <Link
                 href="/business/services"
-                className="mt-7 inline-block text-sm font-semibold text-[#5FC9E6]"
+                className="mt-7 inline-block text-sm font-semibold text-[#5FC9E6] transition hover:translate-x-1"
               >
                 Explore Business Services →
               </Link>
@@ -316,7 +323,7 @@ export default function SolutionsPage() {
 
               <Link
                 href="/digital/services"
-                className="mt-7 inline-block text-sm font-semibold text-[#1266B6]"
+                className="mt-7 inline-block text-sm font-semibold text-[#1266B6] transition hover:translate-x-1"
               >
                 Explore Digital Services →
               </Link>
@@ -338,7 +345,7 @@ export default function SolutionsPage() {
 
               <Link
                 href="/media"
-                className="mt-7 inline-block text-sm font-semibold text-[#1266B6]"
+                className="mt-7 inline-block text-sm font-semibold text-[#1266B6] transition hover:translate-x-1"
               >
                 Explore Media →
               </Link>
