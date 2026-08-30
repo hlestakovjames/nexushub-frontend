@@ -4,9 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
-import {
-  globalNavigation,
-} from '@/config/navigation/site-navigation';
+import { globalNavigation } from '@/config/navigation/site-navigation';
 
 type QuickLink = {
   label: string;
@@ -23,6 +21,7 @@ export default function MobileGlobalNav({
   quickLinks = [],
 }: MobileGlobalNavProps) {
   const pathname = usePathname();
+
   const [isOpen, setIsOpen] = useState(false);
   const [isQuickLinksOpen, setIsQuickLinksOpen] =
     useState(false);
@@ -173,12 +172,22 @@ export default function MobileGlobalNav({
 
               <div className="my-3 h-px bg-white/10" />
 
+              {/* CONTACT */}
               <Link
                 href="/contact"
                 onClick={closeMenu}
                 className="rounded-md border border-white/15 px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 Contact
+              </Link>
+
+              {/* LOGIN */}
+              <Link
+                href="/login"
+                onClick={closeMenu}
+                className="rounded-md bg-[#5FC9E6] px-4 py-3 text-center text-sm font-semibold text-[#050A30] transition hover:opacity-90"
+              >
+                Login
               </Link>
             </div>
           </nav>
