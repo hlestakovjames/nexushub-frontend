@@ -1,308 +1,65 @@
 'use client';
 
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
 
-import {
-  getCurrentUser,
-  type AuthUser,
-} from '@/lib/api/auth';
+import { useDashboardAuth } from '@/components/dashboard/DashboardAuthContext';
 
-const navigation = [
+const quickActions = [
   {
-    label: 'Overview',
-    href: '/dashboard',
-  },
-  {
-    label: 'Organizations',
+    title: 'Organizations',
+    description:
+      'Manage organizations and their system relationships.',
     href: '/dashboard/organizations',
+    label: 'Open Organizations',
   },
   {
-    label: 'Users',
+    title: 'Users',
+    description:
+      'Manage accounts, memberships, and access.',
     href: '/dashboard/users',
+    label: 'Open Users',
   },
   {
-    label: 'Departments',
-    href: '/dashboard/departments',
-  },
-  {
-    label: 'Roles & Permissions',
+    title: 'Access Control',
+    description:
+      'Manage roles and permissions across the system.',
     href: '/dashboard/access',
-  },
-  {
-    label: 'Security & Audit',
-    href: '/dashboard/security',
+    label: 'Manage Access',
   },
 ];
 
 export default function DashboardPage() {
-  const router = useRouter();
-
-  const [user, setUser] = useState<AuthUser | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  useEffect(() => {
-    async function verifyAuthentication() {
-      const accessToken = localStorage.getItem(
-        'nexus_hub_access_token',
-      );
-
-      if (!accessToken) {
-        router.replace('/login');
-        return;
-      }
-
-      try {
-        const currentUser =
-          await getCurrentUser(accessToken);
-
-        setUser(currentUser);
-
-        localStorage.setItem(
-          'nexus_hub_user',
-          JSON.stringify(currentUser),
-        );
-      } catch {
-        localStorage.removeItem(
-          'nexus_hub_access_token',
-        );
-
-        localStorage.removeItem(
-          'nexus_hub_user',
-        );
-
-        router.replace('/login');
-      } finally {
-        setIsLoading(false);
-      }
-    }
-
-    verifyAuthentication();
-  }, [router]);
-
-  function handleLogout() {
-    localStorage.removeItem(
-      'nexus_hub_access_token',
-    );
-
-    localStorage.removeItem(
-      'nexus_hub_user',
-    );
-
-    localStorage.removeItem(
-      'nexus_hub_remember',
-    );
-
-    router.replace('/login');
-  }
-
-  if (isLoading) {
-    return (
-      <main className="flex min-h-screen items-center justify-center bg-slate-50">
-        <div className="text-center">
-          <div className="mx-auto h-9 w-9 animate-spin rounded-full border-2 border-slate-200 border-t-[#1266B6]" />
-
-          <p className="mt-4 text-sm text-slate-500">
-            Verifying your account...
-          </p>
-        </div>
-      </main>
-    );
-  }
-
-  if (!user) {
-    return null;
-  }
+  const { user } = useDashboardAuth();
 
   return (
-    <main className="min-h-screen bg-slate-50 text-[#050A30]">
-      {/* MOBILE OVERLAY */}
-      {isSidebarOpen && (
-        <button
-          type="button"
-          aria-label="Close navigation"
-          onClick={() => setIsSidebarOpen(false)}
-          className="fixed inset-0 z-40 bg-[#050A30]/40 lg:hidden"
-        />
-      )}
+    <div className="mx-auto max-w-[1500px] px-5 py-7 sm:px-6 lg:px-8 lg:py-9">
+      {/* WELCOME */}
+      <section className="overflow-hidden rounded-3xl bg-[#050A30] text-white shadow-xl">
+        <div className="relative p-7 sm:p-9 lg:p-11">
+          <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#1266B6]/20 blur-3xl" />
 
-      {/* SIDEBAR */}
-      <aside
-        className={`fixed inset-y-0 left-0 z-50 flex w-72 flex-col border-r border-white/10 bg-[#050A30] text-white transition-transform duration-300 lg:translate-x-0 ${
-          isSidebarOpen
-            ? 'translate-x-0'
-            : '-translate-x-full'
-        }`}
-      >
-        <div className="flex h-20 items-center justify-between border-b border-white/10 px-6">
-          <Link
-            href="/dashboard"
-            onClick={() => setIsSidebarOpen(false)}
-            className="flex items-center gap-3"
-          >
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#5FC9E6] text-sm font-black text-[#050A30]">
-              N
-            </div>
+          <div className="absolute -bottom-24 right-24 h-72 w-72 rounded-full bg-[#5FC9E6]/10 blur-3xl" />
 
-            <div>
-              <p className="text-sm font-bold">
-                Nexus Hub
-              </p>
-
-              <p className="text-[11px] text-white/40">
-                System
-              </p>
-            </div>
-          </Link>
-
-          <button
-            type="button"
-            onClick={() => setIsSidebarOpen(false)}
-            className="rounded-lg px-2 py-1 text-white/50 hover:bg-white/5 hover:text-white lg:hidden"
-            aria-label="Close navigation"
-          >
-            ✕
-          </button>
-        </div>
-
-        <div className="px-6 py-6">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#5FC9E6]">
-            Workspace
-          </p>
-
-          <p className="mt-2 text-sm text-white/45">
-            {user.role}
-          </p>
-        </div>
-
-        <nav className="flex-1 px-3">
-          <div className="space-y-1">
-            {navigation.map((item) => {
-              const active =
-                item.href === '/dashboard';
-
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() =>
-                    setIsSidebarOpen(false)
-                  }
-                  className={`flex items-center rounded-xl px-4 py-3 text-sm font-medium transition ${
-                    active
-                      ? 'bg-white/10 text-white'
-                      : 'text-white/55 hover:bg-white/5 hover:text-white'
-                  }`}
-                >
-                  <span
-                    className={`mr-3 h-2 w-2 rounded-full ${
-                      active
-                        ? 'bg-[#5FC9E6]'
-                        : 'bg-white/20'
-                    }`}
-                  />
-
-                  {item.label}
-                </Link>
-              );
-            })}
-          </div>
-        </nav>
-
-        <div className="border-t border-white/10 p-4">
-          <div className="rounded-xl bg-white/5 p-4">
-            <p className="truncate text-sm font-semibold">
-              {user.first_name} {user.last_name}
+          <div className="relative">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#5FC9E6]">
+              System Overview
             </p>
 
-            <p className="mt-1 truncate text-xs text-white/40">
-              {user.email}
-            </p>
-
-            <button
-              type="button"
-              onClick={handleLogout}
-              className="mt-4 w-full rounded-lg border border-white/10 px-3 py-2 text-sm font-semibold text-white/70 transition hover:bg-white/5 hover:text-white"
-            >
-              Sign Out
-            </button>
-          </div>
-        </div>
-      </aside>
-
-      {/* MAIN AREA */}
-      <div className="lg:pl-72">
-        {/* TOP BAR */}
-        <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur">
-          <div className="flex min-h-20 items-center justify-between px-5 sm:px-6 lg:px-8">
-            <div className="flex items-center gap-4">
-              <button
-                type="button"
-                onClick={() =>
-                  setIsSidebarOpen(true)
-                }
-                className="rounded-lg border border-slate-200 px-3 py-2 text-sm font-semibold text-slate-700 lg:hidden"
-                aria-label="Open navigation"
-              >
-                ☰
-              </button>
-
+            <div className="mt-5 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1266B6]">
-                  Nexus Hub System
-                </p>
+                <h2 className="max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+                  Welcome back, {user.first_name}.
+                </h2>
 
-                <p className="mt-1 text-sm font-medium text-slate-500">
-                  Administration workspace
-                </p>
-              </div>
-            </div>
-
-            <div className="hidden items-center gap-3 sm:flex">
-              <div className="text-right">
-                <p className="text-sm font-semibold">
-                  {user.first_name} {user.last_name}
-                </p>
-
-                <p className="text-xs text-slate-400">
-                  {user.role}
+                <p className="mt-4 max-w-2xl text-sm leading-7 text-white/55 sm:text-base">
+                  Manage your Nexus Hub workspace, organizations,
+                  people, and system access from one central place.
                 </p>
               </div>
 
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#050A30] text-sm font-bold text-white">
-                {user.first_name.charAt(0)}
-                {user.last_name.charAt(0)}
-              </div>
-            </div>
-          </div>
-        </header>
-
-        {/* CONTENT */}
-        <div className="mx-auto max-w-7xl px-5 py-8 sm:px-6 lg:px-8 lg:py-10">
-          {/* WELCOME */}
-          <section className="rounded-3xl bg-[#050A30] p-7 text-white sm:p-9 lg:p-10">
-            <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#5FC9E6]">
-                  Overview
-                </p>
-
-                <h1 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-                  Welcome, {user.first_name}.
-                </h1>
-
-                <p className="mt-4 max-w-2xl text-base leading-7 text-white/55 sm:text-lg">
-                  Your Nexus Hub system workspace is ready. Manage
-                  organizations, users, access, and system activity
-                  from one place.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4">
-                <p className="text-xs uppercase tracking-[0.15em] text-white/35">
-                  Current Role
+              <div className="w-fit rounded-2xl border border-white/10 bg-white/5 px-5 py-4">
+                <p className="text-[10px] uppercase tracking-[0.18em] text-white/35">
+                  Current role
                 </p>
 
                 <p className="mt-2 text-sm font-semibold text-white">
@@ -310,236 +67,230 @@ export default function DashboardPage() {
                 </p>
               </div>
             </div>
-          </section>
+          </div>
+        </div>
+      </section>
 
-          {/* ACCOUNT SUMMARY */}
-          <section className="mt-8">
-            <div className="grid gap-5 md:grid-cols-3">
-              <div className="rounded-2xl border border-slate-200 bg-white p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-slate-400">
-                  Account
+      {/* STATS */}
+      <section className="mt-7">
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {[
+            ['Organizations', '—', 'Connected organizations'],
+            ['Users', '—', 'System users'],
+            ['Roles', '—', 'Configured roles'],
+          ].map(([label, value, description]) => (
+            <div
+              key={label}
+              className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+            >
+              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">
+                {label}
+              </p>
+
+              <p className="mt-3 text-3xl font-bold">
+                {value}
+              </p>
+
+              <p className="mt-1 text-xs text-slate-400">
+                {description}
+              </p>
+            </div>
+          ))}
+
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">
+              API Status
+            </p>
+
+            <p className="mt-3 text-xl font-bold text-emerald-600">
+              Operational
+            </p>
+
+            <p className="mt-1 text-xs text-slate-400">
+              Authentication verified
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ACTIONS + ACCOUNT */}
+      <section className="mt-10 grid gap-7 xl:grid-cols-[1.45fr_0.75fr]">
+        <div>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#1266B6]">
+            Quick Actions
+          </p>
+
+          <h2 className="mt-2 text-2xl font-bold tracking-tight">
+            Manage your workspace
+          </h2>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {quickActions.map((action) => (
+              <Link
+                key={action.href}
+                href={action.href}
+                className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#1266B6]/40 hover:shadow-lg"
+              >
+                <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#1266B6]">
+                  System
+                </span>
+
+                <h3 className="mt-3 text-lg font-bold transition group-hover:text-[#1266B6]">
+                  {action.title}
+                </h3>
+
+                <p className="mt-2 text-sm leading-6 text-slate-500">
+                  {action.description}
                 </p>
 
-                <p className="mt-3 text-lg font-bold">
+                <span className="mt-5 inline-flex text-xs font-semibold text-[#1266B6] transition group-hover:translate-x-1">
+                  {action.label} →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#1266B6]">
+            Account
+          </p>
+
+          <h2 className="mt-2 text-2xl font-bold tracking-tight">
+            Your account
+          </h2>
+
+          <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="flex items-center gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#050A30] text-sm font-bold text-white">
+                {user.first_name?.charAt(0) ?? ''}
+                {user.last_name?.charAt(0) ?? ''}
+              </div>
+
+              <div className="min-w-0">
+                <p className="truncate font-semibold">
                   {user.first_name} {user.last_name}
                 </p>
 
-                <p className="mt-1 break-all text-sm text-slate-500">
-                  {user.email}
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-slate-200 bg-white p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-slate-400">
-                  Access Level
-                </p>
-
-                <p className="mt-3 text-lg font-bold">
+                <p className="truncate text-sm text-slate-400">
                   {user.role}
                 </p>
-
-                <p className="mt-1 text-sm text-slate-500">
-                  Assigned system role
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-slate-200 bg-white p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-slate-400">
-                  Session
-                </p>
-
-                <p className="mt-3 text-lg font-bold text-emerald-600">
-                  Active
-                </p>
-
-                <p className="mt-1 text-sm text-slate-500">
-                  Backend authentication verified
-                </p>
               </div>
             </div>
-          </section>
 
-          {/* MODULES */}
-          <section className="mt-12">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1266B6]">
-                Administration
+            <div className="mt-6 border-t border-slate-100 pt-5">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                Email
               </p>
 
-              <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
-                System management
-              </h2>
-
-              <p className="mt-3 max-w-2xl leading-7 text-slate-600">
-                These modules form the foundation of the Nexus Hub
-                administration system. Additional capabilities can
-                be added without changing the core workspace.
+              <p className="mt-2 break-all text-sm font-medium text-slate-600">
+                {user.email}
               </p>
             </div>
 
-            <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-              <Link
-                href="/dashboard/organizations"
-                className="group rounded-2xl border border-slate-200 bg-white p-7 transition hover:-translate-y-1 hover:border-[#1266B6]/40 hover:shadow-lg"
-              >
-                <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1266B6]">
-                  01
-                </span>
-
-                <h3 className="mt-4 text-xl font-bold transition group-hover:text-[#1266B6]">
-                  Organizations
-                </h3>
-
-                <p className="mt-3 text-sm leading-6 text-slate-500">
-                  Manage organizations, memberships, structures, and
-                  their relationship with the Nexus Hub system.
+            <div className="mt-5 flex items-center justify-between rounded-xl bg-emerald-50 px-4 py-3">
+              <div>
+                <p className="text-xs font-semibold text-emerald-700">
+                  Session active
                 </p>
 
-                <span className="mt-6 inline-flex text-sm font-semibold text-[#1266B6]">
-                  Open Module →
-                </span>
-              </Link>
-
-              <Link
-                href="/dashboard/users"
-                className="group rounded-2xl border border-slate-200 bg-white p-7 transition hover:-translate-y-1 hover:border-[#1266B6]/40 hover:shadow-lg"
-              >
-                <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1266B6]">
-                  02
-                </span>
-
-                <h3 className="mt-4 text-xl font-bold transition group-hover:text-[#1266B6]">
-                  Users
-                </h3>
-
-                <p className="mt-3 text-sm leading-6 text-slate-500">
-                  Manage accounts, user status, memberships, and
-                  access across the system.
+                <p className="mt-0.5 text-[11px] text-emerald-600">
+                  Account successfully verified
                 </p>
-
-                <span className="mt-6 inline-flex text-sm font-semibold text-[#1266B6]">
-                  Open Module →
-                </span>
-              </Link>
-
-              <Link
-                href="/dashboard/departments"
-                className="group rounded-2xl border border-slate-200 bg-white p-7 transition hover:-translate-y-1 hover:border-[#1266B6]/40 hover:shadow-lg"
-              >
-                <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1266B6]">
-                  03
-                </span>
-
-                <h3 className="mt-4 text-xl font-bold transition group-hover:text-[#1266B6]">
-                  Departments
-                </h3>
-
-                <p className="mt-3 text-sm leading-6 text-slate-500">
-                  Manage organizational departments, teams,
-                  responsibilities, and internal structures.
-                </p>
-
-                <span className="mt-6 inline-flex text-sm font-semibold text-[#1266B6]">
-                  Open Module →
-                </span>
-              </Link>
-
-              <Link
-                href="/dashboard/access"
-                className="group rounded-2xl border border-slate-200 bg-white p-7 transition hover:-translate-y-1 hover:border-[#1266B6]/40 hover:shadow-lg"
-              >
-                <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1266B6]">
-                  04
-                </span>
-
-                <h3 className="mt-4 text-xl font-bold transition group-hover:text-[#1266B6]">
-                  Roles &amp; Permissions
-                </h3>
-
-                <p className="mt-3 text-sm leading-6 text-slate-500">
-                  Control roles, permissions, and access capabilities
-                  across the Nexus Hub system.
-                </p>
-
-                <span className="mt-6 inline-flex text-sm font-semibold text-[#1266B6]">
-                  Open Module →
-                </span>
-              </Link>
-
-              <Link
-                href="/dashboard/security"
-                className="group rounded-2xl border border-slate-200 bg-white p-7 transition hover:-translate-y-1 hover:border-[#1266B6]/40 hover:shadow-lg"
-              >
-                <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1266B6]">
-                  05
-                </span>
-
-                <h3 className="mt-4 text-xl font-bold transition group-hover:text-[#1266B6]">
-                  Security &amp; Audit
-                </h3>
-
-                <p className="mt-3 text-sm leading-6 text-slate-500">
-                  Review authentication events, security activity,
-                  and system audit information.
-                </p>
-
-                <span className="mt-6 inline-flex text-sm font-semibold text-[#1266B6]">
-                  Open Module →
-                </span>
-              </Link>
-
-              <div className="rounded-2xl border border-dashed border-slate-300 bg-white p-7">
-                <span className="text-xs font-semibold uppercase tracking-[0.15em] text-slate-400">
-                  06
-                </span>
-
-                <h3 className="mt-4 text-xl font-bold text-slate-500">
-                  More Modules
-                </h3>
-
-                <p className="mt-3 text-sm leading-6 text-slate-400">
-                  Additional Nexus Hub capabilities will be added
-                  to the workspace as the platform grows.
-                </p>
-
-                <span className="mt-6 inline-flex text-sm font-semibold text-slate-400">
-                  Coming Later
-                </span>
               </div>
+
+              <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
             </div>
-          </section>
-
-          {/* SYSTEM STATUS */}
-          <section className="mt-12">
-            <div className="rounded-2xl border border-slate-200 bg-white p-7">
-              <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-center">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1266B6]">
-                    System Status
-                  </p>
-
-                  <h2 className="mt-2 text-xl font-bold">
-                    Authentication services operational
-                  </h2>
-
-                  <p className="mt-2 text-sm leading-6 text-slate-500">
-                    Your account has been verified through the Nexus
-                    Hub backend authentication service.
-                  </p>
-                </div>
-
-                <div className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2">
-                  <span className="h-2 w-2 rounded-full bg-emerald-500" />
-
-                  <span className="text-sm font-semibold text-emerald-700">
-                    Operational
-                  </span>
-                </div>
-              </div>
-            </div>
-          </section>
+          </div>
         </div>
-      </div>
-    </main>
+      </section>
+
+      {/* ACTIVITY + STATUS */}
+      <section className="mt-10 grid gap-7 lg:grid-cols-[1.2fr_0.8fr]">
+        <div className="rounded-2xl border border-slate-200 bg-white shadow-sm">
+          <div className="border-b border-slate-100 px-6 py-5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#1266B6]">
+              Recent Activity
+            </p>
+
+            <h2 className="mt-2 text-xl font-bold">
+              System activity
+            </h2>
+          </div>
+
+          <div className="divide-y divide-slate-100">
+            <div className="flex items-start gap-4 px-6 py-5">
+              <span className="mt-1 h-2 w-2 rounded-full bg-[#1266B6]" />
+
+              <div>
+                <p className="text-sm font-semibold">
+                  Authentication verified
+                </p>
+
+                <p className="mt-1 text-xs text-slate-400">
+                  Your current session was successfully verified.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4 px-6 py-5">
+              <span className="mt-1 h-2 w-2 rounded-full bg-slate-300" />
+
+              <div>
+                <p className="text-sm font-semibold text-slate-600">
+                  Activity integration ready
+                </p>
+
+                <p className="mt-1 text-xs text-slate-400">
+                  Audit events will appear here once connected.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="rounded-2xl bg-[#050A30] p-7 text-white shadow-sm">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#5FC9E6]">
+            System Status
+          </p>
+
+          <h2 className="mt-3 text-xl font-bold">
+            Nexus Hub infrastructure
+          </h2>
+
+          <div className="mt-7 space-y-4">
+            <div className="flex items-center justify-between rounded-xl bg-white/5 px-4 py-3">
+              <span className="text-sm text-white/60">
+                Authentication
+              </span>
+
+              <span className="text-xs font-semibold text-emerald-400">
+                Operational
+              </span>
+            </div>
+
+            <div className="flex items-center justify-between rounded-xl bg-white/5 px-4 py-3">
+              <span className="text-sm text-white/60">
+                API
+              </span>
+
+              <span className="text-xs font-semibold text-emerald-400">
+                Operational
+              </span>
+            </div>
+
+            <div className="flex items-center justify-between rounded-xl bg-white/5 px-4 py-3">
+              <span className="text-sm text-white/60">
+                Database
+              </span>
+
+              <span className="text-xs font-semibold text-emerald-400">
+                Connected
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }
