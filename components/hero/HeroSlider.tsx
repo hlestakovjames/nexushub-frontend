@@ -82,11 +82,11 @@ export default function HeroSlider({
           />
 
           {/* IMAGE OVERLAYS */}
-          <div className="absolute inset-0 bg-[#050A30]/65" />
+          <div className="absolute inset-0 bg-[#050A30]/40" />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050A30]/95 via-[#050A30]/65 to-[#050A30]/25" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050A30]/70 via-[#050A30]/50 to-[#050A30]/25" />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050A30]/70 via-transparent to-[#050A30]/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050A30]/55 via-transparent to-[#050A30]/20" />
         </div>
       ))}
 

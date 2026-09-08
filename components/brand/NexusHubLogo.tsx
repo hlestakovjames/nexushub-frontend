@@ -25,7 +25,7 @@ export default function NexusHubLogo({
       />
 
       {showWordmark && (
-        <span className="text-lg font-bold tracking-tight text-white">
+        <span className="text-lg font-bold tracking-tight text-[#050A30]">
           Nexus Hub
         </span>
       )}

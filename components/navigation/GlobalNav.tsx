@@ -79,8 +79,8 @@ function ContextItem({
       href={item.href}
       className={`relative shrink-0 px-3 py-4 text-[13px] font-bold tracking-[0.04em] transition ${
         active
-          ? 'text-white'
-          : 'text-white/75 hover:text-white'
+          ? 'text-[#050A30]'
+          : 'text-[#050A30]/65 hover:text-[#050A30]'
       }`}
     >
       {item.label}
@@ -106,7 +106,7 @@ export default function GlobalNav({
       {/* ================================================================
           LAYER 1 — GLOBAL UTILITY
           ================================================================ */}
-      <div className="border-b border-[#050A30]/10 bg-white text-[#050A30]">
+      <div className="border-b border-white/10 bg-[#050A30] text-white">
         <div className="mx-auto flex min-h-10 max-w-7xl items-center justify-between gap-4 px-6">
           {/* QUICK LINKS */}
           <div className="relative">
@@ -117,7 +117,7 @@ export default function GlobalNav({
               }
               aria-expanded={isQuickLinksOpen}
               aria-haspopup="menu"
-              className="flex items-center gap-1.5 rounded-md px-2 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#1266B6] transition hover:bg-[#050A30]/5 hover:text-[#050A30]"
+              className="flex items-center gap-1.5 rounded-md px-2 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-white/90 transition hover:bg-white/10 hover:text-white"
             >
               Quick Links
 
@@ -172,24 +172,24 @@ export default function GlobalNav({
           </div>
 
           {/* UTILITY ACTIONS */}
-          <div className="hidden items-center gap-5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[#1266B6] sm:flex">
+          <div className="hidden items-center gap-5 text-[11px] font-semibold uppercase tracking-[0.08em] text-white/90 sm:flex">
             <Link
               href="/contact?channel=call"
-              className="transition hover:text-[#1266B6]"
+              className="transition hover:text-[#5FC9E6]"
             >
               Call Us
             </Link>
 
             <Link
               href="/contact?channel=whatsapp"
-              className="transition hover:text-[#1266B6]"
+              className="transition hover:text-[#5FC9E6]"
             >
               WhatsApp
             </Link>
 
             <Link
               href="/contact?channel=support"
-              className="transition hover:text-[#1266B6]"
+              className="transition hover:text-[#5FC9E6]"
             >
               Client Support
             </Link>
@@ -198,7 +198,7 @@ export default function GlobalNav({
           {/* LOGIN */}
           <Link
             href="/login"
-            className="rounded-md px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.12em] text-[#1266B6] transition hover:bg-[#050A30]/5 hover:text-[#050A30]"
+            className="rounded-md px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.12em] text-white transition hover:bg-white/10 hover:text-[#5FC9E6]"
           >
             Log In
           </Link>
@@ -208,7 +208,7 @@ export default function GlobalNav({
       {/* ================================================================
           LAYER 2 — CONTEXT NAVIGATION
           ================================================================ */}
-      <div className="border-b border-white/10 bg-[#050A30] text-white shadow-sm">
+      <div className="border-b border-[#050A30]/10 bg-white text-[#050A30] shadow-sm">
         <div className="mx-auto flex min-h-14 max-w-7xl items-center">
           {/* BRAND */}
           <Link

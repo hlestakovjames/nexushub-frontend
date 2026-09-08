@@ -54,7 +54,7 @@ export default function MobileGlobalNav({
             : 'Open navigation menu'
         }
         aria-expanded={isOpen}
-        className="flex h-10 w-10 items-center justify-center rounded-md border border-white/10 text-white transition hover:bg-white/10"
+        className="flex h-10 w-10 items-center justify-center rounded-md border border-[#050A30]/10 text-[#050A30] transition hover:bg-[#050A30]/5"
       >
         <span className="sr-only">
           {isOpen
@@ -88,7 +88,7 @@ export default function MobileGlobalNav({
       </button>
 
       {isOpen && (
-        <div className="absolute left-0 right-0 top-full border-b border-white/10 bg-[#050A30] text-white shadow-xl md:hidden">
+        <div className="absolute left-0 right-0 top-full border-b border-[#050A30]/10 bg-white text-[#050A30] shadow-xl md:hidden">
           <nav
             aria-label="Mobile navigation"
             className="mx-auto max-w-7xl px-6 py-5"
@@ -184,7 +184,7 @@ export default function MobileGlobalNav({
             </div>
 
             {/* CONTEXT NAVIGATION */}
-            <div className="mt-4 rounded-xl bg-[#050A30] p-2 text-white">
+            <div className="mt-4 rounded-xl border border-[#050A30]/10 bg-white p-2 text-[#050A30]">
               <p className="px-1 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-[#5FC9E6]">
                 {contextLabel} Navigation
               </p>
@@ -203,8 +203,8 @@ export default function MobileGlobalNav({
                       onClick={closeMenu}
                       className={`block rounded-md px-4 py-3 text-sm font-semibold transition ${
                         active
-                          ? 'bg-white/10 text-white'
-                          : 'text-white/70 hover:bg-white/5 hover:text-white'
+                          ? 'bg-[#050A30]/5 text-[#050A30]'
+                          : 'text-[#050A30]/70 hover:bg-[#050A30]/5 hover:text-[#050A30]'
                       }`}
                     >
                       {item.label}
