@@ -225,6 +225,60 @@ export const navigationContexts: NavigationContext[] = [
   },
 
   {
+    id: 'nhtv-football-teams',
+    label: 'Teams',
+    routePrefix: '/media/nhtv-football/teams',
+    items: [
+    { label: 'HOME', href: '/media/nhtv-football/teams' },
+    { label: 'MEN', href: '/media/nhtv-football/teams/men' },
+    { label: 'WOMEN', href: '/media/nhtv-football/teams/women' },
+    { label: 'PLAYERS', href: '/media/nhtv-football/teams/players' },
+    {
+      label: 'COMPETITIONS',
+      href: '/media/nhtv-football/teams/competitions',
+    },
+  ],
+  },
+
+  {
+  id: 'nhtv-football-teams-women',
+  label: 'Women',
+  routePrefix: '/media/nhtv-football/teams/women',
+  items: [
+    { label: 'HOME', href: '/media/nhtv-football/teams/women' },
+    { label: 'TEAMS', href: '/media/nhtv-football/teams/women/teams' },
+    { label: 'PLAYERS', href: '/media/nhtv-football/teams/women/players' },
+    {
+      label: 'COMPETITIONS',
+      href: '/media/nhtv-football/teams/women/competitions',
+    },
+    { label: 'FIXTURES', href: '/media/nhtv-football/teams/women/fixtures' },
+    { label: 'RESULTS', href: '/media/nhtv-football/teams/women/results' },
+    { label: 'NEWS', href: '/media/nhtv-football/teams/women/news' },
+    { label: 'VIDEOS', href: '/media/nhtv-football/teams/women/videos' },
+  ],
+},
+
+{
+    id: 'nhtv-football-teams-men',
+    label: 'Men',
+    routePrefix: '/media/nhtv-football/teams/men',
+    items: [
+    { label: 'HOME', href: '/media/nhtv-football/teams/men' },
+    { label: 'TEAMS', href: '/media/nhtv-football/teams/men/teams' },
+    { label: 'PLAYERS', href: '/media/nhtv-football/teams/men/players' },
+    {
+      label: 'COMPETITIONS',
+      href: '/media/nhtv-football/teams/men/competitions',
+    },
+    { label: 'FIXTURES', href: '/media/nhtv-football/teams/men/fixtures' },
+    { label: 'RESULTS', href: '/media/nhtv-football/teams/men/results' },
+    { label: 'NEWS', href: '/media/nhtv-football/teams/men/news' },
+    { label: 'VIDEOS', href: '/media/nhtv-football/teams/men/videos' },
+  ],
+  },
+
+  {
     id: 'nhtv-stories',
     label: 'Stories',
     routePrefix: '/media/nhtv-stories',
