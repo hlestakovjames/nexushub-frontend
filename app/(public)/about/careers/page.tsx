@@ -5,48 +5,56 @@ const reasons = [
     number: '01',
     title: 'Build Real Things',
     description:
-      'Work on products, platforms, media, services, and initiatives that are designed to solve meaningful problems.',
+      'Work on products, platforms, media, services, and initiatives designed to create practical value.',
   },
   {
     number: '02',
     title: 'Learn Across Disciplines',
     description:
-      'Work alongside people from digital, media, business, and operations and gain perspectives beyond a single role.',
+      'Work alongside people in technology, media, business, operations, and creative disciplines.',
   },
   {
     number: '03',
     title: 'Take Ownership',
     description:
-      'Contribute ideas, take responsibility for your work, and have room to grow with the organization.',
+      'Bring ideas forward, take responsibility for your work, and develop through meaningful contribution.',
   },
   {
     number: '04',
     title: 'Grow With the Ecosystem',
     description:
-      'Develop as Nexus Hub expands into new products, services, partnerships, and opportunities.',
+      'Develop alongside Nexus Hub as new products, services, teams, partnerships, and opportunities emerge.',
   },
 ];
 
 const careerAreas = [
   {
+    number: '01',
     title: 'Digital & Technology',
     description:
-      'Software engineering, product, UI/UX, digital platforms, systems, infrastructure, and technical operations.',
+      'Software engineering, product development, UI/UX, digital platforms, systems, infrastructure, data, and technical operations.',
+    roles: ['Software Engineering', 'Product & UX', 'Systems & Platforms'],
   },
   {
+    number: '02',
     title: 'Media & Creative',
     description:
       'Production, editorial, video, storytelling, design, content, creative direction, and audience development.',
+    roles: ['Media Production', 'Editorial & Content', 'Creative & Design'],
   },
   {
+    number: '03',
     title: 'Business',
     description:
-      'Consulting, strategy, business development, partnerships, research, and organizational growth.',
+      'Strategy, business development, consulting, partnerships, research, commercial development, and organizational growth.',
+    roles: ['Strategy', 'Business Development', 'Partnerships'],
   },
   {
+    number: '04',
     title: 'Operations',
     description:
-      'Administration, coordination, communications, support, finance, and organizational operations.',
+      'Administration, coordination, communications, finance, support, people operations, and organizational management.',
+    roles: ['Administration', 'Coordination', 'Operations & Support'],
   },
 ];
 
@@ -54,22 +62,22 @@ const culture = [
   {
     title: 'Curious',
     description:
-      'We encourage people to ask questions, explore possibilities, and keep learning.',
+      'We encourage people to ask questions, explore possibilities, experiment responsibly, and keep learning.',
   },
   {
     title: 'Collaborative',
     description:
-      'We believe different perspectives and capabilities can produce stronger outcomes when they work together.',
+      'Different perspectives and capabilities can create stronger outcomes when people work together.',
   },
   {
     title: 'Practical',
     description:
-      'We value ideas that can become useful products, services, experiences, or improvements.',
+      'We value ideas that can become useful products, services, experiences, systems, or improvements.',
   },
   {
     title: 'Responsible',
     description:
-      'We expect people to take ownership of their work, relationships, and commitments.',
+      'We expect people to take ownership of their work, relationships, decisions, and commitments.',
   },
 ];
 
@@ -78,25 +86,25 @@ const applicationSteps = [
     number: '01',
     title: 'Explore',
     description:
-      'Review the available opportunities and identify the role or area that best matches your capabilities and interests.',
+      'Review available opportunities and identify the area that best matches your capabilities and interests.',
   },
   {
     number: '02',
     title: 'Apply',
     description:
-      'Submit your application with the information and materials requested for the opportunity.',
+      'Submit your application and the materials requested for the specific opportunity.',
   },
   {
     number: '03',
     title: 'Connect',
     description:
-      'We learn more about your experience, strengths, interests, and how you could contribute.',
+      'We learn more about your experience, strengths, interests, and potential contribution.',
   },
   {
     number: '04',
     title: 'Grow',
     description:
-      'Successful candidates join the team and develop alongside the wider Nexus Hub ecosystem.',
+      'Successful candidates join the organization and develop alongside the wider Nexus Hub ecosystem.',
   },
 ];
 
@@ -106,42 +114,53 @@ export default function CareersPage() {
       {/* HERO */}
       <section className="bg-[#050A30] text-white">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
-          <div className="max-w-4xl">
-            <Link
-              href="/about"
-              className="text-sm font-semibold text-[#5FC9E6] transition hover:opacity-80"
-            >
-              ← About Nexus Hub
-            </Link>
+          <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
+            <div className="max-w-4xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#5FC9E6]">
+                About Nexus Hub / Careers
+              </p>
 
-            <p className="mt-8 text-sm font-semibold uppercase tracking-[0.25em] text-[#5FC9E6]">
-              Careers
-            </p>
+              <h1 className="mt-5 text-5xl font-bold leading-[1.04] tracking-tight sm:text-6xl lg:text-7xl">
+                Build what comes next with Nexus Hub.
+              </h1>
 
-            <h1 className="mt-5 text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-              Build what comes next with Nexus Hub.
-            </h1>
+              <p className="mt-7 max-w-3xl text-lg leading-8 text-white/70 sm:text-xl">
+                Join an ecosystem where technology, media, business,
+                creativity, and operations come together to turn ideas
+                into meaningful possibilities.
+              </p>
 
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/70 sm:text-xl">
-              Join a growing ecosystem where technology, media, business,
-              creativity, and people come together to turn ideas into
-              meaningful possibilities.
-            </p>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <a
+                  href="#opportunities"
+                  className="rounded-md bg-[#5FC9E6] px-6 py-3 text-sm font-semibold text-[#050A30] transition hover:opacity-90"
+                >
+                  Explore Opportunities
+                </a>
 
-            <div className="mt-10 flex flex-wrap gap-4">
-              <a
-                href="#opportunities"
-                className="rounded-md bg-[#5FC9E6] px-6 py-3 text-sm font-semibold text-[#050A30] transition hover:opacity-90"
-              >
-                Explore Opportunities
-              </a>
+                <Link
+                  href="/about/team"
+                  className="rounded-md border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+                >
+                  Meet Our Team
+                </Link>
+              </div>
+            </div>
 
-              <Link
-                href="/about/team"
-                className="rounded-md border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Meet Our Team
-              </Link>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="min-w-32 rounded-2xl border border-white/10 bg-white/5 p-5">
+                <p className="text-3xl font-bold text-white">04</p>
+                <p className="mt-2 text-sm text-white/50">
+                  Core career areas
+                </p>
+              </div>
+
+              <div className="min-w-32 rounded-2xl border border-white/10 bg-white/5 p-5">
+                <p className="text-3xl font-bold text-[#5FC9E6]">01</p>
+                <p className="mt-2 text-sm text-white/50">
+                  Connected ecosystem
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -150,7 +169,7 @@ export default function CareersPage() {
       {/* INTRODUCTION */}
       <section>
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
-          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+          <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr]">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1266B6]">
                 Working at Nexus Hub
@@ -164,7 +183,7 @@ export default function CareersPage() {
             <div className="space-y-6 text-lg leading-8 text-slate-600">
               <p>
                 Nexus Hub is being built by people with different
-                backgrounds, skills, interests, and ambitions.
+                backgrounds, capabilities, interests, and ambitions.
               </p>
 
               <p>
@@ -174,20 +193,21 @@ export default function CareersPage() {
               </p>
 
               <p>
-                Opportunities may evolve as new products, initiatives,
-                teams, and business needs emerge.
+                Our opportunities will evolve with the organization.
+                New products, initiatives, teams, and business needs can
+                create new ways for people to contribute.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* WHY JOIN */}
+      {/* WHY NEXUS HUB */}
       <section className="bg-slate-50">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1266B6]">
-              Why Join Nexus Hub
+              Why Nexus Hub
             </p>
 
             <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -196,7 +216,8 @@ export default function CareersPage() {
 
             <p className="mt-5 text-lg leading-8 text-slate-600">
               We want people to contribute to meaningful work while
-              developing their skills and perspective along the way.
+              developing their skills, experience, judgment, and
+              perspective.
             </p>
           </div>
 
@@ -206,7 +227,7 @@ export default function CareersPage() {
                 key={reason.number}
                 className="rounded-2xl border border-slate-200 bg-white p-7"
               >
-                <span className="text-sm font-semibold text-[#1266B6]">
+                <span className="text-sm font-bold text-[#1266B6]">
                   {reason.number}
                 </span>
 
@@ -232,32 +253,43 @@ export default function CareersPage() {
             </p>
 
             <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-              Opportunities can grow across the ecosystem.
+              Find where your capabilities can contribute.
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-slate-600">
-              Roles can exist within individual departments or at the
-              intersection of several capabilities.
+              Career opportunities can develop within individual
+              functions or at the intersection of several capabilities.
             </p>
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {careerAreas.map((area, index) => (
+            {careerAreas.map((area) => (
               <article
-                key={area.title}
-                className="rounded-2xl border border-slate-200 p-8 lg:p-10"
+                key={area.number}
+                className="rounded-3xl border border-slate-200 p-8 transition hover:border-[#1266B6]/30 hover:shadow-lg lg:p-10"
               >
-                <span className="text-sm font-semibold text-[#1266B6]">
-                  {String(index + 1).padStart(2, '0')}
+                <span className="text-sm font-bold text-[#1266B6]">
+                  {area.number}
                 </span>
 
                 <h3 className="mt-4 text-3xl font-bold">
                   {area.title}
                 </h3>
 
-                <p className="mt-4 max-w-xl leading-7 text-slate-600">
+                <p className="mt-4 leading-7 text-slate-600">
                   {area.description}
                 </p>
+
+                <div className="mt-7 flex flex-wrap gap-2">
+                  {area.roles.map((role) => (
+                    <span
+                      key={role}
+                      className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-xs font-semibold text-slate-600"
+                    >
+                      {role}
+                    </span>
+                  ))}
+                </div>
               </article>
             ))}
           </div>
@@ -267,41 +299,43 @@ export default function CareersPage() {
       {/* CURRENT OPPORTUNITIES */}
       <section className="bg-slate-50">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
-          <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
-            <div className="max-w-2xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1266B6]">
-                Opportunities
-              </p>
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1266B6]">
+              Current Opportunities
+            </p>
 
-              <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-                Current openings.
-              </h2>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+              Opportunities will appear here as they open.
+            </h2>
 
-              <p className="mt-5 text-lg leading-8 text-slate-600">
-                Available roles can be published here as Nexus Hub
-                grows and recruitment opportunities become available.
-              </p>
-            </div>
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              This section is designed to become the public careers
+              directory for Nexus Hub. Individual openings can later
+              include their own descriptions, requirements,
+              responsibilities, application process, and closing dates.
+            </p>
           </div>
 
-          {/* PLACEHOLDER OPENINGS */}
-          <div className="mt-12 rounded-2xl border border-dashed border-slate-300 bg-white p-10">
+          <div className="mt-12 rounded-3xl border border-dashed border-slate-300 bg-white p-8 lg:p-12">
             <div className="max-w-2xl">
-              <h3 className="text-xl font-bold">
-                No public openings at the moment.
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#050A30] text-sm font-bold text-[#5FC9E6]">
+                NH
+              </div>
+
+              <h3 className="mt-6 text-2xl font-bold">
+                No public vacancies at the moment.
               </h3>
 
               <p className="mt-3 leading-7 text-slate-600">
-                New opportunities can be added here as roles become
-                available. Each opening can eventually have its own
-                dedicated page containing the role description,
-                requirements, responsibilities, benefits, and
-                application process.
+                We are not publishing a specific vacancy here until an
+                opportunity is formally available. Check back as the
+                organization grows or contact Nexus Hub if you would
+                like to express interest in future opportunities.
               </p>
 
               <Link
                 href="/contact"
-                className="mt-6 inline-flex rounded-md bg-[#050A30] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#0B1B3A]"
+                className="mt-7 inline-flex rounded-md bg-[#050A30] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#0B1B3A]"
               >
                 Contact Nexus Hub
               </Link>
@@ -313,7 +347,7 @@ export default function CareersPage() {
       {/* CULTURE */}
       <section>
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
-          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+          <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr]">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1266B6]">
                 Culture
@@ -324,15 +358,15 @@ export default function CareersPage() {
               </h2>
 
               <p className="mt-5 text-lg leading-8 text-slate-600">
-                The culture should grow with the people who become part
-                of Nexus Hub while remaining grounded in its broader
+                Culture should grow with the people who become part of
+                Nexus Hub while remaining grounded in the organization&apos;s
                 purpose and values.
               </p>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
               {culture.map((item) => (
-                <div
+                <article
                   key={item.title}
                   className="rounded-2xl border border-slate-200 p-7"
                 >
@@ -343,6 +377,50 @@ export default function CareersPage() {
                   <p className="mt-3 leading-7 text-slate-600">
                     {item.description}
                   </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* HOW WE HIRE */}
+      <section className="bg-[#050A30] text-white">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
+          <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr]">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#5FC9E6]">
+                How We Hire
+              </p>
+
+              <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+                A straightforward path into the ecosystem.
+              </h2>
+
+              <p className="mt-5 text-lg leading-8 text-white/60">
+                The exact process can vary by role, but our careers
+                structure is designed to make opportunities clear and
+                the path from application to contribution straightforward.
+              </p>
+            </div>
+
+            <div className="grid gap-8 sm:grid-cols-2">
+              {applicationSteps.map((step) => (
+                <div
+                  key={step.number}
+                  className="border-t border-white/10 pt-5"
+                >
+                  <span className="text-sm font-bold text-[#5FC9E6]">
+                    {step.number}
+                  </span>
+
+                  <h3 className="mt-3 text-xl font-bold">
+                    {step.title}
+                  </h3>
+
+                  <p className="mt-3 leading-7 text-white/60">
+                    {step.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -350,105 +428,51 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* APPLICATION PROCESS */}
-      <section className="bg-slate-50">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1266B6]">
-              Application Process
-            </p>
-
-            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-              A straightforward path into the ecosystem.
-            </h2>
-          </div>
-
-          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {applicationSteps.map((step) => (
-              <div key={step.number}>
-                <span className="text-sm font-semibold text-[#1266B6]">
-                  {step.number}
-                </span>
-
-                <h3 className="mt-3 text-xl font-bold">
-                  {step.title}
-                </h3>
-
-                <p className="mt-3 leading-7 text-slate-600">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* RELATED PEOPLE */}
+      {/* TEAM / LEADERSHIP */}
       <section>
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2">
             <Link
               href="/about/team"
-              className="group rounded-2xl border border-slate-200 p-8 transition hover:-translate-y-1 hover:border-[#1266B6]/40 hover:shadow-lg"
+              className="group rounded-3xl border border-slate-200 p-8 transition hover:-translate-y-1 hover:border-[#1266B6]/40 hover:shadow-lg sm:p-10"
             >
               <p className="text-sm font-semibold uppercase tracking-[0.15em] text-[#1266B6]">
                 Our Team
               </p>
 
-              <h3 className="mt-4 text-2xl font-bold">
+              <h2 className="mt-4 text-3xl font-bold">
                 Meet the people already building Nexus Hub.
-              </h3>
+              </h2>
 
               <p className="mt-4 leading-7 text-slate-600">
-                Explore the team across Digital, Media, Business, and
-                Operations.
+                Explore the people and capabilities across Digital,
+                Media, Business, Operations, and other areas of work.
               </p>
 
-              <span className="mt-7 inline-flex text-sm font-semibold text-[#1266B6] transition group-hover:translate-x-1">
+              <span className="mt-7 inline-flex text-sm font-bold text-[#1266B6] transition group-hover:translate-x-1">
                 Meet Our Team →
               </span>
             </Link>
 
             <Link
               href="/about/leadership"
-              className="group rounded-2xl bg-[#050A30] p-8 text-white transition hover:-translate-y-1"
+              className="group rounded-3xl bg-[#1266B6] p-8 text-white transition hover:-translate-y-1 hover:bg-[#0f5ca5] sm:p-10"
             >
               <p className="text-sm font-semibold uppercase tracking-[0.15em] text-[#5FC9E6]">
                 Leadership
               </p>
 
-              <h3 className="mt-4 text-2xl font-bold">
+              <h2 className="mt-4 text-3xl font-bold">
                 Understand who is guiding the organization.
-              </h3>
+              </h2>
 
-              <p className="mt-4 leading-7 text-white/65">
-                Meet the leaders providing direction across the Nexus
-                Hub ecosystem.
+              <p className="mt-4 leading-7 text-white/75">
+                Meet the leaders providing strategic and technical
+                direction across the Nexus Hub ecosystem.
               </p>
 
-              <span className="mt-7 inline-flex text-sm font-semibold text-[#5FC9E6] transition group-hover:translate-x-1">
+              <span className="mt-7 inline-flex text-sm font-bold text-white transition group-hover:translate-x-1">
                 Meet Leadership →
-              </span>
-            </Link>
-
-            <Link
-              href="/about/approach"
-              className="group rounded-2xl border border-slate-200 p-8 transition hover:-translate-y-1 hover:border-[#1266B6]/40 hover:shadow-lg"
-            >
-              <p className="text-sm font-semibold uppercase tracking-[0.15em] text-[#1266B6]">
-                Our Approach
-              </p>
-
-              <h3 className="mt-4 text-2xl font-bold">
-                Learn how we work.
-              </h3>
-
-              <p className="mt-4 leading-7 text-slate-600">
-                Explore the principles and thinking that guide Nexus Hub.
-              </p>
-
-              <span className="mt-7 inline-flex text-sm font-semibold text-[#1266B6] transition group-hover:translate-x-1">
-                Explore Our Approach →
               </span>
             </Link>
           </div>
@@ -463,20 +487,30 @@ export default function CareersPage() {
           </p>
 
           <h2 className="mx-auto mt-4 max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl">
-            Ready to build something meaningful?
+            Bring your skills. Build your future.
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-white/65">
-            Explore the ecosystem, discover where your strengths fit,
-            and follow future opportunities as they become available.
+            Whether your strength is technology, media, business,
+            creativity, or operations, there is room for capable people
+            to contribute as the Nexus Hub ecosystem grows.
           </p>
 
-          <a
-            href="#opportunities"
-            className="mt-8 inline-flex rounded-md bg-[#5FC9E6] px-6 py-3 text-sm font-semibold text-[#050A30] transition hover:opacity-90"
-          >
-            View Opportunities
-          </a>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <a
+              href="#opportunities"
+              className="rounded-md bg-[#5FC9E6] px-6 py-3 text-sm font-semibold text-[#050A30] transition hover:opacity-90"
+            >
+              View Opportunities
+            </a>
+
+            <Link
+              href="/contact"
+              className="rounded-md border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+            >
+              Contact Nexus Hub
+            </Link>
+          </div>
         </div>
       </section>
     </main>
