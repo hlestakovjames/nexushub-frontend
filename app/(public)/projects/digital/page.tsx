@@ -1,9 +1,11 @@
 import ProjectSectionPage from '@/components/projects/ProjectSectionPage';
+import { siteImages } from '@/config/site-images';
 import { projectRecords } from '@/components/projects/project-data';
 
 export default function DigitalProjectsPage() {
   return (
     <ProjectSectionPage
+      heroImage={siteImages.projects.digital}
       eyebrow="Digital Projects"
       title="Technology built around real needs."
       intro="Digital projects across websites, software systems, mobile applications, AI, ICT solutions, and broader digital transformation."

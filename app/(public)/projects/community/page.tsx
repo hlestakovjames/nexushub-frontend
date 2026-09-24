@@ -1,8 +1,10 @@
 import ProjectSectionPage from '@/components/projects/ProjectSectionPage';
+import { siteImages } from '@/config/site-images';
 
 export default function CommunityProjectsPage() {
   return (
     <ProjectSectionPage
+      heroImage={siteImages.projects.community}
       eyebrow="Community Projects"
       title="Projects with people and communities at the centre."
       intro="Projects across health, education, social impact, outreach, and community development."

@@ -1,8 +1,10 @@
 import ProjectSectionPage from '@/components/projects/ProjectSectionPage';
+import { siteImages } from '@/config/site-images';
 
 export default function BusinessProjectsPage() {
   return (
     <ProjectSectionPage
+      heroImage={siteImages.projects.business}
       eyebrow="Business Projects"
       title="Projects that create organizational possibility."
       intro="Business-focused projects covering consulting, partnerships, corporate initiatives, business development, and growth."

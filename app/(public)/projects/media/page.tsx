@@ -1,8 +1,10 @@
 import ProjectSectionPage from '@/components/projects/ProjectSectionPage';
+import { siteImages } from '@/config/site-images';
 
 export default function MediaProjectsPage() {
   return (
     <ProjectSectionPage
+      heroImage={siteImages.projects.media}
       eyebrow="Media Projects"
       title="Stories, productions, and media experiences."
       intro="Projects across Nexus Hub TV, football, stories, voices, productions, and other media initiatives."

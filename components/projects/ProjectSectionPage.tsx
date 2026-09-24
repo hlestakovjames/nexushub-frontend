@@ -1,4 +1,6 @@
+import Image from 'next/image';
 import Link from 'next/link';
+import { siteImages } from '@/config/site-images';
 import type { ProjectRecord } from './project-data';
 
 type ProjectArea = {
@@ -11,25 +13,68 @@ type ProjectSectionPageProps = {
   eyebrow: string;
   title: string;
   intro: string;
+  heroImage?: string;
   parentHref: string;
   parentLabel: string;
   areas: ProjectArea[];
   records?: ProjectRecord[];
 };
 
+function resolveProjectHeroImage(eyebrow: string, heroImage?: string) {
+  if (heroImage) {
+    return heroImage;
+  }
+
+  if (eyebrow.toLowerCase().includes('digital')) {
+    return siteImages.projects.digital;
+  }
+
+  if (eyebrow.toLowerCase().includes('business')) {
+    return siteImages.projects.business;
+  }
+
+  if (eyebrow.toLowerCase().includes('media')) {
+    return siteImages.projects.media;
+  }
+
+  if (eyebrow.toLowerCase().includes('community')) {
+    return siteImages.projects.community;
+  }
+
+  return siteImages.projects.hero;
+}
+
 export default function ProjectSectionPage({
   eyebrow,
   title,
   intro,
+  heroImage,
   parentHref,
   parentLabel,
   areas,
   records = [],
 }: ProjectSectionPageProps) {
+  const resolvedHeroImage = resolveProjectHeroImage(eyebrow, heroImage);
+
   return (
     <main className="bg-white text-[#050A30]">
-      <section className="bg-[#050A30] text-white">
-        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
+      <section className="relative overflow-hidden bg-[#050A30] text-white">
+        <div className="absolute inset-0">
+          <Image
+            src={resolvedHeroImage}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+
+          <div className="absolute inset-0 bg-[#050A30]/55" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050A30]/80 via-[#050A30]/55 to-[#050A30]/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050A30]/70 via-transparent to-[#050A30]/25" />
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
           <div className="max-w-4xl">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#5FC9E6]">
               {eyebrow}
@@ -39,7 +84,7 @@ export default function ProjectSectionPage({
               {title}
             </h1>
 
-            <p className="mt-7 max-w-3xl text-lg leading-8 text-white/70 sm:text-xl">
+            <p className="mt-7 max-w-3xl text-lg leading-8 text-white/80 sm:text-xl">
               {intro}
             </p>
           </div>
@@ -117,7 +162,7 @@ export default function ProjectSectionPage({
               {records.map((project) => (
                 <Link
                   key={project.slug}
-                  href={`${parentHref}/${project.slug}`}
+                  href={`/projects/${project.slug}`}
                   className="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-lg"
                 >
                   <div className="flex flex-wrap items-center gap-3">

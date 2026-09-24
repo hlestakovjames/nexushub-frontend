@@ -1,5 +1,8 @@
 import Link from 'next/link';
 
+import SplitPageHero from '@/components/hero/SplitPageHero';
+import { siteImages } from '@/config/site-images';
+
 import RelatedServices from '@/components/digital/RelatedServices';
 
 const capabilities = [
@@ -42,48 +45,24 @@ export default function SoftwareDevelopmentPage() {
   return (
     <main className="text-[#050A30]">
       {/* HERO */}
-      <section className="bg-[#050A30] text-white">
-        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
-          <div className="max-w-4xl">
-            <Link
-              href="/digital/services"
-              className="text-sm font-semibold text-[#5FC9E6] transition hover:opacity-80"
-            >
-              ← Digital Services
-            </Link>
-
-            <p className="mt-8 text-sm font-semibold uppercase tracking-[0.2em] text-[#5FC9E6]">
-              Software Development
-            </p>
-
-            <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-              Software designed around the way your organization works.
-            </h1>
-
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70 sm:text-xl">
-              We build custom software systems that simplify
-              operations, connect workflows, manage information, and
-              help organizations work more effectively.
-            </p>
-
-            <div className="mt-9 flex flex-wrap gap-4">
-              <Link
-                href="/contact"
-                className="rounded-md bg-[#5FC9E6] px-6 py-3 text-sm font-semibold text-[#050A30] transition hover:opacity-90"
-              >
-                Discuss a Software Project
-              </Link>
-
-              <Link
-                href="/projects"
-                className="rounded-md border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                View Projects
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <SplitPageHero
+        backLink={{
+          label: "← Digital Services",
+          href: "/digital/services",
+        }}
+        eyebrow="Software Development"
+        title="Software designed around the way your organization works."
+        description="We build custom software systems that simplify operations, connect workflows, manage information, and help organizations work more effectively."
+        image={siteImages.digital.development}
+        primaryAction={{
+          label: "Discuss a Software Project",
+          href: "/contact",
+        }}
+        secondaryAction={{
+          label: "View Projects",
+          href: "/projects",
+        }}
+      />
 
       {/* OVERVIEW */}
       <section className="bg-white">

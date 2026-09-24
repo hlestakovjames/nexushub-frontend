@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import SplitPageHero from '@/components/hero/SplitPageHero';
+import { siteImages } from '@/config/site-images';
 
 const missionPillars = [
   {
@@ -144,35 +146,20 @@ export default function MissionVisionPage() {
   return (
     <main className="bg-white text-[#050A30]">
       {/* HERO */}
-      <section className="relative overflow-hidden bg-[#050A30] text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(95,201,230,0.14),transparent_30%),radial-gradient(circle_at_15%_85%,rgba(18,102,182,0.2),transparent_35%)]" />
-
-        <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
-          <div className="max-w-5xl">
-            <Link
-              href="/about"
-              className="inline-flex text-sm font-semibold text-[#5FC9E6] transition hover:opacity-80"
-            >
-              ← About Nexus Hub
-            </Link>
-
-            <p className="mt-9 text-sm font-bold uppercase tracking-[0.25em] text-[#5FC9E6]">
-              Mission &amp; Vision
-            </p>
-
-            <h1 className="mt-5 max-w-4xl text-5xl font-black leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
-              A clear purpose.
-              <br />
-              A bigger possibility.
-            </h1>
-
-            <p className="mt-7 max-w-3xl text-lg leading-8 text-white/72 sm:text-xl">
-              Our mission defines what we are here to do. Our vision
-              defines the connected ecosystem we are working to build.
-            </p>
-          </div>
-        </div>
-      </section>
+            {/* HERO */}
+      <SplitPageHero
+        backLink={{ label: '← About Nexus Hub', href: '/about' }}
+        eyebrow="Mission & Vision"
+        title={
+          <>
+            A clear purpose.
+            <br />
+            A bigger possibility.
+          </>
+        }
+        description="Our mission defines what we are here to do. Our vision defines the connected ecosystem we are working to build."
+        image={siteImages.about.hero}
+      />
 
       {/* MISSION + VISION */}
       <section>

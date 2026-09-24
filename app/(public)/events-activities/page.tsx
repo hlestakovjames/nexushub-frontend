@@ -1,4 +1,6 @@
+import Image from 'next/image';
 import Link from 'next/link';
+import { siteImages } from '@/config/site-images';
 
 const sections = [
   {
@@ -47,8 +49,22 @@ const publishedItems = [
 export default function EventsActivitiesPage() {
   return (
     <main className="bg-white text-[#050A30]">
-      <section className="bg-[#050A30] text-white">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
+      <section className="relative overflow-hidden bg-[#050A30] text-white">
+        <div className="absolute inset-0">
+          <Image
+            src={siteImages.events.hero}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-[#050A30]/55" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050A30]/75 via-[#050A30]/55 to-[#050A30]/45" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050A30]/65 via-transparent to-[#050A30]/25" />
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#5FC9E6]">
             Nexus Hub
           </p>

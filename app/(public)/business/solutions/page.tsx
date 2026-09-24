@@ -1,5 +1,8 @@
 import Link from 'next/link';
 
+import SplitPageHero from '@/components/hero/SplitPageHero';
+import { siteImages } from '@/config/site-images';
+
 const solutions = [
   {
     number: '01',
@@ -98,6 +101,32 @@ const process = [
 export default function SolutionsPage() {
   return (
     <main className="bg-white text-[#050A30]">
+      {/* HERO */}
+      <SplitPageHero
+        backLink={{
+          label: "← Business",
+          href: "/business",
+        }}
+        eyebrow="Business Solutions"
+        title={
+          <>
+            Solutions shaped around
+            <br />
+            the problem to solve.
+          </>
+        }
+        description="We bring together strategy, business capabilities, digital technology, media, creative work, and partnerships when a challenge requires more than one service."
+        image={siteImages.business.hero}
+        primaryAction={{
+          label: "Discuss a Solution",
+          href: "/contact",
+        }}
+        secondaryAction={{
+          label: "View Business Services",
+          href: "/business/services",
+        }}
+      />
+
       {/* HERO */}
       <section className="bg-[#050A30] text-white">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">

@@ -1,5 +1,8 @@
 import Link from 'next/link';
 
+import SplitPageHero from '@/components/hero/SplitPageHero';
+import { siteImages } from '@/config/site-images';
+
 const primaryModules = [
   {
     number: '01',
@@ -94,47 +97,28 @@ export default function NHTVFootballHomePage() {
   return (
     <main className="bg-white text-[#050A30]">
       {/* HERO */}
-      <section className="relative overflow-hidden bg-[#050A30] text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(95,201,230,0.2),_transparent_42%)]" />
-        <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-[#1266B6]/10 blur-3xl" />
-
-        <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
-          <div className="max-w-5xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#5FC9E6]">
-              NEXUS HUB · NHTV FOOTBALL
-            </p>
-
-            <h1 className="mt-5 text-5xl font-bold leading-[1.02] tracking-tight sm:text-6xl lg:text-8xl">
-              The game.
-              <br />
-              The stories.
-              <br />
-              The system.
-            </h1>
-
-            <p className="mt-8 max-w-3xl text-lg leading-8 text-white/70 sm:text-xl">
-              A connected football destination bringing together teams,
-              players, competitions, fixtures, results, news, and video.
-            </p>
-
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                href="/media/nhtv-football/news"
-                className="rounded-md bg-[#5FC9E6] px-6 py-3 text-sm font-semibold text-[#050A30] transition hover:opacity-90"
-              >
-                Latest Football News
-              </Link>
-
-              <Link
-                href="/media/nhtv-football/teams"
-                className="rounded-md border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Explore Teams
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <SplitPageHero
+        eyebrow="NEXUS HUB · NHTV FOOTBALL"
+        title={
+          <>
+            The game.
+            <br />
+            The stories.
+            <br />
+            The system.
+          </>
+        }
+        description="A connected football destination bringing together teams, players, competitions, fixtures, results, news, and video."
+        image={siteImages.media.hero}
+        primaryAction={{
+          label: "Latest Football News",
+          href: "/media/nhtv-football/news",
+        }}
+        secondaryAction={{
+          label: "Explore Teams",
+          href: "/media/nhtv-football/teams",
+        }}
+      />
 
       {/* POSITIONING */}
       <section>

@@ -1,5 +1,8 @@
 import Link from 'next/link';
 
+import SplitPageHero from '@/components/hero/SplitPageHero';
+import { siteImages } from '@/config/site-images';
+
 const services = [
   {
     number: '01',
@@ -87,48 +90,24 @@ export default function BusinessServicesPage() {
   return (
     <main className="bg-white text-[#050A30]">
       {/* HERO */}
-      <section className="bg-[#050A30] text-white">
-        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
-          <div className="max-w-4xl">
-            <Link
-              href="/business"
-              className="text-sm font-semibold text-[#5FC9E6] transition hover:opacity-80"
-            >
-              ← Business
-            </Link>
-
-            <p className="mt-8 text-sm font-semibold uppercase tracking-[0.25em] text-[#5FC9E6]">
-              Business Services
-            </p>
-
-            <h1 className="mt-5 text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-              Practical services for organizations ready to move forward.
-            </h1>
-
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/70 sm:text-xl">
-              From consulting and strategy to digital business, creative
-              services, and partnership support, we help organizations
-              turn challenges and opportunities into practical action.
-            </p>
-
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                href="/contact"
-                className="rounded-md bg-[#5FC9E6] px-6 py-3 text-sm font-semibold text-[#050A30] transition hover:opacity-90"
-              >
-                Discuss Your Needs
-              </Link>
-
-              <Link
-                href="/business/solutions"
-                className="rounded-md border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Explore Solutions
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <SplitPageHero
+        backLink={{
+          label: "← Business",
+          href: "/business",
+        }}
+        eyebrow="Business Services"
+        title="Practical services for organizations ready to move forward."
+        description="From consulting and strategy to digital business, creative services, and partnership support, we help organizations turn challenges and opportunities into practical action."
+        image={siteImages.business.hero}
+        primaryAction={{
+          label: "Discuss Your Needs",
+          href: "/contact",
+        }}
+        secondaryAction={{
+          label: "Explore Solutions",
+          href: "/business/solutions",
+        }}
+      />
 
       {/* INTRODUCTION */}
       <section>

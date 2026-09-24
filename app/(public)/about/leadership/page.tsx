@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import SplitPageHero from '@/components/hero/SplitPageHero';
+import { siteImages } from '@/config/site-images';
 
 const leadershipProfiles = [
   {
@@ -106,43 +108,28 @@ export default function LeadershipPage() {
   return (
     <main className="bg-white text-[#050A30]">
       {/* HERO */}
-      <section className="bg-[#050A30] text-white">
-        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
-          <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
-            <div className="max-w-4xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#5FC9E6]">
-                About Nexus Hub / Leadership
-              </p>
-
-              <h1 className="mt-5 text-5xl font-bold leading-[1.04] tracking-tight sm:text-6xl lg:text-7xl">
-                Leadership that gives the ecosystem direction.
-              </h1>
-
-              <p className="mt-7 max-w-3xl text-lg leading-8 text-white/70 sm:text-xl">
-                Nexus Hub leadership is responsible for connecting purpose,
-                strategy, people, technology, and opportunity into a
-                coherent direction for the organization.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-2">
-              <div className="rounded-2xl border border-white/10 bg-white/5 px-5 py-5">
-                <p className="text-3xl font-bold text-white">02</p>
-                <p className="mt-2 text-sm text-white/55">
-                  Current leadership profiles
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-white/10 bg-white/5 px-5 py-5">
-                <p className="text-3xl font-bold text-[#5FC9E6]">01</p>
-                <p className="mt-2 text-sm text-white/55">
-                  Connected ecosystem
-                </p>
-              </div>
-            </div>
+            {/* HERO */}
+      <SplitPageHero
+        eyebrow="About Nexus Hub / Leadership"
+        title="Leadership that gives the ecosystem direction."
+        description="Nexus Hub leadership is responsible for connecting purpose, strategy, people, technology, and opportunity into a coherent direction for the organization."
+        image={siteImages.about.hero}
+      >
+        <div className="mt-10 grid max-w-md grid-cols-2 gap-6 border-t border-white/10 pt-6">
+          <div>
+            <p className="text-3xl font-bold text-white">02</p>
+            <p className="mt-2 text-sm text-white/55">
+              Current leadership profiles
+            </p>
+          </div>
+          <div>
+            <p className="text-3xl font-bold text-[#5FC9E6]">01</p>
+            <p className="mt-2 text-sm text-white/55">
+              Connected ecosystem
+            </p>
           </div>
         </div>
-      </section>
+      </SplitPageHero>
 
       {/* INTRODUCTION */}
       <section>

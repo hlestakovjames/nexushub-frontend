@@ -1,17 +1,11 @@
 import ProjectDetailPage from '@/components/projects/ProjectDetailPage';
 
-export default async function MediaProjectPage({
+export default async function ProjectCategorySlugPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
 
-  return (
-    <ProjectDetailPage
-      slug={slug}
-      categoryHref="/projects/media"
-      categoryLabel="Media"
-    />
-  );
+  return <ProjectDetailPage slug={slug} />;
 }

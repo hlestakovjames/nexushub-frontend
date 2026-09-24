@@ -1,5 +1,8 @@
 import Link from 'next/link';
 
+import SplitPageHero from '@/components/hero/SplitPageHero';
+import { siteImages } from '@/config/site-images';
+
 const partnershipTypes = [
   {
     number: '01',
@@ -93,43 +96,26 @@ export default function PartnershipsPage() {
   return (
     <main className="bg-white text-[#050A30]">
       {/* HERO */}
-      <section className="bg-[#050A30] text-white">
-        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
-          <div className="max-w-4xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#5FC9E6]">
-              Business Partnerships
-            </p>
-
-            <h1 className="mt-5 text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-              Building stronger
-              <br />
-              possibilities together.
-            </h1>
-
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/70 sm:text-xl">
-              We collaborate with organizations, businesses, creators,
-              technology teams, and other partners to turn shared
-              opportunities into meaningful outcomes.
-            </p>
-
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                href="/contact"
-                className="rounded-md bg-[#5FC9E6] px-6 py-3 text-sm font-semibold text-[#050A30] transition hover:opacity-90"
-              >
-                Start a Partnership
-              </Link>
-
-              <Link
-                href="/business"
-                className="rounded-md border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Explore Business
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <SplitPageHero
+        eyebrow="Business Partnerships"
+        title={
+          <>
+            Building stronger
+            <br />
+            possibilities together.
+          </>
+        }
+        description="We collaborate with organizations, businesses, creators, technology teams, and other partners to turn shared opportunities into meaningful outcomes."
+        image={siteImages.business.hero}
+        primaryAction={{
+          label: "Start a Partnership",
+          href: "/contact",
+        }}
+        secondaryAction={{
+          label: "Explore Business",
+          href: "/business",
+        }}
+      />
 
       {/* INTRODUCTION */}
       <section>

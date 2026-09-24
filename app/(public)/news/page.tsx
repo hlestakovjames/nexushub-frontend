@@ -1,4 +1,6 @@
+import Image from 'next/image';
 import Link from 'next/link';
+import { siteImages } from '@/config/site-images';
 
 const categories = [
   {
@@ -67,6 +69,20 @@ export default function NewsPage() {
     <main className="bg-white text-[#050A30]">
       {/* HERO */}
       <section className="relative overflow-hidden bg-[#050A30] text-white">
+        <div className="absolute inset-0">
+          <Image
+            src={siteImages.news.hero}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-[#050A30]/55" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050A30]/75 via-[#050A30]/55 to-[#050A30]/45" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050A30]/65 via-transparent to-[#050A30]/25" />
+        </div>
+
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(95,201,230,0.18),transparent_35%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(18,102,182,0.16),transparent_40%)]" />
 

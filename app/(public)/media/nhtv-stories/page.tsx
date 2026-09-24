@@ -1,45 +1,32 @@
 import Link from 'next/link';
 
+import SplitPageHero from '@/components/hero/SplitPageHero';
+import { siteImages } from '@/config/site-images';
+
 export default function NHTVStoriesPage() {
   return (
     <main className="bg-white text-[#050A30]">
       {/* HERO */}
-      <section className="bg-[#050A30] text-white">
-        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
-          <div className="max-w-4xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#5FC9E6]">
-              NHTV Stories
-            </p>
-
-            <h1 className="mt-5 text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-              Every Story
-              <br />
-              Has a Voice.
-            </h1>
-
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/70 sm:text-xl">
-              Real people, meaningful experiences, and stories that
-              deserve to be seen, heard, and remembered.
-            </p>
-
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                href="/media"
-                className="rounded-md bg-[#5FC9E6] px-6 py-3 text-sm font-semibold text-[#050A30] transition hover:opacity-90"
-              >
-                Explore Media
-              </Link>
-
-              <Link
-                href="/media/nexus-hub-tv"
-                className="rounded-md border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Nexus Hub TV
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <SplitPageHero
+        eyebrow="NHTV Stories"
+        title={
+          <>
+            Every Story
+            <br />
+            Has a Voice.
+          </>
+        }
+        description="Real people, meaningful experiences, and stories that deserve to be seen, heard, and remembered."
+        image={siteImages.media.hero}
+        primaryAction={{
+          label: "Explore Media",
+          href: "/media",
+        }}
+        secondaryAction={{
+          label: "Nexus Hub TV",
+          href: "/media/nexus-hub-tv",
+        }}
+      />
 
       {/* INTRO */}
       <section>

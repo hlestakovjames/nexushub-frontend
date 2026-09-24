@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import SplitPageHero from '@/components/hero/SplitPageHero';
+import { siteImages } from '@/config/site-images';
 
 type TeamMember = {
   name: string;
@@ -177,45 +179,39 @@ export default function OurTeamPage() {
   return (
     <main className="bg-white text-[#050A30]">
       {/* HERO */}
-      <section className="relative overflow-hidden bg-[#050A30] text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,rgba(95,201,230,0.15),transparent_30%),radial-gradient(circle_at_15%_82%,rgba(18,102,182,0.2),transparent_35%)]" />
-
-        <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
-          <div className="max-w-5xl">
-            <Link
-              href="/about"
-              className="inline-flex text-sm font-semibold text-[#5FC9E6] transition hover:opacity-80"
-            >
-              ← About Nexus Hub
-            </Link>
-
-            <p className="mt-9 text-sm font-bold uppercase tracking-[0.25em] text-[#5FC9E6]">
-              Our Team
+            {/* HERO */}
+      <SplitPageHero
+        backLink={{ label: '← About Nexus Hub', href: '/about' }}
+        eyebrow="Our Team"
+        title={
+          <>
+            People with different strengths,
+            <br />
+            working toward one purpose.
+          </>
+        }
+        description="Nexus Hub brings together technical, creative, business, and operational capabilities across one connected ecosystem."
+        image={siteImages.about.hero}
+      >
+        <div className="mt-10 grid max-w-md grid-cols-2 gap-6 border-t border-white/10 pt-6">
+          <div>
+            <p className="text-3xl font-bold text-white">
+              {departments.length}
             </p>
-
-            <h1 className="mt-5 max-w-4xl text-5xl font-black leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
-              People with different strengths,
-              <br />
-              working toward one purpose.
-            </h1>
-
-            <p className="mt-7 max-w-3xl text-lg leading-8 text-white/72 sm:text-xl">
-              Nexus Hub brings together technical, creative, business,
-              and operational capabilities across one connected ecosystem.
+            <p className="mt-2 text-sm text-white/55">
+              Departments
             </p>
-
-            <div className="mt-9 flex flex-wrap gap-3">
-              <div className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white/75">
-                {departments.length} Departments
-              </div>
-
-              <div className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white/75">
-                {totalMembers} Team Members
-              </div>
-            </div>
+          </div>
+          <div>
+            <p className="text-3xl font-bold text-[#5FC9E6]">
+              {totalMembers}
+            </p>
+            <p className="mt-2 text-sm text-white/55">
+              Team Members
+            </p>
           </div>
         </div>
-      </section>
+      </SplitPageHero>
 
       {/* INTRODUCTION */}
       <section>

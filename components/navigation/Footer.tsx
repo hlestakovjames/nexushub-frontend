@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Mail, MapPin, Phone, MessageCircle } from 'lucide-react';
 
 import NexusHubLogo from '@/components/brand/NexusHubLogo';
 
@@ -135,9 +136,58 @@ export default function Footer() {
                 ))}
               </ul>
 
-              <p className="mt-6 text-sm leading-6 text-white/40">
-                Nairobi, Kenya
-              </p>
+              <div className="mt-6 space-y-3 text-sm leading-6 text-white/50">
+                <div className="flex items-start gap-3">
+                  <MapPin
+                    size={17}
+                    strokeWidth={1.7}
+                    className="shrink-0 text-[#5FC9E6]"
+                    aria-hidden="true"
+                  />
+                  <span>Nairobi, Kenya</span>
+                </div>
+
+                <Link
+                  href="tel:0728812649"
+                  className="flex items-center gap-3 transition hover:text-white"
+                >
+                  <Phone
+                    size={17}
+                    strokeWidth={1.7}
+                    className="shrink-0 text-[#5FC9E6]"
+                    aria-hidden="true"
+                  />
+                  <span>0728 812 649</span>
+                </Link>
+
+                <Link
+                  href="https://wa.me/254713290745"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 transition hover:text-white"
+                >
+                  <MessageCircle
+                    size={17}
+                    strokeWidth={1.7}
+                    className="shrink-0 text-[#5FC9E6]"
+                    aria-hidden="true"
+                  />
+                  <span>0713 290 745</span>
+                </Link>
+
+                <Link
+                  href="mailto:nexushubkenya@gmail.com"
+                  className="flex items-center gap-3 transition hover:text-white"
+                >
+                  <Mail
+                    size={17}
+                    strokeWidth={1.7}
+                    className="shrink-0 text-[#5FC9E6]"
+                    aria-hidden="true"
+                  />
+                  <span>nexushubkenya@gmail.com</span>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

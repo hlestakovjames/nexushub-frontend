@@ -77,6 +77,10 @@ export const navigationContexts: NavigationContext[] = [
         label: 'Platforms',
         href: '/platforms',
       },
+      {
+        label: 'Contact',
+        href: '/contact',
+      },
     ],
   },
 
@@ -528,6 +532,398 @@ export const navigationContexts: NavigationContext[] = [
       {
         label: 'ALL POSTS',
         href: '/blog',
+      },
+      {
+        label: 'FEATURED',
+        href: '/blog/featured',
+      },
+      {
+        label: 'LATEST',
+        href: '/blog/latest',
+      },
+      {
+        label: 'INSIGHTS',
+        href: '/blog/insights',
+      },
+      {
+        label: 'ANALYSIS',
+        href: '/blog/analysis',
+      },
+      {
+        label: 'OPINION',
+        href: '/blog/opinion',
+      },
+      {
+        label: 'STORIES',
+        href: '/blog/stories',
+      },
+      {
+        label: 'FEATURES',
+        href: '/blog/features',
+      },
+      {
+        label: 'INTERVIEWS',
+        href: '/blog/interviews',
+      },
+      {
+        label: 'CATEGORIES',
+        href: '/blog/categories',
+      },
+      {
+        label: 'AUTHORS',
+        href: '/blog/authors',
+      },
+    ],
+  },
+
+  {
+    id: 'blog-technology',
+    label: 'Technology',
+    routePrefix: '/blog/technology',
+    items: [
+      {
+        label: 'HOME',
+        href: '/blog/technology',
+      },
+      {
+        label: 'TECHNOLOGY NEWS',
+        href: '/blog/technology/technology-news',
+      },
+      {
+        label: 'SOFTWARE & DEVELOPMENT',
+        href: '/blog/technology/software-development',
+      },
+      {
+        label: 'AI & AUTOMATION',
+        href: '/blog/technology/ai-automation',
+      },
+      {
+        label: 'EMERGING TECHNOLOGY',
+        href: '/blog/technology/emerging-technology',
+      },
+      {
+        label: 'ICT & DIGITAL SYSTEMS',
+        href: '/blog/technology/ict-digital-systems',
+      },
+      {
+        label: 'TECHNOLOGY GUIDES',
+        href: '/blog/technology/technology-guides',
+      },
+      {
+        label: 'REVIEWS & ANALYSIS',
+        href: '/blog/technology/reviews-analysis',
+      },
+      {
+        label: 'FEATURES',
+        href: '/blog/technology/features',
+      },
+    ],
+  },
+
+  {
+    id: 'blog-business',
+    label: 'Business',
+    routePrefix: '/blog/business',
+    items: [
+      {
+        label: 'HOME',
+        href: '/blog/business',
+      },
+      {
+        label: 'BUSINESS NEWS',
+        href: '/blog/business/business-news',
+      },
+      {
+        label: 'ENTREPRENEURSHIP',
+        href: '/blog/business/entrepreneurship',
+      },
+      {
+        label: 'STRATEGY',
+        href: '/blog/business/strategy',
+      },
+      {
+        label: 'BUSINESS GROWTH',
+        href: '/blog/business/business-growth',
+      },
+      {
+        label: 'MARKETS',
+        href: '/blog/business/markets',
+      },
+      {
+        label: 'ORGANISATIONS',
+        href: '/blog/business/organisations',
+      },
+      {
+        label: 'BUSINESS GUIDES',
+        href: '/blog/business/business-guides',
+      },
+      {
+        label: 'FEATURES',
+        href: '/blog/business/features',
+      },
+    ],
+  },
+
+  {
+    id: 'blog-innovation',
+    label: 'Innovation',
+    routePrefix: '/blog/innovation',
+    items: [
+      {
+        label: 'HOME',
+        href: '/blog/innovation',
+      },
+      {
+        label: 'INNOVATION NEWS',
+        href: '/blog/innovation/innovation-news',
+      },
+      {
+        label: 'IDEAS',
+        href: '/blog/innovation/ideas',
+      },
+      {
+        label: 'STARTUPS',
+        href: '/blog/innovation/startups',
+      },
+      {
+        label: 'PRODUCTS',
+        href: '/blog/innovation/products',
+      },
+      {
+        label: 'RESEARCH',
+        href: '/blog/innovation/research',
+      },
+      {
+        label: 'EMERGING TRENDS',
+        href: '/blog/innovation/emerging-trends',
+      },
+      {
+        label: 'CASE STUDIES',
+        href: '/blog/innovation/case-studies',
+      },
+      {
+        label: 'FEATURES',
+        href: '/blog/innovation/features',
+      },
+    ],
+  },
+
+  {
+    id: 'blog-digital-transformation',
+    label: 'Digital Transformation',
+    routePrefix: '/blog/digital-transformation',
+    items: [
+      {
+        label: 'HOME',
+        href: '/blog/digital-transformation',
+      },
+      {
+        label: 'DIGITAL STRATEGY',
+        href: '/blog/digital-transformation/digital-strategy',
+      },
+      {
+        label: 'DIGITALISATION',
+        href: '/blog/digital-transformation/digitalisation',
+      },
+      {
+        label: 'AUTOMATION',
+        href: '/blog/digital-transformation/automation',
+      },
+      {
+        label: 'TECHNOLOGY ADOPTION',
+        href: '/blog/digital-transformation/technology-adoption',
+      },
+      {
+        label: 'ORGANISATIONAL CHANGE',
+        href: '/blog/digital-transformation/organisational-change',
+      },
+      {
+        label: 'CASE STUDIES',
+        href: '/blog/digital-transformation/case-studies',
+      },
+      {
+        label: 'GUIDES',
+        href: '/blog/digital-transformation/guides',
+      },
+      {
+        label: 'FEATURES',
+        href: '/blog/digital-transformation/features',
+      },
+    ],
+  },
+
+  {
+    id: 'blog-leadership',
+    label: 'Leadership',
+    routePrefix: '/blog/leadership',
+    items: [
+      {
+        label: 'HOME',
+        href: '/blog/leadership',
+      },
+      {
+        label: 'LEADERSHIP',
+        href: '/blog/leadership/leadership',
+      },
+      {
+        label: 'MANAGEMENT',
+        href: '/blog/leadership/management',
+      },
+      {
+        label: 'GOVERNANCE',
+        href: '/blog/leadership/governance',
+      },
+      {
+        label: 'PEOPLE',
+        href: '/blog/leadership/people',
+      },
+      {
+        label: 'CAREER',
+        href: '/blog/leadership/career',
+      },
+      {
+        label: 'EXECUTIVE INSIGHTS',
+        href: '/blog/leadership/executive-insights',
+      },
+      {
+        label: 'LEADERSHIP STORIES',
+        href: '/blog/leadership/leadership-stories',
+      },
+      {
+        label: 'FEATURES',
+        href: '/blog/leadership/features',
+      },
+    ],
+  },
+
+  {
+    id: 'blog-entrepreneurship',
+    label: 'Entrepreneurship',
+    routePrefix: '/blog/entrepreneurship',
+    items: [
+      {
+        label: 'HOME',
+        href: '/blog/entrepreneurship',
+      },
+      {
+        label: 'STARTING A BUSINESS',
+        href: '/blog/entrepreneurship/starting-a-business',
+      },
+      {
+        label: 'STARTUPS',
+        href: '/blog/entrepreneurship/startups',
+      },
+      {
+        label: 'BUSINESS IDEAS',
+        href: '/blog/entrepreneurship/business-ideas',
+      },
+      {
+        label: 'FUNDING',
+        href: '/blog/entrepreneurship/funding',
+      },
+      {
+        label: 'GROWTH',
+        href: '/blog/entrepreneurship/growth',
+      },
+      {
+        label: 'FOUNDERS',
+        href: '/blog/entrepreneurship/founders',
+      },
+      {
+        label: 'ENTREPRENEUR STORIES',
+        href: '/blog/entrepreneurship/entrepreneur-stories',
+      },
+      {
+        label: 'GUIDES',
+        href: '/blog/entrepreneurship/guides',
+      },
+    ],
+  },
+
+  {
+    id: 'blog-community',
+    label: 'Community',
+    routePrefix: '/blog/community',
+    items: [
+      {
+        label: 'HOME',
+        href: '/blog/community',
+      },
+      {
+        label: 'COMMUNITY STORIES',
+        href: '/blog/community/community-stories',
+      },
+      {
+        label: 'EDUCATION',
+        href: '/blog/community/education',
+      },
+      {
+        label: 'HEALTH',
+        href: '/blog/community/health',
+      },
+      {
+        label: 'SOCIAL IMPACT',
+        href: '/blog/community/social-impact',
+      },
+      {
+        label: 'YOUTH',
+        href: '/blog/community/youth',
+      },
+      {
+        label: 'COMMUNITY DEVELOPMENT',
+        href: '/blog/community/community-development',
+      },
+      {
+        label: 'PEOPLE',
+        href: '/blog/community/people',
+      },
+      {
+        label: 'FEATURES',
+        href: '/blog/community/features',
+      },
+    ],
+  },
+
+  {
+    id: 'blog-media',
+    label: 'Media',
+    routePrefix: '/blog/media',
+    items: [
+      {
+        label: 'HOME',
+        href: '/blog/media',
+      },
+      {
+        label: 'MEDIA INDUSTRY',
+        href: '/blog/media/media-industry',
+      },
+      {
+        label: 'NEXUS HUB TV',
+        href: '/blog/media/nexus-hub-tv',
+      },
+      {
+        label: 'FOOTBALL',
+        href: '/blog/media/football',
+      },
+      {
+        label: 'STORIES',
+        href: '/blog/media/stories',
+      },
+      {
+        label: 'VOICES',
+        href: '/blog/media/voices',
+      },
+      {
+        label: 'CONTENT CREATION',
+        href: '/blog/media/content-creation',
+      },
+      {
+        label: 'BROADCASTING',
+        href: '/blog/media/broadcasting',
+      },
+      {
+        label: 'FEATURES',
+        href: '/blog/media/features',
       },
     ],
   },

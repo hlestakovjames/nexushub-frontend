@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import SplitPageHero from '@/components/hero/SplitPageHero';
+import { siteImages } from '@/config/site-images';
 
 const storyPrinciples = [
   {
@@ -100,50 +102,22 @@ export default function OurStoryPage() {
   return (
     <main className="bg-white text-[#050A30]">
       {/* HERO */}
-      <section className="relative overflow-hidden bg-[#050A30] text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_22%,rgba(95,201,230,0.15),transparent_30%),radial-gradient(circle_at_18%_80%,rgba(18,102,182,0.2),transparent_34%)]" />
-
-        <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
-          <div className="max-w-5xl">
-            <Link
-              href="/about"
-              className="inline-flex text-sm font-semibold text-[#5FC9E6] transition hover:opacity-80"
-            >
-              ← About Nexus Hub
-            </Link>
-
-            <p className="mt-9 text-sm font-bold uppercase tracking-[0.25em] text-[#5FC9E6]">
-              Our Story
-            </p>
-
-            <h1 className="mt-5 max-w-4xl text-5xl font-black leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
-              From an idea of connection to a growing ecosystem.
-            </h1>
-
-            <p className="mt-7 max-w-3xl text-lg leading-8 text-white/72 sm:text-xl">
-              Nexus Hub was shaped around the belief that ideas become
-              more powerful when people, capabilities, technology, media,
-              and opportunities can connect.
-            </p>
-
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link
-                href="/about/mission-vision"
-                className="rounded-md bg-[#5FC9E6] px-6 py-3 text-sm font-bold text-[#050A30] transition hover:opacity-90"
-              >
-                Our Mission &amp; Vision
-              </Link>
-
-              <Link
-                href="/about/approach"
-                className="rounded-md border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Our Approach
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+            {/* HERO */}
+      <SplitPageHero
+        backLink={{ label: '← About Nexus Hub', href: '/about' }}
+        eyebrow="Our Story"
+        title="From an idea of connection to a growing ecosystem."
+        description="Nexus Hub was shaped around the belief that ideas become more powerful when people, capabilities, technology, media, and opportunities can connect."
+        image={siteImages.about.hero}
+        primaryAction={{
+          label: 'Our Mission & Vision',
+          href: '/about/mission-vision',
+        }}
+        secondaryAction={{
+          label: 'Our Approach',
+          href: '/about/approach',
+        }}
+      />
 
       {/* THE BEGINNING */}
       <section>

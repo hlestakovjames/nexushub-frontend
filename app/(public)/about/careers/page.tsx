@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import SplitPageHero from '@/components/hero/SplitPageHero';
+import { siteImages } from '@/config/site-images';
 
 const reasons = [
   {
@@ -112,59 +114,36 @@ export default function CareersPage() {
   return (
     <main className="bg-white text-[#050A30]">
       {/* HERO */}
-      <section className="bg-[#050A30] text-white">
-        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
-          <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
-            <div className="max-w-4xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#5FC9E6]">
-                About Nexus Hub / Careers
-              </p>
-
-              <h1 className="mt-5 text-5xl font-bold leading-[1.04] tracking-tight sm:text-6xl lg:text-7xl">
-                Build what comes next with Nexus Hub.
-              </h1>
-
-              <p className="mt-7 max-w-3xl text-lg leading-8 text-white/70 sm:text-xl">
-                Join an ecosystem where technology, media, business,
-                creativity, and operations come together to turn ideas
-                into meaningful possibilities.
-              </p>
-
-              <div className="mt-10 flex flex-wrap gap-4">
-                <a
-                  href="#opportunities"
-                  className="rounded-md bg-[#5FC9E6] px-6 py-3 text-sm font-semibold text-[#050A30] transition hover:opacity-90"
-                >
-                  Explore Opportunities
-                </a>
-
-                <Link
-                  href="/about/team"
-                  className="rounded-md border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-                >
-                  Meet Our Team
-                </Link>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3">
-              <div className="min-w-32 rounded-2xl border border-white/10 bg-white/5 p-5">
-                <p className="text-3xl font-bold text-white">04</p>
-                <p className="mt-2 text-sm text-white/50">
-                  Core career areas
-                </p>
-              </div>
-
-              <div className="min-w-32 rounded-2xl border border-white/10 bg-white/5 p-5">
-                <p className="text-3xl font-bold text-[#5FC9E6]">01</p>
-                <p className="mt-2 text-sm text-white/50">
-                  Connected ecosystem
-                </p>
-              </div>
-            </div>
+            {/* HERO */}
+      <SplitPageHero
+        eyebrow="About Nexus Hub / Careers"
+        title="Build what comes next with Nexus Hub."
+        description="Join an ecosystem where technology, media, business, creativity, and operations come together to turn ideas into meaningful possibilities."
+        image={siteImages.about.hero}
+        primaryAction={{
+          label: 'Explore Opportunities',
+          href: '#opportunities',
+        }}
+        secondaryAction={{
+          label: 'Meet Our Team',
+          href: '/about/team',
+        }}
+      >
+        <div className="mt-10 grid max-w-md grid-cols-2 gap-6 border-t border-white/10 pt-6">
+          <div>
+            <p className="text-3xl font-bold text-white">04</p>
+            <p className="mt-2 text-sm text-white/50">
+              Core capability areas
+            </p>
+          </div>
+          <div>
+            <p className="text-3xl font-bold text-[#5FC9E6]">01</p>
+            <p className="mt-2 text-sm text-white/50">
+              Connected ecosystem
+            </p>
           </div>
         </div>
-      </section>
+      </SplitPageHero>
 
       {/* INTRODUCTION */}
       <section>

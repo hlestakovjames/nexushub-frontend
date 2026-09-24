@@ -20,38 +20,77 @@ const quickLinks = [
   {
     label: 'Projects',
     href: '/projects',
+    group: 'Explore',
   },
   {
-    label: 'Digital Services',
-    href: '/digital/services',
-  },
-  {
-    label: 'Business Services',
-    href: '/business/services',
-  },
-  {
-    label: 'Business Solutions',
-    href: '/business/solutions',
-  },
-  {
-    label: 'Nexus Hub TV',
-    href: '/media/nexus-hub-tv',
+    label: 'Blog',
+    href: '/blog',
+    group: 'Explore',
   },
   {
     label: 'News',
     href: '/news',
+    group: 'Explore',
   },
   {
     label: 'Events & Activities',
     href: '/events-activities',
+    group: 'Explore',
   },
   {
     label: 'Resources',
     href: '/resources',
+    group: 'Explore',
   },
   {
-    label: 'Contact',
-    href: '/contact',
+    label: 'Digital Services',
+    href: '/digital/services',
+    group: 'Services & Platforms',
+  },
+  {
+    label: 'Business Services',
+    href: '/business/services',
+    group: 'Services & Platforms',
+  },
+  {
+    label: 'Business Solutions',
+    href: '/business/solutions',
+    group: 'Services & Platforms',
+  },
+  {
+    label: 'Platforms',
+    href: '/platforms',
+    group: 'Services & Platforms',
+  },
+  {
+    label: 'Nexus Hub TV',
+    href: '/media/nexus-hub-tv',
+    group: 'Services & Platforms',
+  },
+  {
+    label: 'About',
+    href: '/about',
+    group: 'Nexus Hub',
+  },
+  {
+    label: 'Leadership',
+    href: '/about/leadership',
+    group: 'Nexus Hub',
+  },
+  {
+    label: 'Careers',
+    href: '/about/careers',
+    group: 'Nexus Hub',
+  },
+  {
+    label: 'Partnerships',
+    href: '/business/partnerships',
+    group: 'Nexus Hub',
+  },
+  {
+    label: 'Media',
+    href: '/media',
+    group: 'Nexus Hub',
   },
 ];
 
@@ -146,27 +185,50 @@ export default function GlobalNav({
             {isQuickLinksOpen && (
               <div
                 role="menu"
-                className="absolute left-0 top-full mt-2 w-64 overflow-hidden rounded-xl border border-white/10 bg-[#07123F] p-2 shadow-2xl"
+                className="absolute left-0 top-full mt-2 w-[min(48rem,calc(100vw-3rem))] overflow-hidden rounded-xl border border-white/10 bg-[#07123F] p-4 shadow-2xl"
               >
-                <div className="px-3 py-2">
+                <div className="mb-3 px-2">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#5FC9E6]">
                     Quick Access
                   </p>
+                  <p className="mt-1 text-xs text-white/50">
+                    Explore important areas across Nexus Hub.
+                  </p>
                 </div>
 
-                {quickLinks.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    role="menuitem"
-                    onClick={() =>
-                      setIsQuickLinksOpen(false)
-                    }
-                    className="block rounded-lg px-3 py-2.5 text-sm text-[#1266B6] transition hover:bg-[#050A30]/5 hover:text-[#050A30]"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+                <div className="grid grid-cols-3 gap-4 border-t border-white/10 pt-4">
+                  {[
+                    'Explore',
+                    'Services & Platforms',
+                    'Nexus Hub',
+                  ].map((group) => (
+                    <div key={group}>
+                      <p className="mb-2 px-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/45">
+                        {group}
+                      </p>
+
+                      <div className="space-y-0.5">
+                        {quickLinks
+                          .filter(
+                            (item) => item.group === group,
+                          )
+                          .map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              role="menuitem"
+                              onClick={() =>
+                                setIsQuickLinksOpen(false)
+                              }
+                              className="block rounded-lg px-2.5 py-2 text-sm text-white transition hover:bg-white/10 hover:text-[#5FC9E6]"
+                            >
+                              {item.label}
+                            </Link>
+                          ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
           </div>
@@ -174,14 +236,14 @@ export default function GlobalNav({
           {/* UTILITY ACTIONS */}
           <div className="hidden items-center gap-5 text-[11px] font-semibold uppercase tracking-[0.08em] text-white/90 sm:flex">
             <Link
-              href="/contact?channel=call"
+              href="tel:0728812649"
               className="transition hover:text-[#5FC9E6]"
             >
               Call Us
             </Link>
 
             <Link
-              href="/contact?channel=whatsapp"
+              href="https://wa.me/254713290745"
               className="transition hover:text-[#5FC9E6]"
             >
               WhatsApp
@@ -198,6 +260,8 @@ export default function GlobalNav({
           {/* LOGIN */}
           <Link
             href="/login"
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-md px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.12em] text-white transition hover:bg-white/10 hover:text-[#5FC9E6]"
           >
             Log In

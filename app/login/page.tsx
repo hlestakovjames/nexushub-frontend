@@ -87,11 +87,21 @@ export default function LoginPage() {
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#050A30] text-[#050A30]">
-      {/* BACKGROUND ACCENTS */}
+      {/* HEADQUARTERS BACKGROUND */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-[#1266B6]/20 blur-3xl" />
+        <div className="absolute inset-0">
+          <img
+            src="/images/headquater.jpeg"
+            alt=""
+            className="h-full w-full object-cover"
+          />
+        </div>
 
-        <div className="absolute -bottom-40 -right-20 h-[28rem] w-[28rem] rounded-full bg-[#5FC9E6]/10 blur-3xl" />
+        <div className="absolute inset-0 bg-[#050A30]/10" />
+
+        <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-[#1266B6]/10 blur-3xl" />
+
+        <div className="absolute -bottom-40 -right-20 h-[28rem] w-[28rem] rounded-full bg-[#5FC9E6]/5 blur-3xl" />
       </div>
 
       <div className="relative z-10 flex min-h-screen items-center justify-center px-5 py-10 sm:px-8 lg:px-10">
@@ -118,8 +128,12 @@ export default function LoginPage() {
 
               <div className="relative z-10">
                 <div className="inline-flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#5FC9E6] text-lg font-black text-[#050A30]">
-                    N
+                  <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl bg-white">
+                    <img
+                      src="/images/brand/nexushub-logo.jpeg"
+                      alt="Nexus Hub"
+                      className="h-full w-full object-contain"
+                    />
                   </div>
 
                   <div>
@@ -177,8 +191,12 @@ export default function LoginPage() {
               {/* MOBILE BRAND */}
               <div className="lg:hidden">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#050A30] text-base font-black text-[#5FC9E6]">
-                    N
+                  <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-white">
+                    <img
+                      src="/images/brand/nexushub-logo.jpeg"
+                      alt="Nexus Hub"
+                      className="h-full w-full object-contain"
+                    />
                   </div>
 
                   <div>

@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
 import Footer from '@/components/navigation/Footer';
+import FloatingWhatsApp from '@/components/navigation/FloatingWhatsApp';
 import GlobalNav from '@/components/navigation/GlobalNav';
 
 export default function PublicLayout({
@@ -15,6 +16,8 @@ export default function PublicLayout({
       <main>{children}</main>
 
       <Footer />
+
+      <FloatingWhatsApp />
     </>
   );
 }
