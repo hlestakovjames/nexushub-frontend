@@ -1,110 +1,66 @@
 import Link from 'next/link';
-
-const projects = [
-  {
-    category: 'Digital Platform',
-    title: 'Nexus Hub',
-    description:
-      'The digital ecosystem connecting Nexus Hub media, technology, business, and future ventures.',
-    href: '/',
-  },
-  {
-    category: 'Healthcare',
-    title: 'MercyCare',
-    description:
-      'A community-focused healthcare initiative using digital tools to support programs, services, and community engagement.',
-    href: '#',
-  },
-  {
-    category: 'Sports Media',
-    title: 'Arsenal Pulse',
-    description:
-      'A dedicated sports media platform focused on Arsenal news, stories, analysis, and community engagement.',
-    href: '#',
-  },
-  {
-    category: 'Digital Platform',
-    title: 'Tiqeva',
-    description:
-      'A digital ticketing concept designed to connect event organizers, audiences, and modern ticket experiences.',
-    href: '#',
-  },
-];
+import { projectCategories, projectRecords } from '@/components/projects/project-data';
 
 export default function ProjectsPage() {
   return (
     <main className="bg-white text-[#050A30]">
-      {/* HERO */}
       <section className="bg-[#050A30] text-white">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
           <div className="max-w-4xl">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#5FC9E6]">
-              Projects
+              Nexus Hub Projects
             </p>
 
             <h1 className="mt-5 text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-              Ideas turned
-              <br />
-              into something real.
+              Ideas turned into projects.
             </h1>
 
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/70 sm:text-xl">
-              Explore the platforms, products, brands, and digital
-              initiatives being developed across the Nexus Hub
-              ecosystem.
+            <p className="mt-7 max-w-3xl text-lg leading-8 text-white/70 sm:text-xl">
+              Explore projects across digital innovation, business, media, and
+              community development.
             </p>
           </div>
         </div>
       </section>
 
-      {/* INTRO */}
       <section>
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
-          <div className="max-w-3xl">
+          <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1266B6]">
-              Our Work
+              Project Portfolio
             </p>
 
             <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-              Building things that connect people and possibilities.
+              Four project directions. One connected ecosystem.
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-slate-600">
-              Nexus Hub projects span media, digital technology,
-              business, community initiatives, and emerging ideas.
-              Each project is built with a focus on usefulness,
-              accessibility, and long-term potential.
+              Projects may originate from a digital requirement, a business
+              opportunity, a media initiative, or a community need.
             </p>
           </div>
 
-          {/* PROJECT GRID */}
           <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {projects.map((project, index) => (
+            {projectCategories.map((category) => (
               <Link
-                key={project.title}
-                href={project.href}
-                className="group rounded-2xl border border-slate-200 p-8 transition hover:-translate-y-1 hover:border-[#1266B6]/40 hover:shadow-lg lg:p-10"
+                key={category.href}
+                href={category.href}
+                className="group rounded-2xl border border-slate-200 p-8 transition hover:-translate-y-1 hover:border-[#5FC9E6] hover:shadow-lg"
               >
-                <div className="flex items-start justify-between gap-6">
-                  <span className="text-sm font-semibold text-[#1266B6]">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
+                <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1266B6]">
+                  Projects
+                </span>
 
-                  <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">
-                    {project.category}
-                  </span>
-                </div>
-
-                <h3 className="mt-8 text-3xl font-bold">
-                  {project.title}
+                <h3 className="mt-3 text-3xl font-bold">
+                  {category.name}
                 </h3>
 
-                <p className="mt-4 max-w-xl leading-7 text-slate-600">
-                  {project.description}
+                <p className="mt-4 leading-7 text-slate-600">
+                  {category.description}
                 </p>
 
-                <span className="mt-7 inline-block text-sm font-semibold text-[#1266B6] transition group-hover:translate-x-1">
-                  Explore Project →
+                <span className="mt-7 inline-flex text-sm font-semibold text-[#1266B6] transition group-hover:translate-x-1">
+                  Explore {category.name} Projects →
                 </span>
               </Link>
             ))}
@@ -112,83 +68,71 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* APPROACH */}
       <section className="bg-slate-50">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
-          <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1266B6]">
-                Our Approach
-              </p>
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1266B6]">
+              Featured Projects
+            </p>
 
-              <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-                Projects start with a problem.
-              </h2>
-            </div>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+              Selected project records
+            </h2>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              <article className="rounded-2xl bg-white p-7">
-                <h3 className="text-xl font-bold">
-                  Understand
+            <p className="mt-5 leading-7 text-slate-600">
+              These are the initial portfolio records exposed by the frontend.
+              The architecture is ready to expand into a full CMS-driven
+              project portfolio.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {projectRecords.map((project) => (
+              <Link
+                key={project.slug}
+                href={`/projects/${project.category.toLowerCase()}/${project.slug}`}
+                className="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-lg"
+              >
+                <div className="flex flex-wrap gap-3">
+                  <span className="rounded-full bg-[#050A30] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+                    {project.category}
+                  </span>
+
+                  <span className="rounded-full bg-[#5FC9E6]/20 px-3 py-1 text-xs font-semibold text-[#1266B6]">
+                    {project.status}
+                  </span>
+                </div>
+
+                <h3 className="mt-5 text-2xl font-bold">
+                  {project.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
-                  We identify the problem, opportunity, users, and
-                  context before building.
+                <p className="mt-2 text-sm font-medium text-[#1266B6]">
+                  {project.area}
                 </p>
-              </article>
 
-              <article className="rounded-2xl bg-white p-7">
-                <h3 className="text-xl font-bold">
-                  Design
-                </h3>
-
-                <p className="mt-3 text-sm leading-6 text-slate-600">
-                  Ideas are shaped into clear experiences and
-                  practical systems.
+                <p className="mt-4 leading-7 text-slate-600">
+                  {project.summary}
                 </p>
-              </article>
-
-              <article className="rounded-2xl bg-white p-7">
-                <h3 className="text-xl font-bold">
-                  Build
-                </h3>
-
-                <p className="mt-3 text-sm leading-6 text-slate-600">
-                  Technology turns the concept into a functioning
-                  product or platform.
-                </p>
-              </article>
-
-              <article className="rounded-2xl bg-white p-7">
-                <h3 className="text-xl font-bold">
-                  Evolve
-                </h3>
-
-                <p className="mt-3 text-sm leading-6 text-slate-600">
-                  Successful projects continue to improve as their
-                  users and requirements grow.
-                </p>
-              </article>
-            </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* DIGITAL CTA */}
       <section className="bg-[#050A30] text-white">
         <div className="mx-auto max-w-7xl px-6 py-20 text-center lg:px-8 lg:py-28">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#5FC9E6]">
-            Have an Idea?
+            Start a Project
           </p>
 
           <h2 className="mx-auto mt-4 max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl">
-            Your idea could become the next project.
+            Have an idea worth turning into something real?
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-white/65">
-            Whether it is a website, platform, software product, or
-            something completely new, let's explore the possibility.
+            Tell us what you want to achieve and let&apos;s explore the right
+            combination of technology, business, media, and partnerships.
           </p>
 
           <Link

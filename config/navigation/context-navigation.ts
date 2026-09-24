@@ -1002,8 +1002,152 @@ export const navigationContexts: NavigationContext[] = [
     routePrefix: '/projects',
     items: [
       {
-        label: 'PROJECTS',
+        label: 'ALL PROJECTS',
         href: '/projects',
+      },
+      {
+        label: 'DIGITAL',
+        href: '/projects/digital',
+      },
+      {
+        label: 'BUSINESS',
+        href: '/projects/business',
+      },
+      {
+        label: 'MEDIA',
+        href: '/projects/media',
+      },
+      {
+        label: 'COMMUNITY',
+        href: '/projects/community',
+      },
+    ],
+  },
+
+  {
+    id: 'projects-digital',
+    label: 'Digital Projects',
+    routePrefix: '/projects/digital',
+    items: [
+      {
+        label: 'HOME',
+        href: '/projects/digital',
+      },
+      {
+        label: 'WEB & SOFTWARE',
+        href: '/projects/digital/web-software',
+      },
+      {
+        label: 'MOBILE',
+        href: '/projects/digital/mobile',
+      },
+      {
+        label: 'AI & AUTOMATION',
+        href: '/projects/digital/ai-automation',
+      },
+      {
+        label: 'ICT SOLUTIONS',
+        href: '/projects/digital/ict-solutions',
+      },
+      {
+        label: 'DIGITAL TRANSFORMATION',
+        href: '/projects/digital/digital-transformation',
+      },
+    ],
+  },
+
+  {
+    id: 'projects-business',
+    label: 'Business Projects',
+    routePrefix: '/projects/business',
+    items: [
+      {
+        label: 'HOME',
+        href: '/projects/business',
+      },
+      {
+        label: 'CONSULTING',
+        href: '/projects/business/consulting',
+      },
+      {
+        label: 'PARTNERSHIPS',
+        href: '/projects/business/partnerships',
+      },
+      {
+        label: 'CORPORATE',
+        href: '/projects/business/corporate',
+      },
+      {
+        label: 'BUSINESS DEVELOPMENT',
+        href: '/projects/business/business-development',
+      },
+      {
+        label: 'GROWTH',
+        href: '/projects/business/growth',
+      },
+    ],
+  },
+
+  {
+    id: 'projects-media',
+    label: 'Media Projects',
+    routePrefix: '/projects/media',
+    items: [
+      {
+        label: 'HOME',
+        href: '/projects/media',
+      },
+      {
+        label: 'NEXUS HUB TV',
+        href: '/projects/media/nexus-hub-tv',
+      },
+      {
+        label: 'FOOTBALL',
+        href: '/projects/media/football',
+      },
+      {
+        label: 'STORIES',
+        href: '/projects/media/stories',
+      },
+      {
+        label: 'VOICES',
+        href: '/projects/media/voices',
+      },
+      {
+        label: 'PRODUCTIONS',
+        href: '/projects/media/productions',
+      },
+    ],
+  },
+
+  {
+    id: 'projects-community',
+    label: 'Community Projects',
+    routePrefix: '/projects/community',
+    items: [
+      {
+        label: 'HOME',
+        href: '/projects/community',
+      },
+      {
+        label: 'HEALTH',
+        href: '/projects/community/health',
+      },
+      {
+        label: 'EDUCATION',
+        href: '/projects/community/education',
+      },
+      {
+        label: 'SOCIAL IMPACT',
+        href: '/projects/community/social-impact',
+      },
+      {
+        label: 'OUTREACH',
+        href: '/projects/community/outreach',
+      },
+      {
+        label: 'COMMUNITY DEVELOPMENT',
+        href: '/projects/community/community-development',
       },
     ],
   },
@@ -1038,6 +1182,14 @@ export const navigationContexts: NavigationContext[] = [
       {
         label: 'NHTV VOICES',
         href: '/media/nhtv-voices',
+      },
+      {
+        label: 'KUHRSA ↗',
+        href: 'https://kuhrsa.vercel.app',
+      },
+      {
+        label: 'MERCYCARE ↗',
+        href: 'https://mercycarehealth.vercel.app',
       },
     ],
   },
