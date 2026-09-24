@@ -855,6 +855,138 @@ export const navigationContexts: NavigationContext[] = [
         label: 'DOCUMENTS',
         href: '/resources/documents',
       },
+      {
+        label: 'TEMPLATES',
+        href: '/resources/templates',
+      },
+    ],
+  },
+
+  {
+    id: 'resources-downloads',
+    label: 'Downloads',
+    routePrefix: '/resources/downloads',
+    items: [
+      {
+        label: 'HOME',
+        href: '/resources/downloads',
+      },
+      {
+        label: 'PUBLICATIONS',
+        href: '/resources/downloads/publications',
+      },
+      {
+        label: 'REPORTS',
+        href: '/resources/downloads/reports',
+      },
+      {
+        label: 'MEDIA KITS',
+        href: '/resources/downloads/media-kits',
+      },
+      {
+        label: 'FORMS',
+        href: '/resources/downloads/forms',
+      },
+      {
+        label: 'OTHER DOWNLOADS',
+        href: '/resources/downloads/other',
+      },
+    ],
+  },
+
+  {
+    id: 'resources-guides',
+    label: 'Guides',
+    routePrefix: '/resources/guides',
+    items: [
+      {
+        label: 'HOME',
+        href: '/resources/guides',
+      },
+      {
+        label: 'DIGITAL',
+        href: '/resources/guides/digital',
+      },
+      {
+        label: 'BUSINESS',
+        href: '/resources/guides/business',
+      },
+      {
+        label: 'MEDIA',
+        href: '/resources/guides/media',
+      },
+      {
+        label: 'COMMUNITY',
+        href: '/resources/guides/community',
+      },
+      {
+        label: 'HOW-TO',
+        href: '/resources/guides/how-to',
+      },
+    ],
+  },
+
+  {
+    id: 'resources-documents',
+    label: 'Documents',
+    routePrefix: '/resources/documents',
+    items: [
+      {
+        label: 'HOME',
+        href: '/resources/documents',
+      },
+      {
+        label: 'ORGANISATION',
+        href: '/resources/documents/organisation',
+      },
+      {
+        label: 'POLICIES',
+        href: '/resources/documents/policies',
+      },
+      {
+        label: 'REPORTS',
+        href: '/resources/documents/reports',
+      },
+      {
+        label: 'LEGAL',
+        href: '/resources/documents/legal',
+      },
+      {
+        label: 'PUBLIC DOCUMENTS',
+        href: '/resources/documents/public',
+      },
+    ],
+  },
+
+  {
+    id: 'resources-templates',
+    label: 'Templates',
+    routePrefix: '/resources/templates',
+    items: [
+      {
+        label: 'HOME',
+        href: '/resources/templates',
+      },
+      {
+        label: 'BUSINESS',
+        href: '/resources/templates/business',
+      },
+      {
+        label: 'PROJECTS',
+        href: '/resources/templates/projects',
+      },
+      {
+        label: 'MEDIA',
+        href: '/resources/templates/media',
+      },
+      {
+        label: 'ORGANISATION',
+        href: '/resources/templates/organisation',
+      },
+      {
+        label: 'FORMS',
+        href: '/resources/templates/forms',
+      },
     ],
   },
 
