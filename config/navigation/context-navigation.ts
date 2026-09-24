@@ -547,6 +547,190 @@ export const navigationContexts: NavigationContext[] = [
         label: 'ALL NEWS',
         href: '/news',
       },
+      {
+        label: 'ANNOUNCEMENTS',
+        href: '/news/announcements',
+      },
+      {
+        label: 'NEXUS HUB',
+        href: '/news/nexus-hub',
+      },
+      {
+        label: 'DIGITAL',
+        href: '/news/digital',
+      },
+      {
+        label: 'BUSINESS',
+        href: '/news/business',
+      },
+      {
+        label: 'MEDIA',
+        href: '/news/media',
+      },
+      {
+        label: 'COMMUNITY',
+        href: '/news/community',
+      },
+    ],
+  },
+
+  {
+    id: 'news-nexus-hub',
+    label: 'Nexus Hub',
+    routePrefix: '/news/nexus-hub',
+    items: [
+      {
+        label: 'HOME',
+        href: '/news/nexus-hub',
+      },
+      {
+        label: 'ORGANISATION',
+        href: '/news/nexus-hub/organisation',
+      },
+      {
+        label: 'LEADERSHIP',
+        href: '/news/nexus-hub/leadership',
+      },
+      {
+        label: 'PROJECTS',
+        href: '/news/nexus-hub/projects',
+      },
+      {
+        label: 'ECOSYSTEM',
+        href: '/news/nexus-hub/ecosystem',
+      },
+      {
+        label: 'UPDATES',
+        href: '/news/nexus-hub/updates',
+      },
+    ],
+  },
+
+  {
+    id: 'news-digital',
+    label: 'Digital',
+    routePrefix: '/news/digital',
+    items: [
+      {
+        label: 'HOME',
+        href: '/news/digital',
+      },
+      {
+        label: 'PRODUCTS',
+        href: '/news/digital/products',
+      },
+      {
+        label: 'TECHNOLOGY',
+        href: '/news/digital/technology',
+      },
+      {
+        label: 'INNOVATION',
+        href: '/news/digital/innovation',
+      },
+      {
+        label: 'DIGITAL TRANSFORMATION',
+        href: '/news/digital/digital-transformation',
+      },
+      {
+        label: 'UPDATES',
+        href: '/news/digital/updates',
+      },
+    ],
+  },
+
+  {
+    id: 'news-business',
+    label: 'Business',
+    routePrefix: '/news/business',
+    items: [
+      {
+        label: 'HOME',
+        href: '/news/business',
+      },
+      {
+        label: 'PARTNERSHIPS',
+        href: '/news/business/partnerships',
+      },
+      {
+        label: 'PROJECTS',
+        href: '/news/business/projects',
+      },
+      {
+        label: 'CLIENTS',
+        href: '/news/business/clients',
+      },
+      {
+        label: 'GROWTH',
+        href: '/news/business/growth',
+      },
+      {
+        label: 'UPDATES',
+        href: '/news/business/updates',
+      },
+    ],
+  },
+
+  {
+    id: 'news-media',
+    label: 'Media News',
+    routePrefix: '/news/media',
+    items: [
+      {
+        label: 'HOME',
+        href: '/news/media',
+      },
+      {
+        label: 'NEXUS HUB TV',
+        href: '/news/media/nexus-hub-tv',
+      },
+      {
+        label: 'FOOTBALL',
+        href: '/news/media/football',
+      },
+      {
+        label: 'STORIES',
+        href: '/news/media/stories',
+      },
+      {
+        label: 'VOICES',
+        href: '/news/media/voices',
+      },
+      {
+        label: 'PRODUCTIONS',
+        href: '/news/media/productions',
+      },
+    ],
+  },
+
+  {
+    id: 'news-community',
+    label: 'Community',
+    routePrefix: '/news/community',
+    items: [
+      {
+        label: 'HOME',
+        href: '/news/community',
+      },
+      {
+        label: 'INITIATIVES',
+        href: '/news/community/initiatives',
+      },
+      {
+        label: 'IMPACT',
+        href: '/news/community/impact',
+      },
+      {
+        label: 'PEOPLE',
+        href: '/news/community/people',
+      },
+      {
+        label: 'PLACES',
+        href: '/news/community/places',
+      },
+      {
+        label: 'UPDATES',
+        href: '/news/community/updates',
+      },
     ],
   },
 
