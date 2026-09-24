@@ -749,6 +749,82 @@ export const navigationContexts: NavigationContext[] = [
         label: 'ALL EVENTS & ACTIVITIES',
         href: '/events-activities',
       },
+      {
+        label: 'EVENTS',
+        href: '/events-activities/events',
+      },
+      {
+        label: 'ACTIVITIES',
+        href: '/events-activities/activities',
+      },
+      {
+        label: 'CALENDAR',
+        href: '/events-activities/calendar',
+      },
+    ],
+  },
+
+  {
+    id: 'events',
+    label: 'Events',
+    routePrefix: '/events-activities/events',
+    items: [
+      {
+        label: 'HOME',
+        href: '/events-activities/events',
+      },
+      {
+        label: 'UPCOMING',
+        href: '/events-activities/events/upcoming',
+      },
+      {
+        label: 'ONGOING',
+        href: '/events-activities/events/ongoing',
+      },
+      {
+        label: 'PAST',
+        href: '/events-activities/events/past',
+      },
+      {
+        label: 'VENUES',
+        href: '/events-activities/events/venues',
+      },
+      {
+        label: 'CATEGORIES',
+        href: '/events-activities/events/categories',
+      },
+    ],
+  },
+
+  {
+    id: 'activities',
+    label: 'Activities',
+    routePrefix: '/events-activities/activities',
+    items: [
+      {
+        label: 'HOME',
+        href: '/events-activities/activities',
+      },
+      {
+        label: 'UPCOMING',
+        href: '/events-activities/activities/upcoming',
+      },
+      {
+        label: 'ONGOING',
+        href: '/events-activities/activities/ongoing',
+      },
+      {
+        label: 'PAST',
+        href: '/events-activities/activities/past',
+      },
+      {
+        label: 'PROGRAMMES',
+        href: '/events-activities/activities/programmes',
+      },
+      {
+        label: 'PARTICIPATION',
+        href: '/events-activities/activities/participation',
+      },
     ],
   },
 
