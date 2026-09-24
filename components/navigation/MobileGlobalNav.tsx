@@ -88,7 +88,7 @@ export default function MobileGlobalNav({
       </button>
 
       {isOpen && (
-        <div className="absolute left-0 right-0 top-full border-b border-[#050A30]/10 bg-white text-[#050A30] shadow-xl md:hidden">
+        <div className="absolute left-0 right-0 top-full max-h-[calc(100dvh-4rem)] overflow-y-auto border-b border-[#050A30]/10 bg-white text-[#050A30] shadow-xl md:hidden">
           <nav
             aria-label="Mobile navigation"
             className="mx-auto max-w-7xl px-6 py-5"
