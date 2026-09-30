@@ -17,20 +17,8 @@ export type NavigationContext = {
 |
 | Navigation is resolved by the deepest matching routePrefix.
 |
-| Example:
-|
-| /media
-|   -> media context
-|
-| /media/nhtv-football
-|   -> nhtv-football context
-|
-| /media/nhtv-football/teams
-|   -> inherits nhtv-football context
-|
-| /media/nhtv-football/teams/men
-|   -> can later receive its own context by adding a more specific
-|      routePrefix.
+| Section-specific contexts can be added here when a corporate section
+| requires its own navigation structure.
 |
 |--------------------------------------------------------------------------
 */
@@ -47,7 +35,7 @@ export const navigationContexts: NavigationContext[] = [
       },
       {
         label: 'Media',
-        href: '/media',
+        href: 'https://nexushub-media.vercel.app/',
       },
       {
         label: 'Digital',
@@ -122,234 +110,6 @@ export const navigationContexts: NavigationContext[] = [
       {
         label: 'Careers',
         href: '/about/careers',
-      },
-    ],
-  },
-
-  /*
-  |--------------------------------------------------------------------------
-  | MEDIA
-  |--------------------------------------------------------------------------
-  */
-
-  {
-    id: 'media',
-    label: 'Media',
-    routePrefix: '/media',
-    items: [
-      {
-        label: 'NEXUS HUB TV',
-        href: '/media/nexus-hub-tv',
-      },
-      {
-        label: 'NHTV FOOTBALL',
-        href: '/media/nhtv-football',
-      },
-      {
-        label: 'NHTV STORIES',
-        href: '/media/nhtv-stories',
-      },
-      {
-        label: 'NHTV VOICES',
-        href: '/media/nhtv-voices',
-      },
-    ],
-  },
-
-  {
-    id: 'nexus-hub-tv',
-    label: 'NHTV',
-    routePrefix: '/media/nexus-hub-tv',
-    items: [
-      {
-        label: 'HOME',
-        href: '/media/nexus-hub-tv',
-      },
-      {
-        label: 'SHOWS',
-        href: '/media/nexus-hub-tv/shows',
-      },
-      {
-        label: 'PROGRAMS',
-        href: '/media/nexus-hub-tv/programs',
-      },
-      {
-        label: 'LIVE',
-        href: '/media/nexus-hub-tv/live',
-      },
-      {
-        label: 'VIDEOS',
-        href: '/media/nexus-hub-tv/videos',
-      },
-      {
-        label: 'NEWS',
-        href: '/media/nexus-hub-tv/news',
-      },
-      {
-        label: 'ABOUT',
-        href: '/media/nexus-hub-tv/about',
-      },
-    ],
-  },
-
-  {
-    id: 'nhtv-football',
-    label: 'Football',
-    routePrefix: '/media/nhtv-football',
-    items: [
-      {
-        label: 'HOME',
-        href: '/media/nhtv-football',
-      },
-      {
-        label: 'NEWS',
-        href: '/media/nhtv-football/news',
-      },
-      {
-        label: 'FIXTURES',
-        href: '/media/nhtv-football/fixtures',
-      },
-      {
-        label: 'RESULTS',
-        href: '/media/nhtv-football/results',
-      },
-      {
-        label: 'TEAMS',
-        href: '/media/nhtv-football/teams',
-      },
-      {
-        label: 'VIDEOS',
-        href: '/media/nhtv-football/videos',
-      },
-      {
-        label: 'ABOUT',
-        href: '/media/nhtv-football/about',
-      },
-    ],
-  },
-
-  {
-    id: 'nhtv-football-teams',
-    label: 'Teams',
-    routePrefix: '/media/nhtv-football/teams',
-    items: [
-    { label: 'HOME', href: '/media/nhtv-football/teams' },
-    { label: 'MEN', href: '/media/nhtv-football/teams/men' },
-    { label: 'WOMEN', href: '/media/nhtv-football/teams/women' },
-    { label: 'PLAYERS', href: '/media/nhtv-football/teams/players' },
-    {
-      label: 'COMPETITIONS',
-      href: '/media/nhtv-football/teams/competitions',
-    },
-  ],
-  },
-
-  {
-  id: 'nhtv-football-teams-women',
-  label: 'Women',
-  routePrefix: '/media/nhtv-football/teams/women',
-  items: [
-    { label: 'HOME', href: '/media/nhtv-football/teams/women' },
-    { label: 'TEAMS', href: '/media/nhtv-football/teams/women/teams' },
-    { label: 'PLAYERS', href: '/media/nhtv-football/teams/women/players' },
-    {
-      label: 'COMPETITIONS',
-      href: '/media/nhtv-football/teams/women/competitions',
-    },
-    { label: 'FIXTURES', href: '/media/nhtv-football/teams/women/fixtures' },
-    { label: 'RESULTS', href: '/media/nhtv-football/teams/women/results' },
-    { label: 'NEWS', href: '/media/nhtv-football/teams/women/news' },
-    { label: 'VIDEOS', href: '/media/nhtv-football/teams/women/videos' },
-  ],
-},
-
-{
-    id: 'nhtv-football-teams-men',
-    label: 'Men',
-    routePrefix: '/media/nhtv-football/teams/men',
-    items: [
-    { label: 'HOME', href: '/media/nhtv-football/teams/men' },
-    { label: 'TEAMS', href: '/media/nhtv-football/teams/men/teams' },
-    { label: 'PLAYERS', href: '/media/nhtv-football/teams/men/players' },
-    {
-      label: 'COMPETITIONS',
-      href: '/media/nhtv-football/teams/men/competitions',
-    },
-    { label: 'FIXTURES', href: '/media/nhtv-football/teams/men/fixtures' },
-    { label: 'RESULTS', href: '/media/nhtv-football/teams/men/results' },
-    { label: 'NEWS', href: '/media/nhtv-football/teams/men/news' },
-    { label: 'VIDEOS', href: '/media/nhtv-football/teams/men/videos' },
-  ],
-  },
-
-  {
-    id: 'nhtv-stories',
-    label: 'Stories',
-    routePrefix: '/media/nhtv-stories',
-    items: [
-      {
-        label: 'HOME',
-        href: '/media/nhtv-stories',
-      },
-      {
-        label: 'FEATURED',
-        href: '/media/nhtv-stories/featured',
-      },
-      {
-        label: 'PEOPLE',
-        href: '/media/nhtv-stories/people',
-      },
-      {
-        label: 'CULTURE',
-        href: '/media/nhtv-stories/culture',
-      },
-      {
-        label: 'COMMUNITY',
-        href: '/media/nhtv-stories/community',
-      },
-      {
-        label: 'VIDEO',
-        href: '/media/nhtv-stories/video',
-      },
-      {
-        label: 'ABOUT',
-        href: '/media/nhtv-stories/about',
-      },
-    ],
-  },
-
-  {
-    id: 'nhtv-voices',
-    label: 'Voices',
-    routePrefix: '/media/nhtv-voices',
-    items: [
-      {
-        label: 'HOME',
-        href: '/media/nhtv-voices',
-      },
-      {
-        label: 'PODCASTS',
-        href: '/media/nhtv-voices/podcasts',
-      },
-      {
-        label: 'INTERVIEWS',
-        href: '/media/nhtv-voices/interviews',
-      },
-      {
-        label: 'OPINION',
-        href: '/media/nhtv-voices/opinion',
-      },
-      {
-        label: 'FEATURES',
-        href: '/media/nhtv-voices/features',
-      },
-      {
-        label: 'VIDEO',
-        href: '/media/nhtv-voices/video',
-      },
-      {
-        label: 'ABOUT',
-        href: '/media/nhtv-voices/about',
       },
     ],
   },
@@ -1565,19 +1325,19 @@ export const navigationContexts: NavigationContext[] = [
       },
       {
         label: 'NEXUS HUB TV',
-        href: '/media/nexus-hub-tv',
+        href: 'https://nexushub-media.vercel.app/nexus-hub-tv',
       },
       {
         label: 'NHTV FOOTBALL',
-        href: '/media/nhtv-football',
+        href: 'https://nexushub-media.vercel.app/nhtv-football',
       },
       {
         label: 'NHTV STORIES',
-        href: '/media/nhtv-stories',
+        href: 'https://nexushub-media.vercel.app/nhtv-stories',
       },
       {
         label: 'NHTV VOICES',
-        href: '/media/nhtv-voices',
+        href: 'https://nexushub-media.vercel.app/nhtv-voices',
       },
       {
         label: 'KUHRSA ↗',

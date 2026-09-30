@@ -131,7 +131,7 @@ const ecosystem = [
     eyebrow: 'Content',
     description:
       'Our mission becomes media through stories, productions, conversations, audiences, and connected platforms.',
-    href: '/media',
+    href: 'https://nexushub-media.vercel.app/',
   },
   {
     title: 'Business',

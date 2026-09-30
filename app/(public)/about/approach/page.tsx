@@ -113,7 +113,7 @@ const ecosystemApplications = [
     title: 'Media',
     description:
       'We apply it to content, storytelling, productions, audience experiences, conversations, and media platforms.',
-    href: '/media',
+    href: 'https://nexushub-media.vercel.app/',
     label: 'Explore Media',
   },
   {

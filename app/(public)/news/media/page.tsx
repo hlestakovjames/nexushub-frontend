@@ -172,7 +172,7 @@ export default function NewsMediaPage() {
                 </div>
 
                 <Link
-                  href="/media"
+                  href="https://nexushub-media.vercel.app/"
                   className="mt-8 inline-flex rounded-md bg-[#5FC9E6] px-6 py-3 text-sm font-semibold text-[#050A30] transition hover:opacity-90"
                 >
                   Explore Media
@@ -281,7 +281,7 @@ export default function NewsMediaPage() {
 
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <Link
-              href="/media/nexus-hub-tv"
+              href="https://nexushub-media.vercel.app/nexus-hub-tv"
               className="rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:shadow-lg"
             >
               <p className="text-sm font-semibold text-[#1266B6]">
@@ -299,7 +299,7 @@ export default function NewsMediaPage() {
             </Link>
 
             <Link
-              href="/media/nhtv-football"
+              href="https://nexushub-media.vercel.app/nhtv-football"
               className="rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:shadow-lg"
             >
               <p className="text-sm font-semibold text-[#1266B6]">
@@ -316,7 +316,7 @@ export default function NewsMediaPage() {
             </Link>
 
             <Link
-              href="/media/nhtv-stories"
+              href="https://nexushub-media.vercel.app/nhtv-stories"
               className="rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:shadow-lg"
             >
               <p className="text-sm font-semibold text-[#1266B6]">
@@ -333,7 +333,7 @@ export default function NewsMediaPage() {
             </Link>
 
             <Link
-              href="/media/nhtv-voices"
+              href="https://nexushub-media.vercel.app/nhtv-voices"
               className="rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:shadow-lg"
             >
               <p className="text-sm font-semibold text-[#1266B6]">
@@ -413,7 +413,7 @@ export default function NewsMediaPage() {
             </Link>
 
             <Link
-              href="/media"
+              href="https://nexushub-media.vercel.app/"
               className="rounded-md border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
             >
               Explore Media

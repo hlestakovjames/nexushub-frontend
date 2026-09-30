@@ -19,10 +19,10 @@ const footerGroups = [
   {
     title: 'Media',
     links: [
-      { label: 'Nexus Hub TV', href: '/media/nexus-hub-tv' },
-      { label: 'NHTV Football', href: '/media/nhtv-football' },
-      { label: 'NHTV Stories', href: '/media/nhtv-stories' },
-      { label: 'NHTV Voices', href: '/media/nhtv-voices' },
+      { label: 'Nexus Hub TV', href: 'https://nexushub-media.vercel.app/nexus-hub-tv' },
+      { label: 'NHTV Football', href: 'https://nexushub-media.vercel.app/nhtv-football' },
+      { label: 'NHTV Stories', href: 'https://nexushub-media.vercel.app/nhtv-stories' },
+      { label: 'NHTV Voices', href: 'https://nexushub-media.vercel.app/nhtv-voices' },
     ],
   },
   {

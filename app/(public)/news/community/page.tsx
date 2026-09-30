@@ -302,7 +302,7 @@ export default function NewsCommunityPage() {
             </Link>
 
             <Link
-              href="/media/nhtv-stories"
+              href="https://nexushub-media.vercel.app/nhtv-stories"
               className="rounded-2xl border border-slate-200 p-7 transition hover:-translate-y-1 hover:shadow-lg"
             >
               <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#1266B6]">
@@ -320,7 +320,7 @@ export default function NewsCommunityPage() {
             </Link>
 
             <Link
-              href="/media"
+              href="https://nexushub-media.vercel.app/"
               className="rounded-2xl border border-slate-200 p-7 transition hover:-translate-y-1 hover:shadow-lg"
             >
               <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#1266B6]">

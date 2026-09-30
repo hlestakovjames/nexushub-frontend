@@ -253,7 +253,7 @@ export default function PartnershipsPage() {
               </p>
 
               <Link
-                href="/media"
+                href="https://nexushub-media.vercel.app/"
                 className="mt-7 inline-block text-sm font-semibold text-[#5FC9E6]"
               >
                 Explore Media →

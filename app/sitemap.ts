@@ -12,11 +12,11 @@ const routes = [
   '/about/team',
   '/about/careers',
 
-  '/media',
-  '/media/nexus-hub-tv',
-  '/media/nhtv-football',
-  '/media/nhtv-stories',
-  '/media/nhtv-voices',
+  'https://nexushub-media.vercel.app/',
+  'https://nexushub-media.vercel.app/nexus-hub-tv',
+  'https://nexushub-media.vercel.app/nhtv-football',
+  'https://nexushub-media.vercel.app/nhtv-stories',
+  'https://nexushub-media.vercel.app/nhtv-voices',
 
   '/digital',
   '/digital/services',
@@ -75,7 +75,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ? 1
         : [
             '/about',
-            '/media',
+            'https://nexushub-media.vercel.app/',
             '/digital',
             '/business',
             '/projects',

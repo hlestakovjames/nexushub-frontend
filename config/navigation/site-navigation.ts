@@ -21,7 +21,7 @@ export const globalNavigation: NavigationItem[] = [
   },
   {
     label: 'Media',
-    href: '/media',
+    href: 'https://nexushub-media.vercel.app/',
   },
   {
     label: 'Digital',
@@ -93,49 +93,6 @@ export const sectionNavigation: SectionNavigation[] = [
       {
         label: 'Our Approach',
         href: '/about/approach',
-      },
-    ],
-  },
-
-  /*
-  |--------------------------------------------------------------------------
-  | MEDIA
-  |--------------------------------------------------------------------------
-  */
-
-  {
-    id: 'media',
-    label: 'Media',
-    href: '/media',
-
-    globalItems: [
-      'About',
-      'Media',
-      'Digital',
-      'Business',
-      'Blog',
-      'News',
-      'Events & Activities',
-      'Resources',
-      'Platforms',
-    ],
-
-    items: [
-      {
-        label: 'Nexus Hub TV',
-        href: '/media/nexus-hub-tv',
-      },
-      {
-        label: 'NHTV Football',
-        href: '/media/nhtv-football',
-      },
-      {
-        label: 'NHTV Stories',
-        href: '/media/nhtv-stories',
-      },
-      {
-        label: 'NHTV Voices',
-        href: '/media/nhtv-voices',
       },
     ],
   },
@@ -485,19 +442,19 @@ export const sectionNavigation: SectionNavigation[] = [
       },
       {
         label: 'Nexus Hub TV',
-        href: '/media/nexus-hub-tv',
+        href: 'https://nexushub-media.vercel.app/nexus-hub-tv',
       },
       {
         label: 'NHTV Football',
-        href: '/media/nhtv-football',
+        href: 'https://nexushub-media.vercel.app/nhtv-football',
       },
       {
         label: 'NHTV Stories',
-        href: '/media/nhtv-stories',
+        href: 'https://nexushub-media.vercel.app/nhtv-stories',
       },
       {
         label: 'NHTV Voices',
-        href: '/media/nhtv-voices',
+        href: 'https://nexushub-media.vercel.app/nhtv-voices',
       },
     ],
   },

@@ -6,28 +6,28 @@ const nexusPlatforms = [
   {
     title: 'Nexus Hub TV',
     label: 'MEDIA PLATFORM',
-    href: '/media/nexus-hub-tv',
+    href: 'https://nexushub-media.vercel.app/nexus-hub-tv',
     description:
       'The central television and video platform for Nexus Hub programming, shows, live broadcasts, videos, and media news.',
   },
   {
     title: 'NHTV Football',
     label: 'SPORTS MEDIA PLATFORM',
-    href: '/media/nhtv-football',
+    href: 'https://nexushub-media.vercel.app/nhtv-football',
     description:
       'A dedicated football media platform covering teams, fixtures, results, competitions, videos, and football news.',
   },
   {
     title: 'NHTV Stories',
     label: 'STORYTELLING PLATFORM',
-    href: '/media/nhtv-stories',
+    href: 'https://nexushub-media.vercel.app/nhtv-stories',
     description:
       'A story-led media platform focused on people, culture, community, featured stories, and documentary-style content.',
   },
   {
     title: 'NHTV Voices',
     label: 'CONVERSATION PLATFORM',
-    href: '/media/nhtv-voices',
+    href: 'https://nexushub-media.vercel.app/nhtv-voices',
     description:
       'A platform for podcasts, interviews, opinion, features, video conversations, and diverse perspectives.',
   },
@@ -316,7 +316,7 @@ export default function PlatformsPage() {
           </p>
 
           <Link
-            href="/media"
+            href="https://nexushub-media.vercel.app/"
             className="mt-8 inline-flex rounded-md bg-[#5FC9E6] px-6 py-3 text-sm font-semibold text-[#050A30] transition hover:opacity-90"
           >
             Explore Media

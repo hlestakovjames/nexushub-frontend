@@ -44,7 +44,7 @@ const capabilities = [
     title: 'Media Production',
     description:
       'Plan and create video, editorial, visual, and multimedia content around specific communication objectives.',
-    href: '/media',
+    href: 'https://nexushub-media.vercel.app/',
   },
   {
     title: 'Digital Distribution',
@@ -151,7 +151,7 @@ export default function MediaMarketingSolutionsPage() {
               </Link>
 
               <Link
-                href="/media"
+                href="https://nexushub-media.vercel.app/"
                 className="rounded-md border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 Explore Media

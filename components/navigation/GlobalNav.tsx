@@ -64,7 +64,7 @@ const quickLinks = [
   },
   {
     label: 'Nexus Hub TV',
-    href: '/media/nexus-hub-tv',
+    href: 'https://nexushub-media.vercel.app/nexus-hub-tv',
     group: 'Services & Platforms',
   },
   {
@@ -89,7 +89,7 @@ const quickLinks = [
   },
   {
     label: 'Media',
-    href: '/media',
+    href: 'https://nexushub-media.vercel.app/',
     group: 'Nexus Hub',
   },
 ];

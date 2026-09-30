@@ -18,7 +18,7 @@ const pillars = [
     eyebrow: 'Content & Audiences',
     description:
       'We create media experiences, original content, and audience platforms that connect people with stories, conversations, ideas, and communities.',
-    href: '/media',
+    href: 'https://nexushub-media.vercel.app/',
     action: 'Explore Media',
   },
   {
@@ -157,7 +157,7 @@ const ecosystemAreas = [
     title: 'Media Ecosystem',
     description:
       'Nexus Hub TV, NHTV Football, NHTV Stories, NHTV Voices, and the wider content ecosystem.',
-    href: '/media',
+    href: 'https://nexushub-media.vercel.app/',
   },
   {
     title: 'Business Ecosystem',
@@ -446,7 +446,7 @@ export default function AboutPage() {
                 <li>Audience Development</li>
               </ul>
               <Link
-                href="/media"
+                href="https://nexushub-media.vercel.app/"
                 className="mt-7 inline-flex text-sm font-bold text-[#1266B6]"
               >
                 Explore Media →

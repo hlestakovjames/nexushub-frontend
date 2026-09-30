@@ -374,7 +374,7 @@ export default function BrandCreativePage() {
               </p>
 
               <Link
-                href="/media"
+                href="https://nexushub-media.vercel.app/"
                 className="mt-7 inline-block text-sm font-semibold text-[#1266B6]"
               >
                 Explore Media →

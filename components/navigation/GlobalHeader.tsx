@@ -4,7 +4,7 @@ import NexusHubLogo from '@/components/brand/NexusHubLogo';
 
 const globalNavigation = [
   { label: 'About', href: '/about' },
-  { label: 'Media', href: '/media' },
+  { label: 'Media', href: 'https://nexushub-media.vercel.app/' },
   { label: 'Digital', href: '/digital' },
   { label: 'Business', href: '/business' },
 ];

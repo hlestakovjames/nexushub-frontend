@@ -79,7 +79,7 @@ const ecosystem = [
     title: 'Media',
     description:
       'Stories, productions, conversations, audiences, and media platforms built to connect people with ideas.',
-    href: '/media',
+    href: 'https://nexushub-media.vercel.app/',
   },
   {
     title: 'Business',

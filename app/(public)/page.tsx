@@ -82,11 +82,11 @@ export default function HomePage() {
       image: '/images/media/Creative Branding Studio Setup.png',
       primaryAction: {
         label: 'Explore Media',
-        href: '/media',
+        href: 'https://nexushub-media.vercel.app/',
       },
       secondaryAction: {
         label: 'Nexus Hub TV',
-        href: '/media/nexus-hub-tv',
+        href: 'https://nexushub-media.vercel.app/nexus-hub-tv',
       },
     },
     {
@@ -221,7 +221,7 @@ export default function HomePage() {
             </Link>
 
             <Link
-              href="/media"
+              href="https://nexushub-media.vercel.app/"
               className="group rounded-2xl bg-[#050A30] p-8 text-white transition hover:-translate-y-1 hover:shadow-lg"
             >
               <span className="text-sm font-semibold text-[#5FC9E6]">
@@ -298,7 +298,7 @@ export default function HomePage() {
 
             <div className="grid gap-4 sm:grid-cols-2">
               <Link
-                href="/media/nexus-hub-tv"
+                href="https://nexushub-media.vercel.app/nexus-hub-tv"
                 className="rounded-2xl bg-[#050A30] p-7 text-white transition hover:-translate-y-1"
               >
                 <p className="text-sm font-semibold text-[#5FC9E6]">
@@ -489,7 +489,7 @@ export default function HomePage() {
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             <Link
-              href="/media"
+              href="https://nexushub-media.vercel.app/"
               className="group rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:shadow-md"
             >
               <p className="text-sm font-semibold text-[#1266B6]">

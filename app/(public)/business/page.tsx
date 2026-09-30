@@ -330,7 +330,7 @@ export default function BusinessPage() {
             </Link>
 
             <Link
-              href="/media"
+              href="https://nexushub-media.vercel.app/"
               className="rounded-2xl border border-slate-200 p-7 transition hover:-translate-y-1 hover:shadow-lg"
             >
               <p className="text-sm font-semibold text-[#1266B6]">
