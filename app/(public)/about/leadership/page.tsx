@@ -379,13 +379,6 @@ export default function LeadershipPage() {
 
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
-              href="/about/team"
-              className="rounded-md border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-            >
-              Our Team
-            </Link>
-
-            <Link
               href="/contact"
               className="rounded-md bg-[#5FC9E6] px-6 py-3 text-sm font-semibold text-[#050A30] transition hover:opacity-90"
             >
