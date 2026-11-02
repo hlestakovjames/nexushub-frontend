@@ -266,7 +266,7 @@ export default function HomePage() {
       </section>
 
       {/* SIX APPLICATIONS */}
-      <section className="bg-slate-50">
+      <section className="bg-[#F5F2FF]">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
           <div className="max-w-3xl">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#0A4DA8]">
@@ -291,6 +291,7 @@ export default function HomePage() {
                       ? 'border-[#0A4DA8]/30 bg-[#050B33] text-white shadow-lg'
                       : 'border-slate-200 bg-white hover:-translate-y-1 hover:border-[#0A4DA8]/40 hover:shadow-lg'
                   }`}
+                  style={!app.featured ? { borderTopColor: brandRotation[index % brandRotation.length], borderTopWidth: '3px' } : undefined}
                 >
                   <div className="flex items-center justify-between gap-3">
                     <span className={`text-xs font-bold tracking-[0.14em] ${
@@ -387,7 +388,7 @@ export default function HomePage() {
                 key={service.number}
                 className="grid gap-4 py-7 sm:grid-cols-[70px_0.8fr_1.2fr] sm:items-start"
               >
-                <span className="text-sm font-bold text-[#0A4DA8]">
+                <span className="text-sm font-bold" style={{ color: brandRotation[index % brandRotation.length] }}>
                   {service.number}
                 </span>
                 <h3 className="text-xl font-bold">
@@ -410,7 +411,7 @@ export default function HomePage() {
       </section>
 
       {/* PROJECTS */}
-      <section className="bg-slate-50">
+      <section className="bg-[#EFFBFC]">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div className="max-w-3xl">
@@ -492,7 +493,7 @@ export default function HomePage() {
                 href={item.href}
                 className="group rounded-2xl border border-slate-200 border-t-4 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md"\n                style={{ borderTopColor: brandRotation[index % brandRotation.length] }}
               >
-                <span className="text-xs font-bold text-[#0A4DA8]">
+                <span className="text-xs font-bold" style={{ color: brandRotation[index % brandRotation.length] }}>
                   0{index + 1}
                 </span>
                 <h3 className="mt-5 text-lg font-bold">
