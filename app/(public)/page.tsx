@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { projectRecords } from '@/components/projects/project-data';
+import AnimatedHero from '@/components/home/AnimatedHero';
 
 const applications = [
   {
@@ -134,101 +135,8 @@ export default function HomePage() {
 
   return (
     <main className="overflow-hidden bg-white text-[#050B33]">
-      {/* HERO */}
-      <section className="relative isolate overflow-hidden bg-[#050B33] text-white">
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 -z-10 opacity-30"
-          style={{
-            backgroundImage:
-              'radial-gradient(ellipse at 78% 16%, rgba(139,108,255,.48) 0, transparent 34%), radial-gradient(ellipse at 18% 88%, rgba(10,77,168,.55) 0, transparent 32%), radial-gradient(ellipse at 92% 82%, rgba(245,154,82,.34) 0, transparent 24%), radial-gradient(ellipse at 55% 55%, rgba(79,220,232,.14) 0, transparent 38%)',
-          }}
-        />
-
-        <div className="mx-auto grid min-h-[620px] max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#4FDCE8]">
-              Nexus Hub · Create · Connect · Grow
-            </p>
-
-            <h1 className="mt-7 max-w-4xl text-4xl font-bold leading-[1.12] tracking-tight sm:text-5xl lg:text-6xl">
-              One ecosystem.
-              <span className="block text-[#4FDCE8]">
-                Connected possibilities.
-              </span>
-            </h1>
-
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/75">
-              Nexus Hub brings technology, business, media, learning and
-              collaboration together through a connected ecosystem of
-              specialised applications, services and initiatives.
-            </p>
-
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                href="/ecosystem"
-                className="inline-flex items-center rounded-lg bg-[#4FDCE8] px-6 py-3.5 text-sm font-bold text-[#050B33] transition hover:bg-white"
-              >
-                Explore the Ecosystem
-                <span className="ml-2" aria-hidden="true">→</span>
-              </Link>
-
-              <Link
-                href="/contact"
-                className="inline-flex items-center rounded-lg border border-white/35 px-6 py-3.5 text-sm font-bold text-white transition hover:border-[#4FDCE8] hover:text-[#4FDCE8]"
-              >
-                Work With Us
-              </Link>
-            </div>
-          </div>
-
-          <div className="relative mx-auto w-full max-w-md">
-            <div className="rounded-3xl border border-white/15 bg-white/[0.06] p-6 shadow-2xl backdrop-blur-sm">
-              <div className="flex items-center justify-between border-b border-white/10 pb-5">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#4FDCE8]">
-                    The Nexus Hub Ecosystem
-                  </p>
-                  <h2 className="mt-2 text-xl font-bold">
-                    Six connected applications
-                  </h2>
-                </div>
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#4FDCE8]/15 text-xl font-bold text-[#4FDCE8]">
-                  N
-                </span>
-              </div>
-
-              <div className="mt-5 grid grid-cols-2 gap-3">
-                {applications.map((app) => (
-                  <div
-                    key={app.code}
-                    className={`rounded-xl border p-4 ${
-                      app.featured
-                        ? 'border-[#4FDCE8]/60 bg-[#4FDCE8]/10'
-                        : 'border-white/10 bg-white/[0.04]'
-                    }`}
-                  >
-                    <p className="text-[10px] font-bold tracking-[0.12em] text-[#4FDCE8]">
-                      {app.code}
-                    </p>
-                    <p className="mt-2 text-sm font-bold text-white">
-                      {app.acronym}
-                    </p>
-                    <p className="mt-1 text-xs leading-5 text-white/55">
-                      {app.name.replace('Nexus Hub ', '')}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              <p className="mt-5 text-xs leading-5 text-white/50">
-                Specialised applications connected through a shared
-                ecosystem and backend infrastructure.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ANIMATED HERO */}
+      <AnimatedHero />
 
       {/* INTRODUCTION */}
       <section className="bg-white">
