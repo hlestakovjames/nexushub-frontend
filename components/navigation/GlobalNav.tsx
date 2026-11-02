@@ -18,12 +18,12 @@ export default function GlobalNav() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/95 text-[#050A30] shadow-sm backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/95 text-[#050B33] shadow-sm backdrop-blur-md">
       <div className="mx-auto flex min-h-[76px] max-w-7xl items-center justify-between gap-6 px-5 sm:px-6 lg:px-8">
         <Link
           href="/"
           aria-label="Nexus Hub home"
-          className="flex shrink-0 items-center rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1266B6] focus-visible:ring-offset-4"
+          className="flex shrink-0 items-center rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A4DA8] focus-visible:ring-offset-4"
         >
           <NexusHubLogo size={44} showWordmark />
         </Link>
@@ -40,17 +40,17 @@ export default function GlobalNav() {
                 key={item.href}
                 href={item.href}
                 aria-current={active ? 'page' : undefined}
-                className={`relative rounded-md px-4 py-3 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1266B6] focus-visible:ring-offset-2 ${
+                className={`relative rounded-md px-4 py-3 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A4DA8] focus-visible:ring-offset-2 ${
                   active
-                    ? 'text-[#050A30]'
-                    : 'text-slate-600 hover:bg-slate-50 hover:text-[#050A30]'
+                    ? 'text-[#050B33]'
+                    : 'text-slate-600 hover:bg-slate-50 hover:text-[#050B33]'
                 }`}
               >
                 {item.label}
                 {active && (
                   <span
                     aria-hidden="true"
-                    className="absolute inset-x-4 bottom-1 h-0.5 rounded-full bg-[#5FC9E6]"
+                    className="absolute inset-x-4 bottom-1 h-0.5 rounded-full bg-[#4FDCE8]"
                   />
                 )}
               </Link>
@@ -58,7 +58,7 @@ export default function GlobalNav() {
           })}
           <Link
             href="/contact"
-            className="ml-3 inline-flex min-h-11 items-center justify-center rounded-md bg-[#050A30] px-5 text-sm font-semibold text-white transition hover:bg-[#1266B6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1266B6] focus-visible:ring-offset-2"
+            className="ml-3 inline-flex min-h-11 items-center justify-center rounded-md bg-[#050B33] px-5 text-sm font-semibold text-white transition hover:bg-[#0A4DA8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A4DA8] focus-visible:ring-offset-2"
           >
             Start a conversation
           </Link>
