@@ -210,9 +210,11 @@ export default function AnimatedHero() {
               </button>
             </div>
           </div>
-          <p className="mt-3 text-right text-[11px] text-white/55">
-            {reducedMotion ? "Automatic movement disabled by your motion preference" : isPaused ? "Paused while you interact" : "Automatically changing"}
-          </p>
+          {(reducedMotion || isPaused) && (
+            <p className="mt-3 text-right text-[11px] text-white/55">
+              {reducedMotion ? "Automatic movement disabled by your motion preference" : "Paused while you interact"}
+            </p>
+          )}
         </div>
       </div>
     </section>
