@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowUpRight, Boxes, Compass, Layers3, RefreshCw, ShieldCheck } from 'lucide-react';
+import { ArrowUpRight, Boxes, Compass, GraduationCap, Layers3, RefreshCw, ShieldCheck, Tv, Users } from 'lucide-react';
 
 const assetPassCapabilities = [
   {
@@ -91,7 +91,7 @@ export default function ProductsPage() {
                     remain longer-term possibilities rather than promises of the initial product.
                   </p>
                 </div>
-                <p className="mt-6 text-sm text-slate-500">One of the first digital products emerging from the Nexus Hub innovation ecosystem.</p>
+                <div className="mt-7 flex flex-wrap items-center gap-4">\n                  <a href="https://assetpass.vercel.app" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#050B33] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#0A4DA8]">\n                    Visit AssetPass <ArrowUpRight size={17} aria-hidden="true" />\n                  </a>\n                  <span className="text-sm text-slate-500">One of the first digital products emerging from Nexus Hub.</span>\n                </div>
               </div>
             </div>
           </article>
