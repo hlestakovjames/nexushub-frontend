@@ -6,13 +6,6 @@ type ProjectDetailPageProps = {
   slug: string;
 };
 
-const categoryRoutes = {
-  Digital: '/projects/digital',
-  Business: '/projects/business',
-  Media: '/projects/media',
-  Community: '/projects/community',
-} as const;
-
 export default function ProjectDetailPage({
   slug,
 }: ProjectDetailPageProps) {
@@ -47,8 +40,6 @@ export default function ProjectDetailPage({
       </main>
     );
   }
-
-  const categoryHref = categoryRoutes[project.category];
 
   return (
     <main className="bg-white text-[#050A30]">
@@ -250,16 +241,15 @@ export default function ProjectDetailPage({
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1266B6]">
-              What We Built
+              Project Scope
             </p>
 
             <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-              Key capabilities
+              Functional areas
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-slate-600">
-              The project is structured around the following capabilities and
-              functional areas.
+              The project scope includes the following functional areas. Their availability and completion may vary while development continues.
             </p>
           </div>
 
@@ -423,10 +413,10 @@ export default function ProjectDetailPage({
 
             <div className="flex flex-wrap gap-4">
               <Link
-                href={categoryHref}
+                href="/projects#portfolio"
                 className="inline-flex items-center rounded-lg bg-white px-5 py-3 text-sm font-semibold text-[#050A30] transition hover:bg-white/90"
               >
-                More {project.category} Projects
+                Back to Project Portfolio
               </Link>
 
               <Link
