@@ -240,8 +240,8 @@ export default function HomePage() {
                 Our current service capabilities bring together technical development and creative
                 communication. Each engagement starts with understanding the need and defining the right scope.
               </p>
-              <Link href="/digital" className="mt-7 inline-flex font-bold text-[#0A4DA8] hover:text-[#050B33]">
-                Explore digital capabilities <span className="ml-2" aria-hidden="true">→</span>
+              <Link href="/services" className="mt-7 inline-flex font-bold text-[#0A4DA8] hover:text-[#050B33]">
+                Explore our services <span className="ml-2" aria-hidden="true">→</span>
               </Link>
             </div>
             <div className="divide-y divide-slate-200 border-y border-slate-200">
