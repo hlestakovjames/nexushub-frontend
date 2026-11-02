@@ -41,7 +41,7 @@ export default function MissionVisionPage() {
         {
           heading: 'How the direction guides decisions',
           paragraphs: [
-            'The vision helps assess whether an opportunity contributes to the organisation's long-term direction. The mission helps determine what work to undertake and how to approach it. The purpose keeps attention on the value that work is intended to create.',
+            'The vision helps assess whether an opportunity contributes to the organisation\'s long-term direction. The mission helps determine what work to undertake and how to approach it. The purpose keeps attention on the value that work is intended to create.',
             'These statements should be revisited as the organisation develops, while preserving a consistent sense of why Nexus Hub exists.'
           ]
         }
