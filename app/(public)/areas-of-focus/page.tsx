@@ -183,11 +183,6 @@ export default function AreasOfFocusPage() {
                       Read about our approach <span className="ml-2" aria-hidden="true">→</span>
                     </Link>
                   )}
-                  {area.id === 'media-creativity' && (
-                    <a href="https://nexushub-media.vercel.app/" target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex font-bold text-[#0A4DA8] hover:text-[#050B33]">
-                      Visit Nexus Hub TV <span className="ml-2" aria-hidden="true">↗</span>
-                    </a>
-                  )}
                   {area.id === 'business-enterprise' && (
                     <Link href="/contact" className="mt-8 inline-flex font-bold text-[#0A4DA8] hover:text-[#050B33]">
                       Discuss an opportunity <span className="ml-2" aria-hidden="true">→</span>
