@@ -28,19 +28,23 @@ The website represents Nexus Hub as an organisation working across technology, i
 
 ### 3.1 Colour roles
 
-Use the approved Nexus Hub logo and existing brand assets as the source of truth when finalising exact values.
+Use the approved Nexus Hub logo and the confirmed palette below as the source of truth.
 
 | Token role | Intended use |
 |---|---|
-| Brand navy | Primary identity, headings, navigation details and selected dark sections |
-| Brand blue/cyan | Controlled accent, links, active states and selected highlights |
+| Deep navy `#050B33` | Primary identity, headings, navigation details and selected dark sections |
+| Violet / periwinkle `#8B6CFF` | Secondary brand colour; restrained gradients and selected emphasis |
+| Cyan / aqua `#4FDCE8` | Primary bright accent, links, active states and selected highlights |
+| Royal blue `#0A4DA8` | Supporting brand blue for links, buttons and depth |
+| Orange `#F59A52` | Small decorative highlights and orbit/ring motifs |
+| Golden yellow `#FFB84D` | Small sparkle or highlight details |
 | White | Main page foundation and breathing space |
 | Soft neutral | Alternate section backgrounds and subtle surfaces |
 | Deep neutral | Body text and high-contrast content |
 | Muted neutral | Metadata, captions, dividers and secondary text |
 | Semantic colours | Status, validation and alerts only |
 
-Do not invent a new logo or use an unverified palette as final brand values. Extract and document exact colours after inspecting the approved logo and existing brand files.
+Do not invent or redraw the logo. Use the approved logo asset. Keep orange and golden yellow as minor accents; navy, violet, cyan and royal blue carry the main identity.
 
 ### 3.2 Overall composition
 
