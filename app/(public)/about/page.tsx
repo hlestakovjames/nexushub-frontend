@@ -324,7 +324,7 @@ export default function AboutPage() {
           </p>
         </div>
         <div className="mt-12 grid gap-0 md:grid-cols-[220px_1fr]">
-          {milestones.map((milestone, index) => (
+          {milestones.map((milestone) => (
             <div
               key={milestone.period}
               className="grid gap-3 border-t border-slate-200 py-7 md:grid-cols-subgrid md:gap-8"
