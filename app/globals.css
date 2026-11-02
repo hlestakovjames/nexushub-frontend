@@ -106,3 +106,80 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* Continuous horizontal showcases */
+.showcase-marquee {
+  overflow: hidden;
+  width: 100%;
+  padding-block: 0.25rem 0.75rem;
+  touch-action: pan-y;
+}
+
+.showcase-track {
+  display: flex;
+  width: max-content;
+  animation: nexus-showcase-scroll 48s linear infinite;
+  will-change: transform;
+}
+
+.showcase-marquee-ecosystem .showcase-track {
+  animation-duration: 66s;
+}
+
+.showcase-marquee-discovery .showcase-track {
+  animation-duration: 42s;
+}
+
+.showcase-group {
+  display: flex;
+  flex: none;
+  gap: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.showcase-marquee[data-paused="true"] .showcase-track,
+.showcase-marquee:hover .showcase-track,
+.showcase-marquee:focus-within .showcase-track,
+.showcase-marquee[data-reverse="true"] .showcase-track {
+  animation-play-state: paused;
+}
+
+.showcase-marquee[data-reverse="true"] .showcase-track {
+  animation-name: nexus-showcase-scroll-reverse;
+}
+
+.showcase-card {
+  min-height: 19rem;
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.showcase-card:hover {
+  transform: translateY(-4px);
+}
+
+@keyframes nexus-showcase-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes nexus-showcase-scroll-reverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .showcase-track {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .showcase-group[aria-hidden="true"] {
+    display: none;
+  }
+
+  .showcase-marquee {
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+}
