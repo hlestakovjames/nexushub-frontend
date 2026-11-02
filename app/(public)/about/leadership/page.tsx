@@ -360,58 +360,6 @@ export default function LeadershipPage() {
         </div>
       </section>
 
-      {/* LEADERSHIP + TEAM */}
-      <section>
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
-          <div className="grid gap-6 md:grid-cols-2">
-            <Link
-              href="/about/team"
-              className="group rounded-3xl border border-slate-200 p-8 transition hover:-translate-y-1 hover:border-[#1266B6]/40 hover:shadow-lg sm:p-10"
-            >
-              <p className="text-sm font-semibold uppercase tracking-[0.15em] text-[#1266B6]">
-                Our Team
-              </p>
-
-              <h2 className="mt-4 text-3xl font-bold">
-                Leadership sets direction. Teams make it happen.
-              </h2>
-
-              <p className="mt-4 leading-7 text-slate-600">
-                Meet the wider Nexus Hub team across Digital, Media,
-                Business, Operations, and other areas of capability.
-              </p>
-
-              <span className="mt-7 inline-flex text-sm font-bold text-[#1266B6] transition group-hover:translate-x-1">
-                Explore Our Team →
-              </span>
-            </Link>
-
-            <Link
-              href="/about/careers"
-              className="group rounded-3xl bg-[#1266B6] p-8 text-white transition hover:-translate-y-1 hover:bg-[#0f5ca5] sm:p-10"
-            >
-              <p className="text-sm font-semibold uppercase tracking-[0.15em] text-[#5FC9E6]">
-                Careers
-              </p>
-
-              <h2 className="mt-4 text-3xl font-bold">
-                Build your career within the ecosystem.
-              </h2>
-
-              <p className="mt-4 leading-7 text-white/75">
-                Discover opportunities to contribute to the products,
-                services, media, technology, and initiatives being built
-                by Nexus Hub.
-              </p>
-
-              <span className="mt-7 inline-flex text-sm font-bold text-white transition group-hover:translate-x-1">
-                Explore Careers →
-              </span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="bg-[#050A30] text-white">
         <div className="mx-auto max-w-7xl px-6 py-20 text-center lg:px-8 lg:py-28">
