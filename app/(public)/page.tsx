@@ -131,27 +131,27 @@ export default function HomePage() {
   const featuredProjects = projectRecords.slice(0, 2);
 
   return (
-    <main className="overflow-hidden bg-white text-[#050A30]">
+    <main className="overflow-hidden bg-white text-[#050B33]">
       {/* HERO */}
-      <section className="relative isolate overflow-hidden bg-[#050A30] text-white">
+      <section className="relative isolate overflow-hidden bg-[#050B33] text-white">
         <div
           aria-hidden="true"
           className="absolute inset-0 -z-10 opacity-30"
           style={{
             backgroundImage:
-              'radial-gradient(circle at 80% 20%, #1266B6 0, transparent 35%), radial-gradient(circle at 15% 90%, #1266B6 0, transparent 30%)',
+              'radial-gradient(circle at 80% 20%, #0A4DA8 0, transparent 35%), radial-gradient(circle at 15% 90%, #0A4DA8 0, transparent 30%)',
           }}
         />
 
         <div className="mx-auto grid min-h-[620px] max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#5FC9E6]">
+            <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#4FDCE8]">
               Nexus Hub · Create · Connect · Grow
             </p>
 
             <h1 className="mt-7 max-w-4xl text-4xl font-bold leading-[1.12] tracking-tight sm:text-5xl lg:text-6xl">
               One ecosystem.
-              <span className="block text-[#5FC9E6]">
+              <span className="block text-[#4FDCE8]">
                 Connected possibilities.
               </span>
             </h1>
@@ -165,7 +165,7 @@ export default function HomePage() {
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 href="/ecosystem"
-                className="inline-flex items-center rounded-lg bg-[#5FC9E6] px-6 py-3.5 text-sm font-bold text-[#050A30] transition hover:bg-white"
+                className="inline-flex items-center rounded-lg bg-[#4FDCE8] px-6 py-3.5 text-sm font-bold text-[#050B33] transition hover:bg-white"
               >
                 Explore the Ecosystem
                 <span className="ml-2" aria-hidden="true">→</span>
@@ -173,7 +173,7 @@ export default function HomePage() {
 
               <Link
                 href="/contact"
-                className="inline-flex items-center rounded-lg border border-white/35 px-6 py-3.5 text-sm font-bold text-white transition hover:border-[#5FC9E6] hover:text-[#5FC9E6]"
+                className="inline-flex items-center rounded-lg border border-white/35 px-6 py-3.5 text-sm font-bold text-white transition hover:border-[#4FDCE8] hover:text-[#4FDCE8]"
               >
                 Work With Us
               </Link>
@@ -184,14 +184,14 @@ export default function HomePage() {
             <div className="rounded-3xl border border-white/15 bg-white/[0.06] p-6 shadow-2xl backdrop-blur-sm">
               <div className="flex items-center justify-between border-b border-white/10 pb-5">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#5FC9E6]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#4FDCE8]">
                     The Nexus Hub Ecosystem
                   </p>
                   <h2 className="mt-2 text-xl font-bold">
                     Six connected applications
                   </h2>
                 </div>
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#5FC9E6]/15 text-xl font-bold text-[#5FC9E6]">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#4FDCE8]/15 text-xl font-bold text-[#4FDCE8]">
                   N
                 </span>
               </div>
@@ -202,11 +202,11 @@ export default function HomePage() {
                     key={app.code}
                     className={`rounded-xl border p-4 ${
                       app.featured
-                        ? 'border-[#5FC9E6]/50 bg-[#5FC9E6]/10'
+                        ? 'border-[#4FDCE8]/50 bg-[#4FDCE8]/10'
                         : 'border-white/10 bg-white/[0.04]'
                     }`}
                   >
-                    <p className="text-[10px] font-bold tracking-[0.12em] text-[#5FC9E6]">
+                    <p className="text-[10px] font-bold tracking-[0.12em] text-[#4FDCE8]">
                       {app.code}
                     </p>
                     <p className="mt-2 text-sm font-bold text-white">
@@ -232,7 +232,7 @@ export default function HomePage() {
       <section className="bg-white">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-24">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#1266B6]">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#0A4DA8]">
               Who We Are
             </p>
             <h2 className="mt-4 max-w-xl text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
@@ -255,7 +255,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/about"
-              className="mt-7 inline-flex font-bold text-[#1266B6] hover:text-[#050A30]"
+              className="mt-7 inline-flex font-bold text-[#0A4DA8] hover:text-[#050B33]"
             >
               Discover Nexus Hub <span className="ml-2">→</span>
             </Link>
@@ -267,7 +267,7 @@ export default function HomePage() {
       <section className="bg-slate-50">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
           <div className="max-w-3xl">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#1266B6]">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#0A4DA8]">
               The Ecosystem
             </p>
             <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -286,19 +286,19 @@ export default function HomePage() {
                 <div
                   className={`flex h-full flex-col rounded-2xl border p-7 transition ${
                     app.featured
-                      ? 'border-[#1266B6]/30 bg-[#050A30] text-white shadow-lg'
-                      : 'border-slate-200 bg-white hover:-translate-y-1 hover:border-[#1266B6]/40 hover:shadow-lg'
+                      ? 'border-[#0A4DA8]/30 bg-[#050B33] text-white shadow-lg'
+                      : 'border-slate-200 bg-white hover:-translate-y-1 hover:border-[#0A4DA8]/40 hover:shadow-lg'
                   }`}
                 >
                   <div className="flex items-center justify-between gap-3">
                     <span className={`text-xs font-bold tracking-[0.14em] ${
-                      app.featured ? 'text-[#5FC9E6]' : 'text-[#1266B6]'
+                      app.featured ? 'text-[#4FDCE8]' : 'text-[#0A4DA8]'
                     }`}>
                       {app.code}
                     </span>
                     <span className={`rounded-full px-3 py-1 text-[10px] font-bold ${
                       app.featured
-                        ? 'bg-white/10 text-[#5FC9E6]'
+                        ? 'bg-white/10 text-[#4FDCE8]'
                         : 'bg-slate-100 text-slate-500'
                     }`}>
                       {app.status}
@@ -306,7 +306,7 @@ export default function HomePage() {
                   </div>
 
                   <p className={`mt-7 text-2xl font-extrabold tracking-tight ${
-                    app.featured ? 'text-[#5FC9E6]' : 'text-[#1266B6]'
+                    app.featured ? 'text-[#4FDCE8]' : 'text-[#0A4DA8]'
                   }`}>
                     {app.acronym}
                   </p>
@@ -322,7 +322,7 @@ export default function HomePage() {
                   </p>
 
                   <span className={`mt-7 inline-flex items-center text-sm font-bold ${
-                    app.featured ? 'text-[#5FC9E6]' : 'text-[#1266B6]'
+                    app.featured ? 'text-[#4FDCE8]' : 'text-[#0A4DA8]'
                   }`}>
                     {app.action} <span className="ml-2">→</span>
                   </span>
@@ -355,7 +355,7 @@ export default function HomePage() {
 
           <Link
             href="/ecosystem"
-            className="mt-7 inline-flex rounded-lg bg-[#050A30] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1266B6]"
+            className="mt-7 inline-flex rounded-lg bg-[#050B33] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#0A4DA8]"
           >
             Learn More About the Ecosystem
           </Link>
@@ -366,7 +366,7 @@ export default function HomePage() {
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
           <div className="max-w-3xl">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#1266B6]">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#0A4DA8]">
               Services and Capabilities
             </p>
             <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -385,7 +385,7 @@ export default function HomePage() {
                 key={service.number}
                 className="grid gap-4 py-7 sm:grid-cols-[70px_0.8fr_1.2fr] sm:items-start"
               >
-                <span className="text-sm font-bold text-[#1266B6]">
+                <span className="text-sm font-bold text-[#0A4DA8]">
                   {service.number}
                 </span>
                 <h3 className="text-xl font-bold">
@@ -400,7 +400,7 @@ export default function HomePage() {
 
           <Link
             href="/services"
-            className="mt-8 inline-flex font-bold text-[#1266B6] hover:text-[#050A30]"
+            className="mt-8 inline-flex font-bold text-[#0A4DA8] hover:text-[#050B33]"
           >
             Explore our services <span className="ml-2">→</span>
           </Link>
@@ -412,7 +412,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div className="max-w-3xl">
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#1266B6]">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#0A4DA8]">
                 Selected Work
               </p>
               <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -427,7 +427,7 @@ export default function HomePage() {
 
             <Link
               href="/projects"
-              className="shrink-0 font-bold text-[#1266B6] hover:text-[#050A30]"
+              className="shrink-0 font-bold text-[#0A4DA8] hover:text-[#050B33]"
             >
               View all projects →
             </Link>
@@ -449,7 +449,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="p-7 sm:p-8">
-                  <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#1266B6]">
+                  <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#0A4DA8]">
                     {project.client}
                   </p>
                   <h3 className="mt-3 text-2xl font-bold">
@@ -460,7 +460,7 @@ export default function HomePage() {
                   </p>
                   <Link
                     href={`/projects/${project.slug}`}
-                    className="mt-7 inline-flex font-bold text-[#1266B6] hover:text-[#050A30]"
+                    className="mt-7 inline-flex font-bold text-[#0A4DA8] hover:text-[#050B33]"
                   >
                     View case study <span className="ml-2">→</span>
                   </Link>
@@ -475,7 +475,7 @@ export default function HomePage() {
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
           <div className="max-w-3xl">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#1266B6]">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#0A4DA8]">
               Discover More
             </p>
             <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -488,9 +488,9 @@ export default function HomePage() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="group rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:border-[#1266B6]/40 hover:shadow-md"
+                className="group rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:border-[#0A4DA8]/40 hover:shadow-md"
               >
-                <span className="text-xs font-bold text-[#1266B6]">
+                <span className="text-xs font-bold text-[#0A4DA8]">
                   0{index + 1}
                 </span>
                 <h3 className="mt-5 text-lg font-bold">
@@ -499,7 +499,7 @@ export default function HomePage() {
                 <p className="mt-3 text-sm leading-6 text-slate-600">
                   {item.description}
                 </p>
-                <span className="mt-6 inline-flex text-sm font-bold text-[#1266B6] transition group-hover:translate-x-1">
+                <span className="mt-6 inline-flex text-sm font-bold text-[#0A4DA8] transition group-hover:translate-x-1">
                   Explore <span className="ml-2">→</span>
                 </span>
               </Link>
@@ -509,9 +509,9 @@ export default function HomePage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="bg-[#050A30] text-white">
+      <section className="bg-[#050B33] text-white">
         <div className="mx-auto max-w-7xl px-6 py-20 text-center lg:px-8 lg:py-28">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#5FC9E6]">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#4FDCE8]">
             Create · Connect · Grow
           </p>
           <h2 className="mx-auto mt-5 max-w-3xl text-3xl font-bold tracking-tight sm:text-5xl">
@@ -524,7 +524,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/contact"
-            className="mt-9 inline-flex rounded-lg bg-[#5FC9E6] px-7 py-3.5 text-sm font-bold text-[#050A30] transition hover:bg-white"
+            className="mt-9 inline-flex rounded-lg bg-[#4FDCE8] px-7 py-3.5 text-sm font-bold text-[#050B33] transition hover:bg-white"
           >
             Contact Nexus Hub
           </Link>
