@@ -23,14 +23,14 @@ const footerGroups = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#050A30] text-white">
+    <footer className="bg-[#050B33] text-white">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
         <div className="grid gap-12 md:grid-cols-[1.3fr_1fr_1fr]">
           <div className="max-w-md">
             <Link
               href="/"
               aria-label="Nexus Hub home"
-              className="inline-flex rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5FC9E6] focus-visible:ring-offset-4 focus-visible:ring-offset-[#050A30]"
+              className="inline-flex rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4FDCE8] focus-visible:ring-offset-4 focus-visible:ring-offset-[#050B33]"
             >
               <NexusHubLogo size={52} showWordmark />
             </Link>
@@ -48,7 +48,7 @@ export default function Footer() {
 
           {footerGroups.map((group) => (
             <div key={group.title}>
-              <h2 className="text-xs font-bold uppercase tracking-[0.18em] text-[#5FC9E6]">
+              <h2 className="text-xs font-bold uppercase tracking-[0.18em] text-[#4FDCE8]">
                 {group.title}
               </h2>
               <ul className="mt-5 space-y-3">
@@ -67,12 +67,12 @@ export default function Footer() {
           ))}
 
           <div>
-            <h2 className="text-xs font-bold uppercase tracking-[0.18em] text-[#5FC9E6]">
+            <h2 className="text-xs font-bold uppercase tracking-[0.18em] text-[#4FDCE8]">
               Connect
             </h2>
             <ul className="mt-5 space-y-4 text-sm leading-6 text-white/65">
               <li className="flex items-start gap-3">
-                <MapPin size={18} className="mt-0.5 shrink-0 text-[#5FC9E6]" />
+                <MapPin size={18} className="mt-0.5 shrink-0 text-[#4FDCE8]" />
                 <span>Nairobi, Kenya</span>
               </li>
               <li>
@@ -80,7 +80,7 @@ export default function Footer() {
                   href="mailto:nexushubkenya@gmail.com"
                   className="flex items-center gap-3 transition hover:text-white"
                 >
-                  <Mail size={18} className="shrink-0 text-[#5FC9E6]" />
+                  <Mail size={18} className="shrink-0 text-[#4FDCE8]" />
                   <span className="break-all">nexushubkenya@gmail.com</span>
                 </a>
               </li>
