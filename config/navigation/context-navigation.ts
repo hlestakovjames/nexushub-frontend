@@ -16,11 +16,11 @@ export type NavigationContext = {
  */
 export const corporateNavigation: ContextNavigationItem[] = [
   { label: 'About', href: '/about' },
-  { label: 'Areas of Focus', href: '/areas-of-focus' },
+  { label: 'Focus', href: '/areas-of-focus' },
   { label: 'Services', href: '/services' },
-  { label: 'Products & Innovations', href: '/products' },
-  { label: 'Publications & Insights', href: '/publications' },
-  { label: 'Events & Activities', href: '/events' },
+  { label: 'Products', href: '/products' },
+  { label: 'Insights', href: '/publications' },
+  { label: 'Events', href: '/events' },
   { label: 'Projects', href: '/projects' },
   { label: 'Contact', href: '/contact' },
 ];
