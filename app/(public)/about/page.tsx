@@ -202,6 +202,46 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="border-y border-slate-100 bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-20 sm:py-24 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#0A4DA8]">
+              Explore Nexus Hub
+            </p>
+            <h2 className="mt-4 text-3xl font-black tracking-tight text-[#050B33] sm:text-4xl">
+              Go deeper into who we are.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              Explore the thinking, history, principles, and organisational direction behind Nexus Hub.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { number: '01', title: 'Our Story', description: 'The stages, experiences, and decisions that shaped Nexus Hub.', href: '/about/our-story' },
+              { number: '02', title: 'Mission & Vision', description: 'Our purpose, long-term direction, and strategic objectives.', href: '/about/mission-vision' },
+              { number: '03', title: 'Our Structure', description: 'The three pillars and how the wider organisation connects.', href: '/about/our-structure' },
+              { number: '04', title: 'Our Approach', description: 'How systems thinking, research, design, and development inform our work.', href: '/about/our-approach' },
+              { number: '05', title: 'Our Values', description: 'The principles that guide our decisions and relationships.', href: '/about/our-values' },
+              { number: '06', title: 'Leadership', description: 'Leadership roles, responsibilities, and available profiles.', href: '/about/leadership' },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group rounded-2xl border border-slate-200 bg-slate-50 p-6 transition duration-300 hover:-translate-y-1 hover:border-[#4FDCE8] hover:bg-white hover:shadow-lg"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-bold text-[#0A4DA8]">{item.number}</span>
+                  <span aria-hidden="true" className="text-xl text-[#0A4DA8] transition group-hover:translate-x-1">→</span>
+                </div>
+                <h3 className="mt-7 text-xl font-black text-[#050B33]">{item.title}</h3>
+                <p className="mt-3 leading-7 text-slate-600">{item.description}</p>
+                <span className="mt-6 inline-flex text-sm font-bold text-[#0A4DA8]">Explore page</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-slate-50">
         <div className="mx-auto max-w-7xl px-6 py-20 sm:py-24 lg:px-8">
           <div className="max-w-3xl">
