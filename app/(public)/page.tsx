@@ -67,6 +67,8 @@ const applications = [
   },
 ];
 
+const brandRotation = ['#8B6CFF', '#4FDCE8', '#0A4DA8', '#F59A52', '#FFB84D', '#050B33'];
+
 const serviceAreas = [
   {
     number: '01',
@@ -139,7 +141,7 @@ export default function HomePage() {
           className="absolute inset-0 -z-10 opacity-30"
           style={{
             backgroundImage:
-              'radial-gradient(circle at 80% 20%, #8B6CFF 0, transparent 34%), radial-gradient(circle at 15% 90%, #0A4DA8 0, transparent 30%), radial-gradient(circle at 92% 82%, #F59A52 0, transparent 22%)',
+              'radial-gradient(ellipse at 78% 16%, rgba(139,108,255,.48) 0, transparent 34%), radial-gradient(ellipse at 18% 88%, rgba(10,77,168,.55) 0, transparent 32%), radial-gradient(ellipse at 92% 82%, rgba(245,154,82,.34) 0, transparent 24%), radial-gradient(ellipse at 55% 55%, rgba(79,220,232,.14) 0, transparent 38%)',
           }}
         />
 
@@ -202,7 +204,7 @@ export default function HomePage() {
                     key={app.code}
                     className={`rounded-xl border p-4 ${
                       app.featured
-                        ? 'border-[#4FDCE8]/50 bg-[#4FDCE8]/10'
+                        ? 'border-[#4FDCE8]/60 bg-[#4FDCE8]/10'
                         : 'border-white/10 bg-white/[0.04]'
                     }`}
                   >
@@ -281,7 +283,7 @@ export default function HomePage() {
           </div>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {applications.map((app) => {
+            {applications.map((app, index) => {
               const content = (
                 <div
                   className={`flex h-full flex-col rounded-2xl border p-7 transition ${
@@ -380,7 +382,7 @@ export default function HomePage() {
           </div>
 
           <div className="mt-12 divide-y divide-slate-200 border-y border-slate-200">
-            {serviceAreas.map((service) => (
+            {serviceAreas.map((service, index) => (
               <div
                 key={service.number}
                 className="grid gap-4 py-7 sm:grid-cols-[70px_0.8fr_1.2fr] sm:items-start"
@@ -488,7 +490,7 @@ export default function HomePage() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="group rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:border-[#0A4DA8]/40 hover:shadow-md"
+                className="group rounded-2xl border border-slate-200 border-t-4 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md"\n                style={{ borderTopColor: brandRotation[index % brandRotation.length] }}
               >
                 <span className="text-xs font-bold text-[#0A4DA8]">
                   0{index + 1}
@@ -509,7 +511,7 @@ export default function HomePage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="bg-[#050B33] text-white">
+      <section className="bg-gradient-to-br from-[#050B33] via-[#0A4DA8] to-[#8B6CFF] text-white">
         <div className="mx-auto max-w-7xl px-6 py-20 text-center lg:px-8 lg:py-28">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#4FDCE8]">
             Create · Connect · Grow
