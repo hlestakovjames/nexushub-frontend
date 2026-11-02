@@ -33,7 +33,9 @@ export default function HorizontalShowcase({
   const [paused, setPaused] = useState(false);
   const [reverse, setReverse] = useState(false);
 
-  const renderCard = (item: ShowcaseItem, duplicate = false) => {
+  const repeatCount = duration === 'projects' ? 5 : duration === 'discovery' ? 2 : 1;
+
+  const renderCard = (item: ShowcaseItem, duplicate = false, instance = 0) => {
     const card = (
       <article
         className={`showcase-card flex h-full flex-col rounded-2xl border p-6 sm:p-7 ${
@@ -74,7 +76,7 @@ export default function HorizontalShowcase({
     if (item.external) {
       return (
         <a
-          key={duplicate ? `copy-${item.id}` : item.id}
+          key={`${duplicate ? 'copy-' : ''}${item.id}-${instance}`}
           href={item.href}
           target="_blank"
           rel="noopener noreferrer"
@@ -144,8 +146,16 @@ export default function HorizontalShowcase({
         onTouchStart={() => setPaused(true)}
       >
         <div className="showcase-track">
-          <div className="showcase-group">{items.map((item) => renderCard(item))}</div>
-          <div className="showcase-group" aria-hidden="true">{items.map((item) => renderCard(item, true))}</div>
+          <div className="showcase-group">
+            {Array.from({ length: repeatCount }, (_, repeat) =>
+              items.map((item, index) => renderCard(item, repeat > 0, repeat * items.length + index)),
+            )}
+          </div>
+          <div className="showcase-group" aria-hidden="true">
+            {Array.from({ length: repeatCount }, (_, repeat) =>
+              items.map((item, index) => renderCard(item, true, repeat * items.length + index)),
+            )}
+          </div>
         </div>
       </div>
       <p className={`mt-4 text-xs ${dark ? 'text-white/45' : 'text-slate-500'}`}>
