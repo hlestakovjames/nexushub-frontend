@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import AnimatedHero from '@/components/home/AnimatedHero';
+import HorizontalShowcase from '@/components/home/HorizontalShowcase';
 import { projectRecords } from '@/components/projects/project-data';
 
 const focusAreas = [
@@ -309,30 +310,23 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {applications.map((app, index) => {
-              const content = (
-                <div className={`flex h-full flex-col rounded-2xl border p-7 transition hover:-translate-y-1 hover:shadow-xl ${
-                  app.featured ? 'border-[#4FDCE8]/50 bg-white/10' : 'border-white/15 bg-white/5 hover:border-white/35'
-                }`}>
-                  <div className="flex items-center justify-between gap-3">
-                    <span className="text-xs font-bold tracking-[0.14em]" style={{ color: app.featured ? '#4FDCE8' : brandAccents[index] }}>{app.code}</span>
-                    <span className="rounded-full bg-white/10 px-3 py-1 text-[10px] font-bold text-white/70">{app.status}</span>
-                  </div>
-                  <p className="mt-7 text-2xl font-extrabold" style={{ color: app.featured ? '#4FDCE8' : brandAccents[index] }}>{app.acronym}</p>
-                  <h3 className="mt-2 text-lg font-bold text-white">{app.name}</h3>
-                  <p className="mt-4 flex-1 text-sm leading-7 text-white/65">{app.description}</p>
-                  <span className="mt-7 inline-flex items-center text-sm font-bold text-[#4FDCE8]">
-                    {app.action} <span className="ml-2" aria-hidden="true">→</span>
-                  </span>
-                </div>
-              );
-              return app.external ? (
-                <a key={app.code} href={app.href} target="_blank" rel="noopener noreferrer">{content}</a>
-              ) : (
-                <Link key={app.code} href={app.href}>{content}</Link>
-              );
-            })}
+          <div className="mt-12">
+            <HorizontalShowcase
+              label="Six applications in the Nexus Hub ecosystem"
+              duration="ecosystem"
+              dark
+              items={applications.map((app, index) => ({
+                id: app.code,
+                eyebrow: app.acronym,
+                title: app.name,
+                description: app.description,
+                href: app.href,
+                action: app.action,
+                external: app.external,
+                accent: app.featured ? '#4FDCE8' : brandAccents[index],
+                status: app.status,
+              }))}
+            />
           </div>
           <Link href="/ecosystem" className="mt-9 inline-flex rounded-lg border border-white/25 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10">
             Explore the ecosystem <span className="ml-2" aria-hidden="true">→</span>
@@ -349,17 +343,20 @@ export default function HomePage() {
               Stay informed. Find a way to connect.
             </h2>
           </div>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {discoveryLinks.map((item, index) => (
-              <Link key={item.number} href={item.href} className="group rounded-2xl border border-slate-200 border-t-4 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md" style={{ borderTopColor: brandAccents[index] }}>
-                <span className="text-xs font-bold" style={{ color: brandAccents[index] }}>{item.number}</span>
-                <h3 className="mt-5 text-lg font-bold">{item.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
-                <span className="mt-6 inline-flex text-sm font-bold text-[#0A4DA8] transition group-hover:translate-x-1">
-                  Explore <span className="ml-2" aria-hidden="true">→</span>
-                </span>
-              </Link>
-            ))}
+          <div className="mt-10">
+            <HorizontalShowcase
+              label="Products, publications, news and opportunities"
+              duration="discovery"
+              items={discoveryLinks.map((item, index) => ({
+                id: item.number,
+                eyebrow: `DISCOVER ${item.number}`,
+                title: item.title,
+                description: item.description,
+                href: item.href,
+                action: 'Explore',
+                accent: brandAccents[index],
+              }))}
+            />
           </div>
         </div>
       </section>
