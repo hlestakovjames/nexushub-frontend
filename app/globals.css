@@ -221,3 +221,21 @@ body {
     will-change: auto;
   }
 }
+
+
+/* Gentle floating motion for the fixed WhatsApp action */
+@keyframes nexus-whatsapp-hover {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -8px, 0); }
+}
+
+.nexus-whatsapp-float {
+  animation: nexus-whatsapp-hover 3s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nexus-whatsapp-float {
+    animation: none;
+  }
+}
