@@ -19,7 +19,7 @@ export default function GlobalNav() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/95 text-[#050B33] shadow-sm backdrop-blur-md">
-      <div className="mx-auto flex min-h-[76px] max-w-7xl items-center justify-between gap-6 px-5 sm:px-6 lg:px-8">
+      <div className="relative mx-auto flex min-h-[76px] max-w-7xl items-center justify-between gap-6 px-5 sm:px-6 lg:px-8">
         <Link
           href="/"
           aria-label="Nexus Hub home"
@@ -30,7 +30,7 @@ export default function GlobalNav() {
 
         <nav
           aria-label="Main navigation"
-          className="hidden items-center gap-2 md:flex"
+          className="hidden items-center gap-2 md:flex lg:absolute lg:left-1/2 lg:-translate-x-1/2"
         >
           {corporateNavigation.map((item) => {
             const active = isActivePath(pathname, item.href);
