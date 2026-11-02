@@ -93,7 +93,7 @@ export default function AnimatedHero() {
     <section
       aria-label="Nexus Hub highlights"
       aria-roledescription="carousel"
-      className="relative overflow-hidden bg-white text-[#050B33]"
+      className="relative overflow-hidden bg-[#050B33] text-white"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onFocusCapture={() => setIsPaused(true)}
@@ -108,21 +108,21 @@ export default function AnimatedHero() {
         className="pointer-events-none absolute inset-0"
         style={{
           backgroundImage:
-            "radial-gradient(ellipse at 82% 12%, rgba(139,108,255,.11) 0, transparent 30%), radial-gradient(ellipse at 12% 88%, rgba(79,220,232,.13) 0, transparent 32%), radial-gradient(ellipse at 95% 90%, rgba(245,154,82,.10) 0, transparent 22%)",
+            "radial-gradient(ellipse at 82% 12%, rgba(139,108,255,.20) 0, transparent 30%), radial-gradient(ellipse at 12% 88%, rgba(79,220,232,.14) 0, transparent 32%), radial-gradient(ellipse at 95% 90%, rgba(245,154,82,.12) 0, transparent 22%)",
         }}
       />
 
       <div className="relative mx-auto grid min-h-[650px] max-w-7xl items-center gap-12 px-6 py-16 sm:py-20 lg:grid-cols-[1fr_1.02fr] lg:px-8 lg:py-24">
         <div key={`copy-${activeIndex}`} className="hero-slide-copy relative z-10">
           <p className="text-xs font-extrabold uppercase tracking-[0.22em]" style={{ color: activeSlide.accent }}>
-            Nexus Hub <span className="mx-2 text-slate-300">/</span> {activeSlide.eyebrow}
+            Nexus Hub <span className="mx-2 text-white/35">/</span> {activeSlide.eyebrow}
           </p>
 
           <h1 className="mt-7 max-w-2xl text-4xl font-extrabold leading-[1.12] tracking-tight sm:text-5xl lg:text-[3.65rem]">
             {activeSlide.title}
           </h1>
 
-          <p className="mt-7 max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
+          <p className="mt-7 max-w-xl text-base leading-8 text-white/80 sm:text-lg">
             {activeSlide.description}
           </p>
 
@@ -137,15 +137,15 @@ export default function AnimatedHero() {
             </Link>
             <Link
               href={activeSlide.secondaryHref}
-              className="inline-flex items-center rounded-lg border border-slate-300 bg-white/80 px-6 py-3.5 text-sm font-bold text-[#050B33] transition hover:border-[#050B33]"
+              className="inline-flex items-center rounded-lg border border-white/35 bg-white/5 px-6 py-3.5 text-sm font-bold text-white transition hover:border-white hover:bg-white/10"
             >
               {activeSlide.secondaryLabel}
             </Link>
           </div>
 
-          <p className="mt-10 text-sm font-semibold text-slate-400">
-            {String(activeIndex + 1).padStart(2, "0")} <span className="mx-2 text-slate-300">/</span> {String(slides.length).padStart(2, "0")}
-            <span className="ml-3 font-normal text-slate-500">Ideas, technology and connected possibilities.</span>
+          <p className="mt-10 text-sm font-semibold text-white/65">
+            {String(activeIndex + 1).padStart(2, "0")} <span className="mx-2 text-white/35">/</span> {String(slides.length).padStart(2, "0")}
+            <span className="ml-3 font-normal text-white/55">Ideas, technology and connected possibilities.</span>
           </p>
         </div>
 
@@ -153,7 +153,7 @@ export default function AnimatedHero() {
           <div className="absolute -inset-5 rounded-[2rem] opacity-70 blur-2xl" style={{ background: `linear-gradient(135deg, ${activeSlide.accent}30, transparent 65%)` }} />
           <div
             key={`image-${activeIndex}`}
-            className="hero-slide-image relative aspect-[5/4] overflow-hidden rounded-[1.75rem] border border-slate-200 bg-slate-100 shadow-[0_25px_70px_-28px_rgba(5,11,51,.35)]"
+            className="hero-slide-image relative aspect-[5/4] overflow-hidden rounded-[1.75rem] border border-white/15 bg-white/5 shadow-[0_25px_70px_-28px_rgba(0,0,0,.65)]"
           >
             <Image
               src={activeSlide.image}
@@ -185,7 +185,7 @@ export default function AnimatedHero() {
                   className="h-2.5 rounded-full transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0A4DA8]"
                   style={{
                     width: index === activeIndex ? "2rem" : "0.625rem",
-                    backgroundColor: index === activeIndex ? activeSlide.accent : "#CBD5E1",
+                    backgroundColor: index === activeIndex ? activeSlide.accent : "rgba(255,255,255,.42)",
                   }}
                 />
               ))}
@@ -196,7 +196,7 @@ export default function AnimatedHero() {
                 type="button"
                 onClick={() => showSlide(activeIndex - 1)}
                 aria-label="Previous hero slide"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-[#050B33] transition hover:border-[#0A4DA8] hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0A4DA8]"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition hover:border-white/70 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0A4DA8]"
               >
                 <span aria-hidden="true">←</span>
               </button>
@@ -210,7 +210,7 @@ export default function AnimatedHero() {
               </button>
             </div>
           </div>
-          <p className="mt-3 text-right text-[11px] text-slate-400">
+          <p className="mt-3 text-right text-[11px] text-white/55">
             {reducedMotion ? "Automatic movement disabled by your motion preference" : isPaused ? "Paused while you interact" : "Automatically changing"}
           </p>
         </div>
