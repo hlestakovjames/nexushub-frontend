@@ -63,7 +63,7 @@ const focusAreas = [
     title: 'Media & Creativity',
     statement: 'Using creative communication to make ideas visible and accessible.',
     description:
-      'Media and creativity extend how Nexus Hub communicates ideas, tells stories, develops visual experiences, and engages audiences. Nexus Hub TV is the media arm within the wider organisation; it is distinct from the parent brand and its other areas of work.',
+      'Media and creativity extend how Nexus Hub communicates ideas, tells stories, develops visual experiences, and engages audiences. Nexus Hub TV is the media arm within the wider organisation; it is distinct from the parent brand and its other areas of work. Its dedicated application will be designed and developed from scratch.',
     activities: [
       {
         title: 'Digital media',
@@ -82,7 +82,7 @@ const focusAreas = [
         description: 'Exploring ways to connect content, communities, and audiences across relevant platforms.',
       },
     ],
-    maturity: 'Media arm available online; wider direction developing',
+    maturity: 'Media application planned; wider direction developing',
     accent: '#F59A52',
   },
   {
