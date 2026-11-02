@@ -34,7 +34,7 @@ export default function MobileGlobalNav({
         aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
         aria-expanded={isOpen}
         aria-controls="mobile-corporate-navigation"
-        className="flex h-11 w-11 items-center justify-center rounded-md border border-slate-200 text-[#050A30] transition hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1266B6] focus-visible:ring-offset-2"
+        className="flex h-11 w-11 items-center justify-center rounded-md border border-slate-200 text-[#050B33] transition hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A4DA8] focus-visible:ring-offset-2"
       >
         <span className="sr-only">
           {isOpen ? 'Close navigation menu' : 'Open navigation menu'}
@@ -49,7 +49,7 @@ export default function MobileGlobalNav({
       {isOpen && (
         <div
           id="mobile-corporate-navigation"
-          className="absolute right-0 top-[calc(100%+0.75rem)] z-50 w-[min(20rem,calc(100vw-2.5rem))] rounded-xl border border-slate-200 bg-white p-3 text-[#050A30] shadow-xl"
+          className="absolute right-0 top-[calc(100%+0.75rem)] z-50 w-[min(20rem,calc(100vw-2.5rem))] rounded-xl border border-slate-200 bg-white p-3 text-[#050B33] shadow-xl"
         >
           <nav aria-label={`${contextLabel} navigation`}>
             <ul className="space-y-1">
@@ -62,10 +62,10 @@ export default function MobileGlobalNav({
                       href={item.href}
                       onClick={closeMenu}
                       aria-current={active ? 'page' : undefined}
-                      className={`block rounded-lg px-4 py-3 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1266B6] ${
+                      className={`block rounded-lg px-4 py-3 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A4DA8] ${
                         active
-                          ? 'bg-slate-100 text-[#050A30]'
-                          : 'text-slate-600 hover:bg-slate-50 hover:text-[#050A30]'
+                          ? 'bg-slate-100 text-[#050B33]'
+                          : 'text-slate-600 hover:bg-slate-50 hover:text-[#050B33]'
                       }`}
                     >
                       {item.label}
@@ -79,7 +79,7 @@ export default function MobileGlobalNav({
           <Link
             href="/contact"
             onClick={closeMenu}
-            className="mt-3 flex min-h-11 items-center justify-center rounded-md bg-[#050A30] px-4 text-sm font-semibold text-white transition hover:bg-[#1266B6]"
+            className="mt-3 flex min-h-11 items-center justify-center rounded-md bg-[#050B33] px-4 text-sm font-semibold text-white transition hover:bg-[#0A4DA8]"
           >
             Start a conversation
           </Link>
