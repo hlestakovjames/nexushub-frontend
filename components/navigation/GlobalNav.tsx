@@ -1,37 +1,31 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 import NexusHubLogo from '@/components/brand/NexusHubLogo';
 import {
+  corporateNavigation,
   resolveNavigationContext,
   type ContextNavigationItem,
 } from '@/config/navigation/context-navigation';
 
 import MobileGlobalNav from './MobileGlobalNav';
 
-type GlobalNavProps = {
-  sectionId?: string;
-};
-
 const quickLinks = [
-  { label: 'Projects', href: '/projects', group: 'Explore' },
-  { label: 'Blog', href: '/blog', group: 'Explore' },
-  { label: 'News', href: '/news', group: 'Explore' },
-  { label: 'Events & Activities', href: '/events-activities', group: 'Explore' },
-  { label: 'Resources', href: '/resources', group: 'Explore' },
-  { label: 'Digital Services', href: '/digital/services', group: 'Services & Platforms' },
-  { label: 'Business Services', href: '/business/services', group: 'Services & Platforms' },
-  { label: 'Business Solutions', href: '/business/solutions', group: 'Services & Platforms' },
-  { label: 'Platforms', href: '/platforms', group: 'Services & Platforms' },
-  { label: 'Nexus Hub TV', href: 'https://nexushub-media.vercel.app/nexus-hub-tv', group: 'Services & Platforms' },
-  { label: 'About', href: '/about', group: 'Nexus Hub' },
-  { label: 'Leadership', href: '/about/leadership', group: 'Nexus Hub' },
-  { label: 'Careers', href: '/about/careers', group: 'Nexus Hub' },
-  { label: 'Partnerships', href: '/business/partnerships', group: 'Nexus Hub' },
-  { label: 'Media', href: 'https://nexushub-media.vercel.app/', group: 'Nexus Hub' },
+  { label: 'Explore our services', href: '/services' },
+  { label: 'Products and innovations', href: '/products' },
+  { label: 'Our projects', href: '/projects' },
+  { label: 'Publications and insights', href: '/publications' },
+  { label: 'Events', href: '/events' },
+  { label: 'Opportunities', href: '/opportunities' },
+  { label: 'Explore the ecosystem', href: '/ecosystem' },
+  { label: 'Contact Nexus Hub', href: '/contact' },
+  {
+    label: 'Nexus Hub TV',
+    href: 'https://nexushub-media.vercel.app/',
+  },
 ];
 
 function isActivePath(pathname: string, href: string) {
@@ -52,7 +46,7 @@ function ContextItem({
   return (
     <Link
       href={item.href}
-      className={`relative shrink-0 px-3 py-4 text-[13px] font-bold tracking-[0.04em] transition ${
+      className={`relative shrink-0 px-3 py-4 text-[13px] font-bold tracking-[0.02em] transition ${
         active
           ? 'text-[#050A30]'
           : 'text-[#050A30]/65 hover:text-[#050A30]'
@@ -67,16 +61,13 @@ function ContextItem({
   );
 }
 
-export default function GlobalNav({
-  sectionId: _sectionId,
-}: GlobalNavProps) {
+export default function GlobalNav() {
   const pathname = usePathname();
   const [isQuickLinksOpen, setIsQuickLinksOpen] = useState(false);
   const context = resolveNavigationContext(pathname);
 
   return (
     <header className="sticky top-0 z-50 w-full">
-      {/* LAYER 1 — GLOBAL UTILITY */}
       <div className="border-b border-white/10 bg-[#050A30] text-white">
         <div className="mx-auto flex min-h-10 max-w-7xl items-center justify-between gap-4 px-6">
           <div className="relative">
@@ -88,69 +79,31 @@ export default function GlobalNav({
               className="flex items-center gap-1.5 rounded-md px-2 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-white/90 transition hover:bg-white/10 hover:text-white"
             >
               Quick Links
-
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 20 20"
-                fill="none"
-                aria-hidden="true"
-                className={`transition-transform ${isQuickLinksOpen ? 'rotate-180' : ''}`}
-              >
-                <path
-                  d="M5 7.5L10 12.5L15 7.5"
-                  stroke="currentColor"
-                  strokeWidth="1.7"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <span aria-hidden="true">
+                {isQuickLinksOpen ? '−' : '+'}
+              </span>
             </button>
 
             {isQuickLinksOpen && (
               <div
                 role="menu"
-                className="absolute left-0 top-full mt-2 w-[min(48rem,calc(100vw-3rem))] overflow-hidden rounded-xl border border-white/10 bg-[#07123F] p-4 shadow-2xl"
+                className="absolute left-0 top-full mt-2 w-[min(22rem,calc(100vw-3rem))] overflow-hidden rounded-xl border border-white/10 bg-[#07123F] p-3 shadow-2xl"
               >
-                <div className="mb-3 px-2">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#5FC9E6]">
-                    Quick Access
-                  </p>
-                  <p className="mt-1 text-xs text-white/50">
-                    Explore important areas across Nexus Hub.
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-3 gap-4 border-t border-white/10 pt-4">
-                  {['Explore', 'Services & Platforms', 'Nexus Hub'].map((group) => (
-                    <div key={group}>
-                      <p className="mb-2 px-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/45">
-                        {group}
-                      </p>
-
-                      <div className="space-y-0.5">
-                        {quickLinks
-                          .filter((item) => item.group === group)
-                          .map((item) => (
-                            <Link
-                              key={item.href}
-                              href={item.href}
-                              role="menuitem"
-                              onClick={() => setIsQuickLinksOpen(false)}
-                              className="block rounded-lg px-2.5 py-2 text-sm text-white transition hover:bg-white/10 hover:text-[#5FC9E6]"
-                            >
-                              {item.label}
-                            </Link>
-                          ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                {quickLinks.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    role="menuitem"
+                    onClick={() => setIsQuickLinksOpen(false)}
+                    className="block rounded-lg px-3 py-2.5 text-sm text-white/80 transition hover:bg-white/10 hover:text-[#5FC9E6]"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
               </div>
             )}
           </div>
 
-          {/* UTILITY ACTIONS */}
           <div className="hidden items-center gap-5 text-[11px] font-semibold uppercase tracking-[0.08em] text-white/90 sm:flex">
             <Link href="tel:0728812649" className="transition hover:text-[#5FC9E6]">
               Call Us
@@ -158,6 +111,8 @@ export default function GlobalNav({
 
             <Link
               href="https://wa.me/254713290745"
+              target="_blank"
+              rel="noopener noreferrer"
               className="transition hover:text-[#5FC9E6]"
             >
               WhatsApp
@@ -173,9 +128,8 @@ export default function GlobalNav({
         </div>
       </div>
 
-      {/* LAYER 2 — CONTEXT NAVIGATION */}
       <div className="border-b border-[#050A30]/10 bg-white text-[#050A30] shadow-sm">
-        <div className="mx-auto flex min-h-14 max-w-7xl items-center">
+        <div className="mx-auto flex min-h-16 max-w-7xl items-center">
           <Link
             href="/"
             aria-label="Nexus Hub home"
@@ -185,10 +139,10 @@ export default function GlobalNav({
           </Link>
 
           <nav
-            aria-label={`${context.label} navigation`}
-            className="hidden min-w-0 flex-1 items-center overflow-x-auto text-[#050A30] md:flex"
+            aria-label="Corporate navigation"
+            className="hidden min-w-0 flex-1 items-center overflow-x-auto md:flex"
           >
-            {context.items.map((item) => (
+            {corporateNavigation.map((item) => (
               <ContextItem
                 key={item.href}
                 item={item}

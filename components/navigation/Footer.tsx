@@ -5,70 +5,42 @@ import NexusHubLogo from '@/components/brand/NexusHubLogo';
 
 const footerGroups = [
   {
-    title: 'Company',
+    title: 'Nexus Hub',
     links: [
-      { label: 'About', href: '/about' },
-      { label: 'Our Story', href: '/about/our-story' },
-      { label: 'Mission & Vision', href: '/about/mission-vision' },
-      { label: 'Our Approach', href: '/about/approach' },
+      { label: 'About Us', href: '/about' },
       { label: 'Leadership', href: '/about/leadership' },
-      { label: 'Our Team', href: '/about/team' },
-      { label: 'Careers', href: '/about/careers' },
-    ],
-  },
-  {
-    title: 'Media',
-    links: [
-      { label: 'Nexus Hub TV', href: 'https://nexushub-media.vercel.app/nexus-hub-tv' },
-      { label: 'NHTV Football', href: 'https://nexushub-media.vercel.app/nhtv-football' },
-      { label: 'NHTV Stories', href: 'https://nexushub-media.vercel.app/nhtv-stories' },
-      { label: 'NHTV Voices', href: 'https://nexushub-media.vercel.app/nhtv-voices' },
-    ],
-  },
-  {
-    title: 'Digital',
-    links: [
-      { label: 'Digital Overview', href: '/digital' },
-      { label: 'Digital Services', href: '/digital/services' },
+      { label: 'Our Ecosystem', href: '/ecosystem' },
       { label: 'Projects', href: '/projects' },
     ],
   },
   {
-    title: 'Business',
+    title: 'Discover',
     links: [
-      { label: 'Business Overview', href: '/business' },
-      { label: 'Business Services', href: '/business/services' },
-      { label: 'Business Solutions', href: '/business/solutions' },
-      { label: 'Partnerships', href: '/business/partnerships' },
+      { label: 'Services', href: '/services' },
+      { label: 'Products & Innovations', href: '/products' },
+      { label: 'Publications', href: '/publications' },
+      { label: 'Events', href: '/events' },
+      { label: 'Opportunities', href: '/opportunities' },
     ],
   },
   {
-    title: 'Resources',
+    title: 'Our Applications',
     links: [
-      { label: 'Downloads', href: '/resources/downloads' },
-      { label: 'Guides', href: '/resources/guides' },
-      { label: 'Documents', href: '/resources/documents' },
-      { label: 'Blog', href: '/blog' },
-      { label: 'News', href: '/news' },
-      { label: 'Events & Activities', href: '/events-activities' },
+      { label: 'Corporate Website', href: '/' },
+      { label: 'Ecosystem Portal', href: '/ecosystem' },
+      { label: 'Corporate Workspace', href: '/ecosystem' },
+      { label: 'Nexus Hub TV', href: 'https://nexushub-media.vercel.app/' },
+      { label: 'Nexus Hub Learning', href: '/ecosystem' },
+      { label: 'Administration Console', href: '/ecosystem' },
     ],
-  },
-];
-
-const connectLinks = [
-  {
-    label: 'Contact',
-    href: '/contact',
   },
 ];
 
 export default function Footer() {
   return (
     <footer className="bg-[#030721] text-white">
-      {/* MAIN FOOTER */}
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
         <div className="grid gap-14 lg:grid-cols-[1.1fr_2fr]">
-          {/* BRAND BLOCK */}
           <div className="max-w-sm">
             <Link
               href="/"
@@ -76,10 +48,7 @@ export default function Footer() {
               className="inline-flex items-center"
             >
               <div className="flex h-[72px] w-[72px] items-center justify-center rounded-full bg-white/95 shadow-sm">
-                <NexusHubLogo
-                  size={52}
-                  showWordmark={false}
-                />
+                <NexusHubLogo size={52} showWordmark={false} />
               </div>
             </Link>
 
@@ -88,13 +57,12 @@ export default function Footer() {
             </p>
 
             <p className="mt-4 text-sm leading-7 text-white/55">
-              Nexus Hub connects ideas across digital innovation,
-              media, and business to create meaningful platforms,
-              experiences, and opportunities.
+              Nexus Hub is a connected ecosystem bringing together
+              technology, media, business, people and opportunities
+              through specialised digital applications and services.
             </p>
           </div>
 
-          {/* LINK GROUPS */}
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {footerGroups.map((group) => (
               <div key={group.title}>
@@ -104,7 +72,7 @@ export default function Footer() {
 
                 <ul className="mt-5 space-y-3">
                   {group.links.map((link) => (
-                    <li key={link.href}>
+                    <li key={`${group.title}-${link.label}`}>
                       <Link
                         href={link.href}
                         className="text-sm text-white/60 transition hover:text-white"
@@ -117,83 +85,54 @@ export default function Footer() {
               </div>
             ))}
 
-            {/* CONNECT */}
             <div>
               <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-[#5FC9E6]">
                 Connect
               </h2>
 
-              <ul className="mt-5 space-y-3">
-                {connectLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-white/60 transition hover:text-white"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-6 space-y-3 text-sm leading-6 text-white/50">
-                <div className="flex items-start gap-3">
-                  <MapPin
-                    size={17}
-                    strokeWidth={1.7}
-                    className="shrink-0 text-[#5FC9E6]"
-                    aria-hidden="true"
-                  />
+              <ul className="mt-5 space-y-3 text-sm leading-6 text-white/55">
+                <li className="flex items-start gap-3">
+                  <MapPin size={17} className="shrink-0 text-[#5FC9E6]" />
                   <span>Nairobi, Kenya</span>
-                </div>
+                </li>
 
-                <Link
-                  href="tel:0728812649"
-                  className="flex items-center gap-3 transition hover:text-white"
-                >
-                  <Phone
-                    size={17}
-                    strokeWidth={1.7}
-                    className="shrink-0 text-[#5FC9E6]"
-                    aria-hidden="true"
-                  />
-                  <span>0728 812 649</span>
-                </Link>
+                <li>
+                  <Link href="tel:0728812649" className="flex items-center gap-3 hover:text-white">
+                    <Phone size={17} className="shrink-0 text-[#5FC9E6]" />
+                    <span>0728 812 649</span>
+                  </Link>
+                </li>
 
-                <Link
-                  href="https://wa.me/254713290745"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 transition hover:text-white"
-                >
-                  <MessageCircle
-                    size={17}
-                    strokeWidth={1.7}
-                    className="shrink-0 text-[#5FC9E6]"
-                    aria-hidden="true"
-                  />
-                  <span>0713 290 745</span>
-                </Link>
+                <li>
+                  <Link
+                    href="https://wa.me/254713290745"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 hover:text-white"
+                  >
+                    <MessageCircle size={17} className="shrink-0 text-[#5FC9E6]" />
+                    <span>0713 290 745</span>
+                  </Link>
+                </li>
 
-                <Link
-                  href="mailto:nexushubkenya@gmail.com"
-                  className="flex items-center gap-3 transition hover:text-white"
-                >
-                  <Mail
-                    size={17}
-                    strokeWidth={1.7}
-                    className="shrink-0 text-[#5FC9E6]"
-                    aria-hidden="true"
-                  />
-                  <span>nexushubkenya@gmail.com</span>
-                </Link>
-              </div>
+                <li>
+                  <Link href="mailto:nexushubkenya@gmail.com" className="flex items-center gap-3 hover:text-white">
+                    <Mail size={17} className="shrink-0 text-[#5FC9E6]" />
+                    <span>nexushubkenya@gmail.com</span>
+                  </Link>
+                </li>
+
+                <li className="pt-2">
+                  <Link href="/contact" className="font-semibold text-[#5FC9E6] hover:text-white">
+                    Contact Nexus Hub →
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
 
-      {/* BOTTOM BAR */}
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 text-sm sm:flex-row sm:items-center sm:justify-between lg:px-8">
           <p className="text-white/40">
@@ -201,24 +140,13 @@ export default function Footer() {
           </p>
 
           <div className="flex flex-wrap gap-x-5 gap-y-2">
-            <Link
-              href="/privacy"
-              className="text-white/40 transition hover:text-white"
-            >
+            <Link href="/privacy" className="text-white/40 transition hover:text-white">
               Privacy Policy
             </Link>
-
-            <Link
-              href="/terms"
-              className="text-white/40 transition hover:text-white"
-            >
+            <Link href="/terms" className="text-white/40 transition hover:text-white">
               Terms
             </Link>
-
-            <Link
-              href="/sitemap.xml"
-              className="text-white/40 transition hover:text-white"
-            >
+            <Link href="/sitemap.xml" className="text-white/40 transition hover:text-white">
               Sitemap
             </Link>
           </div>
