@@ -491,7 +491,8 @@ export default function HomePage() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="group rounded-2xl border border-slate-200 border-t-4 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md"\n                style={{ borderTopColor: brandRotation[index % brandRotation.length] }}
+                className="group rounded-2xl border border-slate-200 border-t-4 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md"
+                style={{ borderTopColor: brandRotation[index % brandRotation.length] }}
               >
                 <span className="text-xs font-bold" style={{ color: brandRotation[index % brandRotation.length] }}>
                   0{index + 1}
