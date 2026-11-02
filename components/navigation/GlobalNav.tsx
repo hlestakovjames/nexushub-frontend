@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import NexusHubLogo from '@/components/brand/NexusHubLogo';
 import { corporateNavigation } from '@/config/navigation/context-navigation';
@@ -18,13 +18,19 @@ function isActivePath(pathname: string, href: string) {
 export default function GlobalNav() {
   const pathname = usePathname();
   const [showWhatsApp, setShowWhatsApp] = useState(false);
+  const isInitialMount = useRef(true);
 
   useEffect(() => {
-    const updateVisibility = () => setShowWhatsApp(window.scrollY > 320);
-    updateVisibility();
-    window.addEventListener('scroll', updateVisibility, { passive: true });
-    return () => window.removeEventListener('scroll', updateVisibility);
-  }, []);
+    setShowWhatsApp(false);
+
+    const delay = isInitialMount.current ? 1100 : 350;
+    const entranceTimer = window.setTimeout(() => {
+      setShowWhatsApp(true);
+    }, delay);
+
+    isInitialMount.current = false;
+    return () => window.clearTimeout(entranceTimer);
+  }, [pathname]);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/95 text-[#050B33] shadow-sm backdrop-blur-md">
