@@ -139,7 +139,7 @@ export default function HomePage() {
           className="absolute inset-0 -z-10 opacity-30"
           style={{
             backgroundImage:
-              'radial-gradient(circle at 80% 20%, #0A4DA8 0, transparent 35%), radial-gradient(circle at 15% 90%, #0A4DA8 0, transparent 30%)',
+              'radial-gradient(circle at 80% 20%, #8B6CFF 0, transparent 34%), radial-gradient(circle at 15% 90%, #0A4DA8 0, transparent 30%), radial-gradient(circle at 92% 82%, #F59A52 0, transparent 22%)',
           }}
         />
 
