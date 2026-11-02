@@ -20,6 +20,7 @@ export const corporateNavigation: ContextNavigationItem[] = [
   { label: 'Services', href: '/services' },
   { label: 'Products', href: '/products' },
   { label: 'Insights', href: '/publications' },
+  { label: 'Resources', href: '/resources' },
   { label: 'Events', href: '/events' },
   { label: 'Projects', href: '/projects' },
   { label: 'Contact', href: '/contact' },
