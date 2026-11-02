@@ -89,11 +89,11 @@ body {
 }
 
 .hero-slide-copy {
-  animation: nexus-hero-copy-enter 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: nexus-hero-copy-enter 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .hero-slide-image {
-  animation: nexus-hero-image-enter 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: nexus-hero-image-enter 1050ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
