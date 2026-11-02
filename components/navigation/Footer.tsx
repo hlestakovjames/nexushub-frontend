@@ -16,7 +16,11 @@ const footerGroups = [
     title: 'Explore',
     links: [
       { label: 'Home', href: '/' },
-      { label: 'Contact and Enquiries', href: '/contact' },
+      { label: 'Services', href: '/services' },
+      { label: 'Products & Innovations', href: '/products' },
+      { label: 'Publications & Insights', href: '/publications' },
+      { label: 'Resources', href: '/resources' },
+      { label: 'Events & Activities', href: '/events' },
     ],
   },
 ];
