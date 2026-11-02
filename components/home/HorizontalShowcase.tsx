@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 type ShowcaseItem = {
   id: string;
@@ -13,12 +14,13 @@ type ShowcaseItem = {
   external?: boolean;
   accent: string;
   status?: string;
+  image?: string;
 };
 
 type HorizontalShowcaseProps = {
   items: ShowcaseItem[];
   label: string;
-  duration?: 'ecosystem' | 'discovery';
+  duration?: 'ecosystem' | 'discovery' | 'projects';
   dark?: boolean;
 };
 
@@ -41,6 +43,11 @@ export default function HorizontalShowcase({
         }`}
         style={{ borderTopWidth: 3, borderTopColor: item.accent }}
       >
+        {item.image && (
+          <div className="relative -mx-6 -mt-6 mb-5 h-44 overflow-hidden rounded-t-[calc(1rem-1px)] sm:-mx-7 sm:-mt-7">
+            <Image src={item.image} alt={item.title} fill sizes="(max-width: 768px) 82vw, 360px" className="object-cover" />
+          </div>
+        )}
         <div className="flex items-center justify-between gap-3">
           <span className="text-xs font-extrabold tracking-[0.14em]" style={{ color: item.accent }}>
             {item.eyebrow}
@@ -123,7 +130,7 @@ export default function HorizontalShowcase({
       </div>
 
       <div
-        className={`showcase-marquee ${duration === 'ecosystem' ? 'showcase-marquee-ecosystem' : 'showcase-marquee-discovery'}`}
+        className={`showcase-marquee ${duration === 'ecosystem' ? 'showcase-marquee-ecosystem' : duration === 'projects' ? 'showcase-marquee-projects' : 'showcase-marquee-discovery'}`}
         data-paused={paused}
         data-reverse={reverse}
         role="region"
