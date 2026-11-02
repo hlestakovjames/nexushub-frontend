@@ -11,7 +11,7 @@ const focusAreas = [
     title: 'Technology & Digital Solutions',
     description:
       'Designing and developing websites, software, platforms and digital systems that address practical needs.',
-    href: '/digital',
+    href: '/areas-of-focus#technology-digital-solutions',
     label: 'Explore technology',
     accent: '#4FDCE8',
   },
@@ -20,7 +20,7 @@ const focusAreas = [
     title: 'Innovation & Systems Thinking',
     description:
       'Exploring problems, connected systems and emerging possibilities, then shaping promising ideas into practical solutions.',
-    href: '/about/approach',
+    href: '/areas-of-focus#innovation-systems-thinking',
     label: 'Explore our approach',
     accent: '#8B6CFF',
   },
@@ -39,7 +39,7 @@ const focusAreas = [
     title: 'Business & Enterprise',
     description:
       'Bringing business thinking, creative capabilities and collaborative solutions together around organisational needs.',
-    href: '/business',
+    href: '/areas-of-focus#business-enterprise',
     label: 'Explore business',
     accent: '#FFB84D',
   },
