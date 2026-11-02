@@ -29,10 +29,9 @@ const focusAreas = [
     title: 'Media & Creativity',
     description:
       'Using visual communication, creative production and digital storytelling to share ideas and connect with audiences.',
-    href: 'https://nexushub-media.vercel.app/',
-    label: 'Explore Nexus Hub TV',
+    href: '/areas-of-focus#media-creativity',
+    label: 'Explore media & creativity',
     accent: '#F59A52',
-    external: true,
   },
   {
     number: '04',
@@ -103,11 +102,10 @@ const applications = [
     name: 'Nexus Hub TV',
     acronym: 'NH-TV',
     description:
-      'The media arm for content, stories, programmes, productions and audience engagement.',
-    status: 'Available online',
-    href: 'https://nexushub-media.vercel.app/',
-    action: 'Visit Nexus Hub TV',
-    external: true,
+      'A dedicated media application to be designed and developed from scratch for content, stories, programmes, productions and audience engagement.',
+    status: 'Planned application',
+    href: '/areas-of-focus#media-creativity',
+    action: 'Explore media & creativity',
   },
   {
     code: 'APP-05',
@@ -206,8 +204,8 @@ export default function HomePage() {
           </div>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2">
-            {focusAreas.map((area) => {
-              const card = (
+            {focusAreas.map((area) => (
+              <Link key={area.number} href={area.href}>
                 <article className="h-full rounded-2xl border border-white bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg sm:p-8">
                   <span className="text-xs font-extrabold tracking-[0.16em]" style={{ color: area.accent }}>{area.number}</span>
                   <h3 className="mt-5 text-xl font-extrabold tracking-tight">{area.title}</h3>
@@ -216,13 +214,8 @@ export default function HomePage() {
                     {area.label} <span className="ml-2" aria-hidden="true">→</span>
                   </span>
                 </article>
-              );
-              return 'external' in area && area.external ? (
-                <a key={area.number} href={area.href} target="_blank" rel="noopener noreferrer">{card}</a>
-              ) : (
-                <Link key={area.number} href={area.href}>{card}</Link>
-              );
-            })}
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -321,7 +314,6 @@ export default function HomePage() {
                 description: app.description,
                 href: app.href,
                 action: app.action,
-                external: app.external,
                 accent: app.featured ? '#4FDCE8' : brandAccents[index],
                 status: app.status,
               }))}
