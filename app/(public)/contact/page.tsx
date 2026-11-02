@@ -253,7 +253,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <ContactEnquiryForm />     </form>
+            <ContactEnquiryForm />
           </div>
         </div>
       </section>
