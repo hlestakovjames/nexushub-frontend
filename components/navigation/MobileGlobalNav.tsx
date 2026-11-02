@@ -55,6 +55,7 @@ export default function MobileGlobalNav({
             <ul className="space-y-1">
               {contextItems.map((item) => {
                 const active = isActivePath(pathname, item.href);
+                const isContact = item.href === '/contact';
 
                 return (
                   <li key={item.href}>
@@ -62,11 +63,15 @@ export default function MobileGlobalNav({
                       href={item.href}
                       onClick={closeMenu}
                       aria-current={active ? 'page' : undefined}
-                      className={`block rounded-lg px-4 py-3 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A4DA8] ${
-                        active
-                          ? 'bg-slate-100 text-[#050B33]'
-                          : 'text-slate-600 hover:bg-slate-50 hover:text-[#050B33]'
-                      }`}
+                      className={
+                        isContact
+                          ? 'mt-2 flex min-h-11 items-center justify-center rounded-xl bg-[#FFB84D] px-4 py-3 text-sm font-bold text-[#050B33] shadow-sm transition hover:bg-[#F59A52] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#050B33] focus-visible:ring-offset-2'
+                          : `block rounded-lg px-4 py-3 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A4DA8] ${
+                              active
+                                ? 'bg-slate-100 text-[#050B33]'
+                                : 'text-slate-600 hover:bg-slate-50 hover:text-[#050B33]'
+                            }`
+                      }
                     >
                       {item.label}
                     </Link>
@@ -75,14 +80,6 @@ export default function MobileGlobalNav({
               })}
             </ul>
           </nav>
-
-          <Link
-            href="/contact"
-            onClick={closeMenu}
-            className="mt-3 flex min-h-11 items-center justify-center rounded-md bg-[#050B33] px-4 text-sm font-semibold text-white transition hover:bg-[#0A4DA8]"
-          >
-            Start a conversation
-          </Link>
         </div>
       )}
     </div>
