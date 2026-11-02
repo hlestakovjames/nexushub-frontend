@@ -140,8 +140,7 @@ body {
 
 .showcase-marquee[data-paused="true"] .showcase-track,
 .showcase-marquee:hover .showcase-track,
-.showcase-marquee:focus-within .showcase-track,
-.showcase-marquee[data-reverse="true"] .showcase-track {
+.showcase-marquee:focus-within .showcase-track {
   animation-play-state: paused;
 }
 
