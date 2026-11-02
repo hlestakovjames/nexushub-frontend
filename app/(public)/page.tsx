@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import AnimatedHero from '@/components/home/AnimatedHero';
 import HorizontalShowcase from '@/components/home/HorizontalShowcase';
+import ImpactStatistics from '@/components/home/ImpactStatistics';
 import { projectRecords } from '@/components/projects/project-data';
 
 const focusAreas = [
@@ -189,6 +190,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <ImpactStatistics />
 
       {/* AREAS OF FOCUS */}
       <section className="bg-[#F5F2FF]">
