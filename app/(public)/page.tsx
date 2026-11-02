@@ -144,9 +144,9 @@ const discoveryLinks = [
   },
   {
     number: '03',
-    title: 'News & Activities',
-    description: 'Follow developments, engagements, events and activities connected to Nexus Hub.',
-    href: '/news',
+    title: 'Events & Activities',
+    description: 'Explore events, programmes, engagements and activities involving Nexus Hub.',
+    href: '/events',
   },
   {
     number: '04',
