@@ -12,7 +12,7 @@ export default function OurStoryPage() {
           paragraphs: [
             'Around April to June 2024, an experience independently completing a KUCCPS application using a phone and mobile data prompted an early question: could other people be helped to access important digital and administrative services without unnecessary barriers?',
             'The idea was not yet a defined company. It was an exploration of practical online assistance, including application-related services such as KUCCPS and HELB, alongside other digital support.',
-            'In late November 2024, a request from a cousin to create a Facebook poster became the first graphic-design commission. The positive response helped reveal another possible direction: turning a self-taught creative skill into a service.'
+            'In late November 2024, a client reached out through Facebook requesting an event poster. Completing that commission became the first graphic-design project. The positive response helped reveal another possible direction: turning a self-taught creative skill into a service.'
           ]
         },
         {
