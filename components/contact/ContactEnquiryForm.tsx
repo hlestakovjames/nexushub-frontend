@@ -1,6 +1,6 @@
 'use client';
 
-type FormEvent = React.FormEvent<HTMLFormElement>;
+import type { FormEvent } from 'react';
 
 const enquiryLabels: Record<string, string> = {
   general: 'General Enquiry',
