@@ -120,8 +120,8 @@ export default function ProductsPage() {
                 direction. Its applications are being approached as separate components with distinct roles
                 and development stages.
               </p>
-              <Link href="/ecosystem" className="mt-7 inline-flex items-center gap-2 font-bold text-[#0A4DA8] hover:text-[#050B33]">
-                Explore the Nexus Hub ecosystem <ArrowUpRight size={17} aria-hidden="true" />
+              <Link href="/areas-of-focus#innovation-systems-thinking" className="mt-7 inline-flex items-center gap-2 font-bold text-[#0A4DA8] hover:text-[#050B33]">
+                Explore our innovation direction <ArrowUpRight size={17} aria-hidden="true" />
               </Link>
             </div>
           </div>
