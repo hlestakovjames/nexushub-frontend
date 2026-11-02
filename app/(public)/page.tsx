@@ -275,22 +275,21 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {featuredProjects.map((project) => (
-              <article key={project.slug} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-                <div className="relative aspect-[16/8] overflow-hidden bg-slate-200">
-                  <Image src={project.image} alt={project.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition duration-700 hover:scale-105" />
-                </div>
-                <div className="p-7 sm:p-8">
-                  <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#0A4DA8]">{project.client}</p>
-                  <h3 className="mt-3 text-2xl font-extrabold">{project.title}</h3>
-                  <p className="mt-4 leading-7 text-slate-600">{project.summary}</p>
-                  <Link href={`/projects/${project.slug}`} className="mt-7 inline-flex font-bold text-[#0A4DA8] hover:text-[#050B33]">
-                    Explore project <span className="ml-2" aria-hidden="true">→</span>
-                  </Link>
-                </div>
-              </article>
-            ))}
+          <div className="mt-12">
+            <HorizontalShowcase
+              label="Selected Nexus Hub projects"
+              duration="projects"
+              items={featuredProjects.map((project, index) => ({
+                id: project.slug,
+                eyebrow: project.client,
+                title: project.title,
+                description: project.summary,
+                href: `/projects/${project.slug}`,
+                action: 'Explore project',
+                accent: brandAccents[index],
+                image: project.image,
+              }))}
+            />
           </div>
         </div>
       </section>
