@@ -34,20 +34,25 @@ export default function GlobalNav() {
         >
           {corporateNavigation.map((item) => {
             const active = isActivePath(pathname, item.href);
+            const isContact = item.href === '/contact';
 
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 aria-current={active ? 'page' : undefined}
-                className={`relative rounded-md px-4 py-3 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A4DA8] focus-visible:ring-offset-2 ${
-                  active
-                    ? 'text-[#050B33]'
-                    : 'text-slate-600 hover:bg-slate-50 hover:text-[#050B33]'
-                }`}
+                className={
+                  isContact
+                    ? 'ml-2 inline-flex min-h-11 items-center justify-center rounded-xl bg-[#FFB84D] px-5 py-3 text-sm font-bold text-[#050B33] shadow-sm transition hover:bg-[#F59A52] hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#050B33] focus-visible:ring-offset-2'
+                    : `relative rounded-md px-4 py-3 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A4DA8] focus-visible:ring-offset-2 ${
+                        active
+                          ? 'text-[#050B33]'
+                          : 'text-slate-600 hover:bg-slate-50 hover:text-[#050B33]'
+                      }`
+                }
               >
                 {item.label}
-                {active && (
+                {!isContact && active && (
                   <span
                     aria-hidden="true"
                     className="absolute inset-x-4 bottom-1 h-0.5 rounded-full bg-[#4FDCE8]"
@@ -56,12 +61,6 @@ export default function GlobalNav() {
               </Link>
             );
           })}
-          <Link
-            href="/contact"
-            className="ml-3 inline-flex min-h-11 items-center justify-center rounded-md bg-[#050B33] px-5 text-sm font-semibold text-white transition hover:bg-[#0A4DA8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A4DA8] focus-visible:ring-offset-2"
-          >
-            Start a conversation
-          </Link>
         </nav>
 
         <div className="md:hidden">
