@@ -17,6 +17,7 @@ export type NavigationContext = {
 export const corporateNavigation: ContextNavigationItem[] = [
   { label: 'About', href: '/about' },
   { label: 'Areas of Focus', href: '/areas-of-focus' },
+  { label: 'Services', href: '/services' },
   { label: 'Projects', href: '/projects' },
   { label: 'Contact', href: '/contact' },
 ];
