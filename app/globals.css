@@ -1,17 +1,20 @@
 @import "tailwindcss";
 
 /*
- * Nexus Hub corporate design tokens.
- * Brand colour values below are carried forward from the existing website
- * and remain subject to confirmation against the approved logo/brand files.
+ * Nexus Hub approved brand palette.
+ * Navy anchors the identity; violet, cyan and royal blue define the mark.
+ * Orange and golden yellow are reserved for small highlights.
  */
 
 :root {
   color-scheme: light;
 
-  --nh-brand-navy: #050a30;
-  --nh-brand-blue: #1266b6;
-  --nh-brand-cyan: #5fc9e6;
+  --nh-brand-navy: #050B33;
+  --nh-brand-violet: #8B6CFF;
+  --nh-brand-cyan: #4FDCE8;
+  --nh-brand-blue: #0A4DA8;
+  --nh-accent-orange: #F59A52;
+  --nh-accent-gold: #FFB84D;
 
   --nh-background: #ffffff;
   --nh-surface: #f8fafc;
@@ -32,8 +35,11 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-nexus-navy: var(--nh-brand-navy);
-  --color-nexus-blue: var(--nh-brand-blue);
+  --color-nexus-violet: var(--nh-brand-violet);
   --color-nexus-cyan: var(--nh-brand-cyan);
+  --color-nexus-blue: var(--nh-brand-blue);
+  --color-nexus-orange: var(--nh-accent-orange);
+  --color-nexus-gold: var(--nh-accent-gold);
   --color-nexus-surface: var(--nh-surface);
   --color-nexus-muted: var(--nh-muted);
   --font-sans: var(--font-geist-sans);
