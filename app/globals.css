@@ -182,3 +182,7 @@ body {
     scrollbar-width: thin;
   }
 }
+
+.showcase-marquee-projects .showcase-track {
+  animation-duration: 34s;
+}
