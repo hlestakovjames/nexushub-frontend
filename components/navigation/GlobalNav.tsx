@@ -1,32 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 import NexusHubLogo from '@/components/brand/NexusHubLogo';
-import {
-  corporateNavigation,
-  resolveNavigationContext,
-  type ContextNavigationItem,
-} from '@/config/navigation/context-navigation';
+import { corporateNavigation } from '@/config/navigation/context-navigation';
 
 import MobileGlobalNav from './MobileGlobalNav';
-
-const quickLinks = [
-  { label: 'Explore our services', href: '/services' },
-  { label: 'Products and innovations', href: '/products' },
-  { label: 'Our projects', href: '/projects' },
-  { label: 'Publications and insights', href: '/publications' },
-  { label: 'Events', href: '/events' },
-  { label: 'Opportunities', href: '/opportunities' },
-  { label: 'Explore the ecosystem', href: '/ecosystem' },
-  { label: 'Contact Nexus Hub', href: '/contact' },
-  {
-    label: 'Nexus Hub TV',
-    href: 'https://nexushub-media.vercel.app/',
-  },
-];
 
 function isActivePath(pathname: string, href: string) {
   return href === '/'
@@ -34,130 +14,61 @@ function isActivePath(pathname: string, href: string) {
     : pathname === href || pathname.startsWith(`${href}/`);
 }
 
-function ContextItem({
-  item,
-  pathname,
-}: {
-  item: ContextNavigationItem;
-  pathname: string;
-}) {
-  const active = isActivePath(pathname, item.href);
-
-  return (
-    <Link
-      href={item.href}
-      className={`relative shrink-0 px-3 py-4 text-[13px] font-bold tracking-[0.02em] transition ${
-        active
-          ? 'text-[#050A30]'
-          : 'text-[#050A30]/65 hover:text-[#050A30]'
-      }`}
-    >
-      {item.label}
-
-      {active && (
-        <span className="absolute bottom-1.5 left-3 right-3 h-0.5 rounded-full bg-[#5FC9E6]" />
-      )}
-    </Link>
-  );
-}
-
 export default function GlobalNav() {
   const pathname = usePathname();
-  const [isQuickLinksOpen, setIsQuickLinksOpen] = useState(false);
-  const context = resolveNavigationContext(pathname);
 
   return (
-    <header className="sticky top-0 z-50 w-full">
-      <div className="border-b border-white/10 bg-[#050A30] text-white">
-        <div className="mx-auto flex min-h-10 max-w-7xl items-center justify-between gap-4 px-6">
-          <div className="relative">
-            <button
-              type="button"
-              onClick={() => setIsQuickLinksOpen((open) => !open)}
-              aria-expanded={isQuickLinksOpen}
-              aria-haspopup="menu"
-              className="flex items-center gap-1.5 rounded-md px-2 py-1.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-white/90 transition hover:bg-white/10 hover:text-white"
-            >
-              Quick Links
-              <span aria-hidden="true">
-                {isQuickLinksOpen ? '−' : '+'}
-              </span>
-            </button>
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/95 text-[#050A30] shadow-sm backdrop-blur-md">
+      <div className="mx-auto flex min-h-[76px] max-w-7xl items-center justify-between gap-6 px-5 sm:px-6 lg:px-8">
+        <Link
+          href="/"
+          aria-label="Nexus Hub home"
+          className="flex shrink-0 items-center rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1266B6] focus-visible:ring-offset-4"
+        >
+          <NexusHubLogo size={44} showWordmark />
+        </Link>
 
-            {isQuickLinksOpen && (
-              <div
-                role="menu"
-                className="absolute left-0 top-full mt-2 w-[min(22rem,calc(100vw-3rem))] overflow-hidden rounded-xl border border-white/10 bg-[#07123F] p-3 shadow-2xl"
-              >
-                {quickLinks.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    role="menuitem"
-                    onClick={() => setIsQuickLinksOpen(false)}
-                    className="block rounded-lg px-3 py-2.5 text-sm text-white/80 transition hover:bg-white/10 hover:text-[#5FC9E6]"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
+        <nav
+          aria-label="Main navigation"
+          className="hidden items-center gap-2 md:flex"
+        >
+          {corporateNavigation.map((item) => {
+            const active = isActivePath(pathname, item.href);
 
-          <div className="hidden items-center gap-5 text-[11px] font-semibold uppercase tracking-[0.08em] text-white/90 sm:flex">
-            <Link href="tel:0728812649" className="transition hover:text-[#5FC9E6]">
-              Call Us
-            </Link>
-
-            <Link
-              href="https://wa.me/254713290745"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition hover:text-[#5FC9E6]"
-            >
-              WhatsApp
-            </Link>
-
-            <Link
-              href="/contact?channel=support"
-              className="transition hover:text-[#5FC9E6]"
-            >
-              Client Support
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      <div className="border-b border-[#050A30]/10 bg-white text-[#050A30] shadow-sm">
-        <div className="mx-auto flex min-h-16 max-w-7xl items-center">
-          <Link
-            href="/"
-            aria-label="Nexus Hub home"
-            className="flex shrink-0 items-center px-6"
-          >
-            <NexusHubLogo size={40} showWordmark={true} />
-          </Link>
-
-          <nav
-            aria-label="Corporate navigation"
-            className="hidden min-w-0 flex-1 items-center overflow-x-auto md:flex"
-          >
-            {corporateNavigation.map((item) => (
-              <ContextItem
+            return (
+              <Link
                 key={item.href}
-                item={item}
-                pathname={pathname}
-              />
-            ))}
-          </nav>
+                href={item.href}
+                aria-current={active ? 'page' : undefined}
+                className={`relative rounded-md px-4 py-3 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1266B6] focus-visible:ring-offset-2 ${
+                  active
+                    ? 'text-[#050A30]'
+                    : 'text-slate-600 hover:bg-slate-50 hover:text-[#050A30]'
+                }`}
+              >
+                {item.label}
+                {active && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-x-4 bottom-1 h-0.5 rounded-full bg-[#5FC9E6]"
+                  />
+                )}
+              </Link>
+            );
+          })}
+          <Link
+            href="/contact"
+            className="ml-3 inline-flex min-h-11 items-center justify-center rounded-md bg-[#050A30] px-5 text-sm font-semibold text-white transition hover:bg-[#1266B6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1266B6] focus-visible:ring-offset-2"
+          >
+            Start a conversation
+          </Link>
+        </nav>
 
-          <div className="ml-auto pr-6 md:hidden">
-            <MobileGlobalNav
-              contextLabel={context.label}
-              contextItems={context.items}
-              quickLinks={quickLinks}
-            />
-          </div>
+        <div className="md:hidden">
+          <MobileGlobalNav
+            contextLabel="Nexus Hub"
+            contextItems={corporateNavigation}
+          />
         </div>
       </div>
     </header>
