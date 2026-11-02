@@ -65,6 +65,37 @@ body {
   color: var(--nh-brand-navy);
 }
 
+
+@keyframes nexus-hero-copy-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes nexus-hero-image-enter {
+  from {
+    opacity: 0;
+    transform: scale(1.025);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-slide-copy {
+  animation: nexus-hero-copy-enter 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-slide-image {
+  animation: nexus-hero-image-enter 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
