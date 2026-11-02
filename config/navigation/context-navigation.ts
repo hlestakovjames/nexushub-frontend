@@ -10,15 +10,13 @@ export type NavigationContext = {
   items: ContextNavigationItem[];
 };
 
+/**
+ * Only publish destinations with meaningful, implemented page content.
+ * Expand this list as the remaining corporate pages are completed.
+ */
 export const corporateNavigation: ContextNavigationItem[] = [
   { label: 'About', href: '/about' },
-  { label: 'Services', href: '/services' },
-  { label: 'Products', href: '/products' },
   { label: 'Projects', href: '/projects' },
-  { label: 'Publications', href: '/publications' },
-  { label: 'Events', href: '/events' },
-  { label: 'Opportunities', href: '/opportunities' },
-  { label: 'Ecosystem', href: '/ecosystem' },
   { label: 'Contact', href: '/contact' },
 ];
 
