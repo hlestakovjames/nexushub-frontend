@@ -396,12 +396,6 @@ export default async function LeadershipProfilePage({
               Leadership
             </Link>
 
-            <Link
-              href="/about/team"
-              className="rounded-md bg-[#5FC9E6] px-6 py-3 text-sm font-semibold text-[#050A30] transition hover:opacity-90"
-            >
-              Our Team
-            </Link>
           </div>
         </div>
       </section>
