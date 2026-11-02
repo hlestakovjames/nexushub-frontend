@@ -17,14 +17,10 @@ type MobileGlobalNavProps = {
   quickLinks?: QuickLink[];
 };
 
-function isActivePath(
-  pathname: string,
-  href: string,
-) {
+function isActivePath(pathname: string, href: string) {
   return href === '/'
     ? pathname === '/'
-    : pathname === href ||
-        pathname.startsWith(`${href}/`);
+    : pathname === href || pathname.startsWith(`${href}/`);
 }
 
 export default function MobileGlobalNav({
@@ -33,10 +29,8 @@ export default function MobileGlobalNav({
   quickLinks = [],
 }: MobileGlobalNavProps) {
   const pathname = usePathname();
-
   const [isOpen, setIsOpen] = useState(false);
-  const [isQuickLinksOpen, setIsQuickLinksOpen] =
-    useState(false);
+  const [isQuickLinksOpen, setIsQuickLinksOpen] = useState(false);
 
   const closeMenu = () => {
     setIsOpen(false);
@@ -48,40 +42,28 @@ export default function MobileGlobalNav({
       <button
         type="button"
         onClick={() => setIsOpen((open) => !open)}
-        aria-label={
-          isOpen
-            ? 'Close navigation menu'
-            : 'Open navigation menu'
-        }
+        aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
         aria-expanded={isOpen}
         className="flex h-10 w-10 items-center justify-center rounded-md border border-[#050A30]/10 text-[#050A30] transition hover:bg-[#050A30]/5"
       >
         <span className="sr-only">
-          {isOpen
-            ? 'Close navigation menu'
-            : 'Open navigation menu'}
+          {isOpen ? 'Close navigation menu' : 'Open navigation menu'}
         </span>
 
         <span className="flex flex-col gap-1.5">
           <span
             className={`block h-0.5 w-5 bg-current transition ${
-              isOpen
-                ? 'translate-y-2 rotate-45'
-                : ''
+              isOpen ? 'translate-y-2 rotate-45' : ''
             }`}
           />
-
           <span
             className={`block h-0.5 w-5 bg-current transition ${
               isOpen ? 'opacity-0' : ''
             }`}
           />
-
           <span
             className={`block h-0.5 w-5 bg-current transition ${
-              isOpen
-                ? '-translate-y-2 -rotate-45'
-                : ''
+              isOpen ? '-translate-y-2 -rotate-45' : ''
             }`}
           />
         </span>
@@ -101,11 +83,7 @@ export default function MobileGlobalNav({
 
               <button
                 type="button"
-                onClick={() =>
-                  setIsQuickLinksOpen(
-                    (open) => !open,
-                  )
-                }
+                onClick={() => setIsQuickLinksOpen((open) => !open)}
                 aria-expanded={isQuickLinksOpen}
                 className="flex w-full items-center justify-between rounded-md px-3 py-2.5 text-sm font-semibold text-white transition hover:bg-white/5"
               >
@@ -118,9 +96,7 @@ export default function MobileGlobalNav({
                   fill="none"
                   aria-hidden="true"
                   className={`transition-transform ${
-                    isQuickLinksOpen
-                      ? 'rotate-180'
-                      : ''
+                    isQuickLinksOpen ? 'rotate-180' : ''
                   }`}
                 >
                   <path
@@ -173,14 +149,6 @@ export default function MobileGlobalNav({
                   Client Support
                 </Link>
               </div>
-
-              <Link
-                href="/login"
-                onClick={closeMenu}
-                className="mt-2 block rounded-md bg-[#5FC9E6] px-4 py-3 text-center text-sm font-bold text-[#050A30] transition hover:opacity-90"
-              >
-                Log In
-              </Link>
             </div>
 
             {/* CONTEXT NAVIGATION */}
@@ -191,10 +159,7 @@ export default function MobileGlobalNav({
 
               <div className="space-y-1">
                 {contextItems.map((item) => {
-                  const active = isActivePath(
-                    pathname,
-                    item.href,
-                  );
+                  const active = isActivePath(pathname, item.href);
 
                   return (
                     <Link

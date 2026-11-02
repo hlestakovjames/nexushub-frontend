@@ -12,12 +12,6 @@ const routes = [
   '/about/team',
   '/about/careers',
 
-  'https://nexushub-media.vercel.app/',
-  'https://nexushub-media.vercel.app/nexus-hub-tv',
-  'https://nexushub-media.vercel.app/nhtv-football',
-  'https://nexushub-media.vercel.app/nhtv-stories',
-  'https://nexushub-media.vercel.app/nhtv-voices',
-
   '/digital',
   '/digital/services',
   '/digital/services/software-development',
@@ -65,28 +59,24 @@ const routes = [
   '/terms',
 ];
 
+const priorityRoutes = new Set([
+  '/about',
+  '/digital',
+  '/business',
+  '/projects',
+  '/blog',
+  '/news',
+  '/events-activities',
+  '/resources',
+  '/platforms',
+  '/contact',
+]);
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
-    priority:
-      route === '/'
-        ? 1
-        : [
-            '/about',
-            'https://nexushub-media.vercel.app/',
-            '/digital',
-            '/business',
-            '/projects',
-            '/blog',
-            '/news',
-            '/events-activities',
-            '/resources',
-            '/platforms',
-            '/contact',
-          ].includes(route)
-          ? 0.8
-          : 0.6,
+    priority: route === '/' ? 1 : priorityRoutes.has(route) ? 0.8 : 0.6,
   }));
 }
