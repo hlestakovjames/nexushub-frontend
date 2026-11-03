@@ -1,26 +1,241 @@
 @import "tailwindcss";
 
+/*
+ * Nexus Hub approved brand palette.
+ * Navy anchors the identity; violet, cyan and royal blue define the mark.
+ * Orange and golden yellow are reserved for small highlights.
+ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  --nh-brand-navy: #050B33;
+  --nh-brand-violet: #8B6CFF;
+  --nh-brand-cyan: #4FDCE8;
+  --nh-brand-blue: #0A4DA8;
+  --nh-accent-orange: #F59A52;
+  --nh-accent-gold: #FFB84D;
+
+  --nh-background: #ffffff;
+  --nh-surface: #f8fafc;
+  --nh-surface-muted: #f1f5f9;
+  --nh-foreground: #111827;
+  --nh-muted: #64748b;
+  --nh-border: #e2e8f0;
+
+  --background: var(--nh-background);
+  --foreground: var(--nh-foreground);
+
+  --nh-container: 80rem;
+  --nh-gutter: clamp(1.25rem, 4vw, 2rem);
+  --nh-section-space: clamp(4rem, 8vw, 7rem);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-nexus-navy: var(--nh-brand-navy);
+  --color-nexus-violet: var(--nh-brand-violet);
+  --color-nexus-cyan: var(--nh-brand-cyan);
+  --color-nexus-blue: var(--nh-brand-blue);
+  --color-nexus-orange: var(--nh-accent-orange);
+  --color-nexus-gold: var(--nh-accent-gold);
+  --color-nexus-surface: var(--nh-surface);
+  --color-nexus-muted: var(--nh-muted);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  min-height: 100%;
+  background: var(--nh-background);
+  color: var(--nh-foreground);
   font-family: Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--nh-brand-cyan) 35%, white);
+  color: var(--nh-brand-navy);
+}
+
+
+@keyframes nexus-hero-copy-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes nexus-hero-image-enter {
+  from {
+    opacity: 0;
+    transform: scale(1.025);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-slide-copy {
+  animation: nexus-hero-copy-enter 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-slide-image {
+  animation: nexus-hero-image-enter 1050ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+
+/* Continuous horizontal showcases */
+.showcase-marquee {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  max-width: 100vw;
+  transform: translateX(-50%);
+  overflow: hidden;
+  padding-block: 0.25rem 0.75rem;
+  touch-action: pan-y;
+}
+
+.showcase-track {
+  display: flex;
+  width: max-content;
+  animation: nexus-showcase-scroll 48s linear infinite;
+  will-change: transform;
+}
+
+.showcase-marquee-ecosystem .showcase-track {
+  animation-duration: 66s;
+}
+
+.showcase-marquee-discovery .showcase-track {
+  animation-duration: 42s;
+}
+
+.showcase-group {
+  display: flex;
+  flex: none;
+  gap: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.showcase-marquee[data-paused="true"] .showcase-track,
+.showcase-marquee:hover .showcase-track,
+.showcase-marquee:focus-within .showcase-track {
+  animation-play-state: paused;
+}
+
+.showcase-marquee[data-reverse="true"] .showcase-track {
+  animation-name: nexus-showcase-scroll-reverse;
+}
+
+.showcase-card {
+  min-height: 19rem;
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.showcase-card:hover {
+  transform: translateY(-4px);
+}
+
+@keyframes nexus-showcase-scroll {
+  from { transform: translateX(100vw); }
+  to { transform: translateX(calc(100vw - 50%)); }
+}
+
+@keyframes nexus-showcase-scroll-reverse {
+  from { transform: translateX(calc(100vw - 50%)); }
+  to { transform: translateX(100vw); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .showcase-track {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .showcase-group[aria-hidden="true"] {
+    display: none;
+  }
+
+  .showcase-marquee {
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+}
+
+.showcase-marquee-projects .showcase-track {
+  animation-duration: 34s;
+}
+
+/* Individual content elements reveal as they enter the viewport */
+.scroll-item-reveal {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+  transition:
+    opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--scroll-reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.scroll-item-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.scroll-reveal-root main section {
+  scroll-margin-top: 6rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-item-reveal,
+  .scroll-item-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+}
+
+
+/* Gentle floating motion for the fixed WhatsApp action */
+@keyframes nexus-whatsapp-hover {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -8px, 0); }
+}
+
+.nexus-whatsapp-float {
+  animation: nexus-whatsapp-hover 3s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nexus-whatsapp-float {
+    animation: none;
+  }
 }

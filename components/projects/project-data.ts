@@ -27,8 +27,8 @@ export const projectRecords: ProjectRecord[] = [
     title: 'MercyCare Health Platform',
     category: 'Digital',
     area: 'Web & Software',
-    status: 'Featured Project',
-    client: 'MercyCare Home Health Services',
+    status: 'Live · Ongoing Development',
+    client: 'MercyCare',
     image: '/images/projects/mercycare.jpeg',
     summary:
       'A digital platform developed to give MercyCare a structured online presence for its healthcare services, programs, projects, communication, resources, and engagement.',
@@ -92,7 +92,7 @@ export const projectRecords: ProjectRecord[] = [
     title: 'KUHRSA Management System',
     category: 'Digital',
     area: 'Web & Software',
-    status: 'Featured Project',
+    status: 'Live · Ongoing Development',
     client: 'Kisii University Human Resource Students’ Association',
     image: '/images/projects/kisiihrsa.jpeg',
     summary:

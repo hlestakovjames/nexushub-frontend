@@ -1,6 +1,69 @@
 import Link from 'next/link';
 
+import AnimatedHero from '@/components/home/AnimatedHero';
+import HorizontalShowcase from '@/components/home/HorizontalShowcase';
+import ImpactStatistics from '@/components/home/ImpactStatistics';
 import { projectRecords } from '@/components/projects/project-data';
+
+const focusAreas = [
+  {
+    number: '01',
+    title: 'Technology & Digital Solutions',
+    description:
+      'Designing and developing websites, software, platforms and digital systems that address practical needs.',
+    href: '/areas-of-focus#technology-digital-solutions',
+    label: 'Explore technology',
+    accent: '#4FDCE8',
+  },
+  {
+    number: '02',
+    title: 'Innovation & Systems Thinking',
+    description:
+      'Exploring problems, connected systems and emerging possibilities, then shaping promising ideas into practical solutions.',
+    href: '/areas-of-focus#innovation-systems-thinking',
+    label: 'Explore our approach',
+    accent: '#8B6CFF',
+  },
+  {
+    number: '03',
+    title: 'Media & Creativity',
+    description:
+      'Using visual communication, creative production and digital storytelling to share ideas and connect with audiences.',
+    href: '/areas-of-focus#media-creativity',
+    label: 'Explore media & creativity',
+    accent: '#F59A52',
+  },
+  {
+    number: '04',
+    title: 'Business & Enterprise',
+    description:
+      'Bringing business thinking, creative capabilities and collaborative solutions together around organisational needs.',
+    href: '/areas-of-focus#business-enterprise',
+    label: 'Explore business',
+    accent: '#FFB84D',
+  },
+];
+
+const capabilities = [
+  {
+    number: '01',
+    title: 'Web Development',
+    description:
+      'Responsive websites and web platforms for businesses, organisations, institutions and initiatives.',
+  },
+  {
+    number: '02',
+    title: 'Mobile App Development',
+    description:
+      'Mobile application experiences shaped around user needs, workflows and practical use cases.',
+  },
+  {
+    number: '03',
+    title: 'Branding & Graphic Design',
+    description:
+      'Brand identity and visual communication that help ideas and organisations present themselves clearly.',
+  },
+];
 
 const applications = [
   {
@@ -8,7 +71,7 @@ const applications = [
     name: 'Nexus Hub Corporate Website',
     acronym: 'NH-WEB',
     description:
-      'The public face of Nexus Hub: corporate information, services, products, projects, publications, events and opportunities.',
+      'The public-facing home for corporate information, services, products, projects, publications, events and opportunities.',
     status: 'Current application',
     href: '/',
     action: 'You are here',
@@ -19,7 +82,7 @@ const applications = [
     name: 'Nexus Hub Ecosystem Portal',
     acronym: 'NH-PORTAL',
     description:
-      'A participation and connection space for people, organisations, communities, projects, opportunities and collaboration.',
+      'A planned participation and connection space for people, organisations, communities, projects and opportunities.',
     status: 'Planned application',
     href: '/ecosystem',
     action: 'Explore the ecosystem',
@@ -29,7 +92,7 @@ const applications = [
     name: 'Nexus Hub Corporate Workspace',
     acronym: 'NH-WORK',
     description:
-      'The internal workspace for organisational operations, departments, teams, projects, tasks, finance and administration.',
+      'A planned internal workspace for organisational operations, teams, projects, tasks and administration.',
     status: 'Planned application',
     href: '/ecosystem',
     action: 'Explore the ecosystem',
@@ -39,18 +102,17 @@ const applications = [
     name: 'Nexus Hub TV',
     acronym: 'NH-TV',
     description:
-      'The media application for channels, programmes, episodes, stories, productions, publishing and audience engagement.',
-    status: 'Available online',
-    href: 'https://nexushub-media.vercel.app/',
-    action: 'Visit Nexus Hub TV',
-    external: true,
+      'A dedicated media application to be designed and developed from scratch for content, stories, programmes, productions and audience engagement.',
+    status: 'Planned application',
+    href: '/areas-of-focus#media-creativity',
+    action: 'Explore media & creativity',
   },
   {
     code: 'APP-05',
     name: 'Nexus Hub Learning',
     acronym: 'NH-LEARN',
     description:
-      'A learning environment for courses, programmes, lessons, assessments, learner progress and certification.',
+      'A planned learning environment for courses, programmes, lessons and learner progress.',
     status: 'Planned application',
     href: '/ecosystem',
     action: 'Explore the ecosystem',
@@ -60,472 +122,250 @@ const applications = [
     name: 'Nexus Hub Administration Console',
     acronym: 'NH-ADMIN',
     description:
-      'The central control environment for identity, access, governance, application configuration, security and oversight.',
+      'A planned internal control environment for identity, access, configuration, security and oversight.',
     status: 'Internal application',
     href: '/ecosystem',
     action: 'Explore the ecosystem',
   },
 ];
 
-const serviceAreas = [
-  {
-    number: '01',
-    title: 'Digital Solutions',
-    description:
-      'Websites, software systems, digital platforms, application development, integrations and digital transformation.',
-  },
-  {
-    number: '02',
-    title: 'Business and Organisational Support',
-    description:
-      'Business advisory, organisational solutions, strategic support, process improvement and collaboration.',
-  },
-  {
-    number: '03',
-    title: 'Media and Content',
-    description:
-      'Media production, storytelling, creative content, digital publishing and audience-focused experiences.',
-  },
-  {
-    number: '04',
-    title: 'Creative and Brand Services',
-    description:
-      'Brand identity, visual communication, creative direction and digital experiences.',
-  },
-  {
-    number: '05',
-    title: 'Projects and Partnerships',
-    description:
-      'Collaborative initiatives, technology projects, implementation partnerships and tailored solutions.',
-  },
-];
-
 const discoveryLinks = [
   {
-    title: 'Products and Innovations',
-    description:
-      'Discover products, solutions and innovations developed within the Nexus Hub ecosystem.',
+    number: '01',
+    title: 'Products & Innovations',
+    description: 'Discover products and solutions taking shape across the Nexus Hub ecosystem.',
     href: '/products',
   },
   {
-    title: 'Publications and Insights',
-    description:
-      'Explore organisational updates, articles, perspectives and published knowledge.',
+    number: '02',
+    title: 'Publications & Insights',
+    description: 'Explore articles, perspectives, updates and knowledge shared by Nexus Hub.',
     href: '/publications',
   },
   {
-    title: 'Events and Activities',
-    description:
-      'Find activities, engagements and events connected to Nexus Hub and its ecosystem.',
+    number: '03',
+    title: 'Events & Activities',
+    description: 'Explore events, programmes, engagements and activities involving Nexus Hub.',
     href: '/events',
   },
   {
+    number: '04',
     title: 'Opportunities',
-    description:
-      'Explore announcements, openings, calls for participation and collaboration opportunities.',
+    description: 'Find opportunities to participate, collaborate and connect with our work.',
     href: '/opportunities',
   },
 ];
+
+const brandAccents = ['#8B6CFF', '#4FDCE8', '#0A4DA8', '#F59A52', '#FFB84D', '#050B33'];
 
 export default function HomePage() {
   const featuredProjects = projectRecords.slice(0, 2);
 
   return (
-    <main className="overflow-hidden bg-white text-[#050A30]">
-      {/* HERO */}
-      <section className="relative isolate overflow-hidden bg-[#050A30] text-white">
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 -z-10 opacity-30"
-          style={{
-            backgroundImage:
-              'radial-gradient(circle at 80% 20%, #1266B6 0, transparent 35%), radial-gradient(circle at 15% 90%, #1266B6 0, transparent 30%)',
-          }}
-        />
+    <main className="overflow-hidden bg-white text-[#050B33]">
+      <AnimatedHero />
 
-        <div className="mx-auto grid min-h-[620px] max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#5FC9E6]">
-              Nexus Hub · Create · Connect · Grow
-            </p>
-
-            <h1 className="mt-7 max-w-4xl text-4xl font-bold leading-[1.12] tracking-tight sm:text-5xl lg:text-6xl">
-              One ecosystem.
-              <span className="block text-[#5FC9E6]">
-                Connected possibilities.
-              </span>
-            </h1>
-
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/75">
-              Nexus Hub brings technology, business, media, learning and
-              collaboration together through a connected ecosystem of
-              specialised applications, services and initiatives.
-            </p>
-
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                href="/ecosystem"
-                className="inline-flex items-center rounded-lg bg-[#5FC9E6] px-6 py-3.5 text-sm font-bold text-[#050A30] transition hover:bg-white"
-              >
-                Explore the Ecosystem
-                <span className="ml-2" aria-hidden="true">→</span>
-              </Link>
-
-              <Link
-                href="/contact"
-                className="inline-flex items-center rounded-lg border border-white/35 px-6 py-3.5 text-sm font-bold text-white transition hover:border-[#5FC9E6] hover:text-[#5FC9E6]"
-              >
-                Work With Us
-              </Link>
-            </div>
-          </div>
-
-          <div className="relative mx-auto w-full max-w-md">
-            <div className="rounded-3xl border border-white/15 bg-white/[0.06] p-6 shadow-2xl backdrop-blur-sm">
-              <div className="flex items-center justify-between border-b border-white/10 pb-5">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#5FC9E6]">
-                    The Nexus Hub Ecosystem
-                  </p>
-                  <h2 className="mt-2 text-xl font-bold">
-                    Six connected applications
-                  </h2>
-                </div>
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#5FC9E6]/15 text-xl font-bold text-[#5FC9E6]">
-                  N
-                </span>
-              </div>
-
-              <div className="mt-5 grid grid-cols-2 gap-3">
-                {applications.map((app) => (
-                  <div
-                    key={app.code}
-                    className={`rounded-xl border p-4 ${
-                      app.featured
-                        ? 'border-[#5FC9E6]/50 bg-[#5FC9E6]/10'
-                        : 'border-white/10 bg-white/[0.04]'
-                    }`}
-                  >
-                    <p className="text-[10px] font-bold tracking-[0.12em] text-[#5FC9E6]">
-                      {app.code}
-                    </p>
-                    <p className="mt-2 text-sm font-bold text-white">
-                      {app.acronym}
-                    </p>
-                    <p className="mt-1 text-xs leading-5 text-white/55">
-                      {app.name.replace('Nexus Hub ', '')}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              <p className="mt-5 text-xs leading-5 text-white/50">
-                Specialised applications connected through a shared
-                ecosystem and backend infrastructure.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* INTRODUCTION */}
+      {/* WHO WE ARE */}
       <section className="bg-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-8 lg:py-24">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#1266B6]">
-              Who We Are
-            </p>
-            <h2 className="mt-4 max-w-xl text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#0A4DA8]">Who We Are</p>
+            <h2 className="mt-4 max-w-xl text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
               A connected ecosystem built around ideas and action.
             </h2>
           </div>
-
           <div>
             <p className="text-lg leading-8 text-slate-600">
-              Nexus Hub is a technology, business and creative ecosystem
-              focused on developing solutions, building platforms,
-              producing media, supporting organisations and creating
-              opportunities for collaboration.
+              Nexus Hub brings technology, creativity, media and business together to develop solutions,
+              build digital products, share ideas and create opportunities for collaboration.
             </p>
             <p className="mt-4 leading-7 text-slate-600">
-              Rather than treating every activity as a separate
-              organisation or disconnected service, our ecosystem brings
-              specialised capabilities together while giving each
-              application a clear purpose.
+              We approach these areas as connected capabilities, while giving each activity, project and
+              platform a clear purpose of its own.
             </p>
-            <Link
-              href="/about"
-              className="mt-7 inline-flex font-bold text-[#1266B6] hover:text-[#050A30]"
-            >
-              Discover Nexus Hub <span className="ml-2">→</span>
+            <Link href="/about" className="mt-7 inline-flex font-bold text-[#0A4DA8] hover:text-[#050B33]">
+              Discover Nexus Hub <span className="ml-2" aria-hidden="true">→</span>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* SIX APPLICATIONS */}
-      <section className="bg-slate-50">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
+      <ImpactStatistics />
+
+      {/* AREAS OF FOCUS */}
+      <section className="bg-[#F5F2FF]">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-24">
           <div className="max-w-3xl">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#1266B6]">
-              The Ecosystem
-            </p>
-            <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-              Six applications. Distinct roles. One ecosystem.
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#0A4DA8]">Our Areas of Focus</p>
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+              Different disciplines. Connected possibilities.
             </h2>
             <p className="mt-5 text-lg leading-8 text-slate-600">
-              Each application serves a specialised purpose. Together,
-              they support public discovery, participation, internal
-              operations, media, learning and central administration.
+              These focus areas describe the wider interests and capabilities that shape the Nexus Hub vision.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {applications.map((app) => {
-              const content = (
-                <div
-                  className={`flex h-full flex-col rounded-2xl border p-7 transition ${
-                    app.featured
-                      ? 'border-[#1266B6]/30 bg-[#050A30] text-white shadow-lg'
-                      : 'border-slate-200 bg-white hover:-translate-y-1 hover:border-[#1266B6]/40 hover:shadow-lg'
-                  }`}
-                >
-                  <div className="flex items-center justify-between gap-3">
-                    <span className={`text-xs font-bold tracking-[0.14em] ${
-                      app.featured ? 'text-[#5FC9E6]' : 'text-[#1266B6]'
-                    }`}>
-                      {app.code}
-                    </span>
-                    <span className={`rounded-full px-3 py-1 text-[10px] font-bold ${
-                      app.featured
-                        ? 'bg-white/10 text-[#5FC9E6]'
-                        : 'bg-slate-100 text-slate-500'
-                    }`}>
-                      {app.status}
-                    </span>
-                  </div>
-
-                  <p className={`mt-7 text-2xl font-extrabold tracking-tight ${
-                    app.featured ? 'text-[#5FC9E6]' : 'text-[#1266B6]'
-                  }`}>
-                    {app.acronym}
-                  </p>
-
-                  <h3 className="mt-2 text-lg font-bold">
-                    {app.name}
-                  </h3>
-
-                  <p className={`mt-4 flex-1 text-sm leading-7 ${
-                    app.featured ? 'text-white/70' : 'text-slate-600'
-                  }`}>
-                    {app.description}
-                  </p>
-
-                  <span className={`mt-7 inline-flex items-center text-sm font-bold ${
-                    app.featured ? 'text-[#5FC9E6]' : 'text-[#1266B6]'
-                  }`}>
-                    {app.action} <span className="ml-2">→</span>
+          <div className="mt-12 grid gap-5 sm:grid-cols-2">
+            {focusAreas.map((area) => (
+              <Link key={area.number} href={area.href}>
+                <article className="h-full rounded-2xl border border-white bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg sm:p-8">
+                  <span className="text-xs font-extrabold tracking-[0.16em]" style={{ color: area.accent }}>{area.number}</span>
+                  <h3 className="mt-5 text-xl font-extrabold tracking-tight">{area.title}</h3>
+                  <p className="mt-3 leading-7 text-slate-600">{area.description}</p>
+                  <span className="mt-6 inline-flex text-sm font-bold text-[#0A4DA8]">
+                    {area.label} <span className="ml-2" aria-hidden="true">→</span>
                   </span>
-                </div>
-              );
-
-              return app.external ? (
-                <a
-                  key={app.code}
-                  href={app.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${app.action} (opens in a new tab)`}
-                >
-                  {content}
-                </a>
-              ) : (
-                <Link key={app.code} href={app.href}>
-                  {content}
-                </Link>
-              );
-            })}
-          </div>
-
-          <p className="mt-8 max-w-3xl text-sm leading-6 text-slate-500">
-            Application availability is shown individually. Planned and
-            internal applications are not presented as publicly launched
-            services.
-          </p>
-
-          <Link
-            href="/ecosystem"
-            className="mt-7 inline-flex rounded-lg bg-[#050A30] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#1266B6]"
-          >
-            Learn More About the Ecosystem
-          </Link>
-        </div>
-      </section>
-
-      {/* SERVICES */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
-          <div className="max-w-3xl">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#1266B6]">
-              Services and Capabilities
-            </p>
-            <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-              Capabilities that work together.
-            </h2>
-            <p className="mt-5 text-lg leading-8 text-slate-600">
-              We bring together technical, organisational and creative
-              capabilities to help turn requirements into practical
-              solutions.
-            </p>
-          </div>
-
-          <div className="mt-12 divide-y divide-slate-200 border-y border-slate-200">
-            {serviceAreas.map((service) => (
-              <div
-                key={service.number}
-                className="grid gap-4 py-7 sm:grid-cols-[70px_0.8fr_1.2fr] sm:items-start"
-              >
-                <span className="text-sm font-bold text-[#1266B6]">
-                  {service.number}
-                </span>
-                <h3 className="text-xl font-bold">
-                  {service.title}
-                </h3>
-                <p className="leading-7 text-slate-600">
-                  {service.description}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <Link
-            href="/services"
-            className="mt-8 inline-flex font-bold text-[#1266B6] hover:text-[#050A30]"
-          >
-            Explore our services <span className="ml-2">→</span>
-          </Link>
-        </div>
-      </section>
-
-      {/* PROJECTS */}
-      <section className="bg-slate-50">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-            <div className="max-w-3xl">
-              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#1266B6]">
-                Selected Work
-              </p>
-              <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-                Projects shaped around real needs.
-              </h2>
-              <p className="mt-5 text-lg leading-8 text-slate-600">
-                Explore selected implementations and initiatives
-                demonstrating how Nexus Hub applies technology and
-                connected thinking in practice.
-              </p>
-            </div>
-
-            <Link
-              href="/projects"
-              className="shrink-0 font-bold text-[#1266B6] hover:text-[#050A30]"
-            >
-              View all projects →
-            </Link>
-          </div>
-
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {featuredProjects.map((project) => (
-              <article
-                key={project.slug}
-                className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
-              >
-                <div className="aspect-[16/7] overflow-hidden bg-slate-200">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="h-full w-full object-cover transition duration-500 hover:scale-105"
-                  />
-                </div>
-
-                <div className="p-7 sm:p-8">
-                  <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#1266B6]">
-                    {project.client}
-                  </p>
-                  <h3 className="mt-3 text-2xl font-bold">
-                    {project.title}
-                  </h3>
-                  <p className="mt-4 leading-7 text-slate-600">
-                    {project.summary}
-                  </p>
-                  <Link
-                    href={`/projects/${project.slug}`}
-                    className="mt-7 inline-flex font-bold text-[#1266B6] hover:text-[#050A30]"
-                  >
-                    View case study <span className="ml-2">→</span>
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* DISCOVERY */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
-          <div className="max-w-3xl">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#1266B6]">
-              Discover More
-            </p>
-            <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-              Stay informed. Find what matters.
-            </h2>
-          </div>
-
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {discoveryLinks.map((item, index) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="group rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:border-[#1266B6]/40 hover:shadow-md"
-              >
-                <span className="text-xs font-bold text-[#1266B6]">
-                  0{index + 1}
-                </span>
-                <h3 className="mt-5 text-lg font-bold">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">
-                  {item.description}
-                </p>
-                <span className="mt-6 inline-flex text-sm font-bold text-[#1266B6] transition group-hover:translate-x-1">
-                  Explore <span className="ml-2">→</span>
-                </span>
+                </article>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <section className="bg-[#050A30] text-white">
-        <div className="mx-auto max-w-7xl px-6 py-20 text-center lg:px-8 lg:py-28">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#5FC9E6]">
-            Create · Connect · Grow
-          </p>
-          <h2 className="mx-auto mt-5 max-w-3xl text-3xl font-bold tracking-tight sm:text-5xl">
+      {/* CAPABILITIES */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-24">
+          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+            <div className="max-w-xl">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#0A4DA8]">What We Do</p>
+              <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+                Practical capabilities for real-world needs.
+              </h2>
+              <p className="mt-5 leading-8 text-slate-600">
+                Our current service capabilities bring together technical development and creative
+                communication. Each engagement starts with understanding the need and defining the right scope.
+              </p>
+              <Link href="/services" className="mt-7 inline-flex font-bold text-[#0A4DA8] hover:text-[#050B33]">
+                Explore our services <span className="ml-2" aria-hidden="true">→</span>
+              </Link>
+            </div>
+            <div className="divide-y divide-slate-200 border-y border-slate-200">
+              {capabilities.map((item) => (
+                <div key={item.number} className="grid gap-3 py-7 sm:grid-cols-[64px_0.8fr_1.2fr] sm:items-start">
+                  <span className="text-sm font-extrabold text-[#0A4DA8]">{item.number}</span>
+                  <h3 className="text-xl font-bold">{item.title}</h3>
+                  <p className="leading-7 text-slate-600">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SELECTED WORK */}
+      <section className="bg-[#EFFBFC]">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-24">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div className="max-w-3xl">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#0A4DA8]">Selected Work</p>
+              <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+                Ideas put into practice.
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-600">
+                A look at selected digital projects and systems developed with organisations and initiatives.
+              </p>
+            </div>
+            <Link href="/projects" className="shrink-0 font-bold text-[#0A4DA8] hover:text-[#050B33]">
+              View all projects <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+
+          <div className="mt-12">
+            <HorizontalShowcase
+              label="Selected Nexus Hub projects"
+              duration="projects"
+              items={featuredProjects.map((project, index) => ({
+                id: project.slug,
+                eyebrow: project.client,
+                title: project.title,
+                description: project.summary,
+                href: `/projects/${project.slug}`,
+                action: 'Explore project',
+                accent: brandAccents[index],
+                image: project.image,
+              }))}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* THE WIDER ECOSYSTEM */}
+      <section className="bg-[#050B33] text-white">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-24">
+          <div className="max-w-3xl">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#4FDCE8]">The Nexus Hub Ecosystem</p>
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+              Connected applications with distinct roles.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-white/70">
+              The wider digital ecosystem is being developed as a set of purpose-led applications.
+              Their availability is shown individually so planned and internal systems are not confused
+              with services already available online.
+            </p>
+          </div>
+
+          <div className="mt-12">
+            <HorizontalShowcase
+              label="Six applications in the Nexus Hub ecosystem"
+              duration="ecosystem"
+              dark
+              items={applications.map((app, index) => ({
+                id: app.code,
+                eyebrow: app.acronym,
+                title: app.name,
+                description: app.description,
+                href: app.href,
+                action: app.action,
+                accent: app.featured ? '#4FDCE8' : brandAccents[index],
+                status: app.status,
+              }))}
+            />
+          </div>
+          <Link href="/ecosystem" className="mt-9 inline-flex rounded-lg border border-white/25 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10">
+            Explore the ecosystem <span className="ml-2" aria-hidden="true">→</span>
+          </Link>
+        </div>
+      </section>
+
+      {/* DISCOVER */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-24">
+          <div className="max-w-3xl">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#0A4DA8]">Discover More</p>
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
+              Stay informed. Find a way to connect.
+            </h2>
+          </div>
+          <div className="mt-10">
+            <HorizontalShowcase
+              label="Products, publications, news and opportunities"
+              duration="discovery"
+              items={discoveryLinks.map((item, index) => ({
+                id: item.number,
+                eyebrow: `DISCOVER ${item.number}`,
+                title: item.title,
+                description: item.description,
+                href: item.href,
+                action: 'Explore',
+                accent: brandAccents[index],
+              }))}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ENGAGEMENT */}
+      <section className="bg-gradient-to-br from-[#050B33] via-[#0A4DA8] to-[#8B6CFF] text-white">
+        <div className="mx-auto max-w-7xl px-6 py-20 text-center lg:px-8 lg:py-24">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#4FDCE8]">Create · Connect · Grow</p>
+          <h2 className="mx-auto mt-5 max-w-3xl text-3xl font-extrabold tracking-tight sm:text-5xl">
             Have an idea worth building?
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/70">
-            Whether you represent an organisation, have a project in
-            mind, need a digital solution or want to explore a
-            partnership, start a conversation with Nexus Hub.
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/75">
+            Whether you represent an organisation, have a project in mind, need a digital solution
+            or want to explore a collaboration, start a conversation with Nexus Hub.
           </p>
-          <Link
-            href="/contact"
-            className="mt-9 inline-flex rounded-lg bg-[#5FC9E6] px-7 py-3.5 text-sm font-bold text-[#050A30] transition hover:bg-white"
-          >
+          <Link href="/contact" className="mt-9 inline-flex rounded-lg bg-[#4FDCE8] px-7 py-3.5 text-sm font-bold text-[#050B33] transition hover:bg-white">
             Contact Nexus Hub
           </Link>
         </div>

@@ -59,10 +59,9 @@ export default function ProjectsPage() {
 
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {projectCategories.map((category) => (
-              <Link
-                key={category.href}
-                href={category.href}
-                className="group rounded-2xl border border-slate-200 p-8 transition hover:-translate-y-1 hover:border-[#5FC9E6] hover:shadow-lg"
+              <div
+                key={category.name}
+                className="rounded-2xl border border-slate-200 p-8"
               >
                 <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1266B6]">
                   Projects
@@ -76,10 +75,10 @@ export default function ProjectsPage() {
                   {category.description}
                 </p>
 
-                <span className="mt-7 inline-flex text-sm font-semibold text-[#1266B6] transition group-hover:translate-x-1">
-                  Explore {category.name} Projects →
+                <span className="mt-7 inline-flex text-sm font-medium text-slate-500">
+                  Project direction
                 </span>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
@@ -87,9 +86,9 @@ export default function ProjectsPage() {
 
       <section className="bg-slate-50">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-28">
-          <div className="max-w-2xl">
+          <div id="portfolio" className="max-w-2xl scroll-mt-24">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1266B6]">
-              Featured Projects
+              Current Projects
             </p>
 
             <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -97,9 +96,7 @@ export default function ProjectsPage() {
             </h2>
 
             <p className="mt-5 leading-7 text-slate-600">
-              These are the initial portfolio records exposed by the frontend.
-              The architecture is ready to expand into a full CMS-driven
-              project portfolio.
+              Explore the projects currently featured in the Nexus Hub portfolio. Both are live and continue to evolve through ongoing development.
             </p>
           </div>
 

@@ -3,12 +3,13 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://nexushubgroup.vercel.app'),
   title: {
-    default: 'Nexus Hub',
+    default: 'Nexus Hub | Technology, Innovation & Enterprise',
     template: '%s | Nexus Hub',
   },
   description:
-    'Nexus Hub connects ideas through digital innovation, media, and business.',
+    'Nexus Hub brings together technology, innovation, media and enterprise, empowering businesses through innovative digital solutions.',
 };
 
 export default function RootLayout({

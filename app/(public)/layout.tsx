@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import Footer from '@/components/navigation/Footer';
 import FloatingWhatsApp from '@/components/navigation/FloatingWhatsApp';
+import ScrollReveal from '@/components/motion/ScrollReveal';
 import GlobalNav from '@/components/navigation/GlobalNav';
 
 export default function PublicLayout({
@@ -12,11 +13,10 @@ export default function PublicLayout({
   return (
     <>
       <GlobalNav />
-
-      <main>{children}</main>
-
+      <ScrollReveal>
+        <main>{children}</main>
+      </ScrollReveal>
       <Footer />
-
       <FloatingWhatsApp />
     </>
   );
