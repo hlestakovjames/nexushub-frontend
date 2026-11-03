@@ -38,6 +38,9 @@ export const navigationContexts: NavigationContext[] = [
 export function resolveNavigationContext(
   pathname: string,
 ): NavigationContext {
+  // The current navigation has one global context; retain the parameter for callers.
+  void pathname;
+
   return {
     id: 'corporate',
     label: 'Nexus Hub',
