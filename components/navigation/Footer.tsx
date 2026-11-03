@@ -7,6 +7,7 @@ const exploreLinks = [
   { label: 'About Nexus Hub', href: '/about' },
   { label: 'Services', href: '/services' },
   { label: 'Products & Innovations', href: '/products' },
+  { label: 'Opportunities', href: '/opportunities' },
   { label: 'Projects', href: '/projects' },
   { label: 'Publications & Insights', href: '/publications' },
   { label: 'Resources', href: '/resources' },
