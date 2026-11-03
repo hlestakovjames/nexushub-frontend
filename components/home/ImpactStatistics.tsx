@@ -29,9 +29,11 @@ function CountUp({ value, suffix }: { value: number; suffix: string }) {
 
   useEffect(() => {
     if (!started) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setCount(value);
-      return;
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reducedMotion) {
+      const frame = window.requestAnimationFrame(() => setCount(value));
+      return () => window.cancelAnimationFrame(frame);
     }
 
     const duration = 1800;
