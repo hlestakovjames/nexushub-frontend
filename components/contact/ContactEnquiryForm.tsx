@@ -12,7 +12,7 @@ const enquiryLabels: Record<string, string> = {
 };
 
 export default function ContactEnquiryForm() {
-  function handleSubmit(event: FormEvent) {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
@@ -31,7 +31,7 @@ export default function ContactEnquiryForm() {
       String(formData.get('message') ?? ''),
       '',
       'Consent: The sender agrees that Nexus Hub may use the information provided to respond to this enquiry.',
-    ].join('\n');
+    ].join('\\n');
 
     const mailto = `mailto:nexushubkenya@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
     window.location.href = mailto;
@@ -108,7 +108,7 @@ export default function ContactEnquiryForm() {
         </div>
         <div className="sm:col-span-2">
           <button type="submit" className="inline-flex w-full items-center justify-center rounded-xl bg-[#050A30] px-6 py-4 text-sm font-semibold text-white transition hover:bg-[#1266B6] sm:w-auto">
-            Continue to Email → 
+            Continue to Email →
           </button>
           <p className="mt-4 text-xs leading-5 text-slate-500">
             This opens your device&apos;s email app with your enquiry prepared. Review it and press Send in your email app. Nothing is submitted to Nexus Hub directly from this website.
