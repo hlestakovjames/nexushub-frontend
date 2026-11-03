@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowUpRight, Boxes, Compass, GraduationCap, Layers3, RefreshCw, ShieldCheck, Tv, Users } from 'lucide-react';
+import { ArrowUpRight, Boxes, Compass, Layers3, RefreshCw, ShieldCheck } from 'lucide-react';
 
 const assetPassCapabilities = [
   {
