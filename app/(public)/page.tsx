@@ -289,8 +289,7 @@ export default function HomePage() {
             </h2>
             <p className="mt-5 text-lg leading-8 text-white/70">
               The wider digital ecosystem is being developed as a set of purpose-led applications.
-              This public overview introduces the applications intended for visitors and participants;
-              internal administration systems are deliberately kept out of the public catalogue.
+              This overview introduces the applications intended for visitors and participants.
             </p>
           </div>
 
