@@ -96,7 +96,7 @@ export default function ProjectsPage() {
             </h2>
 
             <p className="mt-5 leading-7 text-slate-600">
-              Explore the projects currently featured in the Nexus Hub portfolio. Both are live and continue to evolve through ongoing development.
+              Explore the projects currently featured in the Nexus Hub portfolio. Published records reflect work selected for public presentation.
             </p>
           </div>
 
