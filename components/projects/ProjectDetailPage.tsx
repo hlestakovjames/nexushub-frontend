@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import { getProjectBySlug } from './project-data';
 
 type ProjectDetailPageProps = {
@@ -11,35 +12,7 @@ export default function ProjectDetailPage({
 }: ProjectDetailPageProps) {
   const project = getProjectBySlug(slug);
 
-  if (!project) {
-    return (
-      <main className="bg-white text-[#050A30]">
-        <section className="bg-[#050A30] text-white">
-          <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#5FC9E6]">
-              Project Profile
-            </p>
-
-            <h1 className="mt-5 text-5xl font-bold leading-tight tracking-tight sm:text-6xl">
-              Project not found
-            </h1>
-
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/70">
-              The project you are looking for is not currently available in
-              the Nexus Hub project portfolio.
-            </p>
-
-            <Link
-              href="/projects"
-              className="mt-8 inline-flex text-sm font-semibold text-[#5FC9E6]"
-            >
-              ← Back to Projects
-            </Link>
-          </div>
-        </section>
-      </main>
-    );
-  }
+  if (!project) notFound();
 
   return (
     <main className="bg-white text-[#050A30]">
