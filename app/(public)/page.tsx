@@ -117,16 +117,6 @@ const applications = [
     href: '/ecosystem',
     action: 'Explore the ecosystem',
   },
-  {
-    code: 'APP-06',
-    name: 'Nexus Hub Administration Console',
-    acronym: 'NH-ADMIN',
-    description:
-      'A planned internal control environment for identity, access, configuration, security and oversight.',
-    status: 'Internal application',
-    href: '/ecosystem',
-    action: 'Explore the ecosystem',
-  },
 ];
 
 const discoveryLinks = [
@@ -295,18 +285,18 @@ export default function HomePage() {
           <div className="max-w-3xl">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#4FDCE8]">The Nexus Hub Ecosystem</p>
             <h2 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">
-              Connected applications with distinct roles.
+              A connected ecosystem of purpose-led applications.
             </h2>
             <p className="mt-5 text-lg leading-8 text-white/70">
               The wider digital ecosystem is being developed as a set of purpose-led applications.
-              Their availability is shown individually so planned and internal systems are not confused
-              with services already available online.
+              This public overview introduces the applications intended for visitors and participants;
+              internal administration systems are deliberately kept out of the public catalogue.
             </p>
           </div>
 
           <div className="mt-12">
             <HorizontalShowcase
-              label="Six applications in the Nexus Hub ecosystem"
+              label="Five public-facing and planned applications in the Nexus Hub ecosystem"
               duration="ecosystem"
               dark
               items={applications.map((app, index) => ({
